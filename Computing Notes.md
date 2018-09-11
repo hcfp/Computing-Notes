@@ -1152,12 +1152,13 @@ WHERE columnX = value
 - If two users are attempting to update two records, deadlock can occur where neither can proceed
 
 ``` text
-User1                                 User2
-Locks Customer A's record             Locks Customer B's record
-Tries to access Customer B's record   Tries to access Customer A's record
-Waits...                              Waits...
+User1                                   User2
+Locks Customer A's record               Locks Customer B's record
+Tries to access Customer B's record     Tries to access Customer A's record
+Waits...                                Waits...
 
-                              DEADLOCK!
+
+                                DEADLOCK!
 ```
 
 ### Serialisation
