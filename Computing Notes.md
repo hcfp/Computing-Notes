@@ -1181,3 +1181,47 @@ Waits...                                Waits...
 - This ensures that transactions are not lost when two or more users are simultaneously trying to access the same object
 - Transactions are ordered in terms of their dependencies on each other and the time they were initiated
 - It can prevent deadlock by blocking one request until another is completed
+
+## Mealy machines
+
+### Finite state machines
+
+- Does not have output
+- Sometimes called finite state automaton
+- Model for computation
+
+### State transition diagrams
+
+- Circles represent states that a system may be in
+- Arrows represent the transition between states
+- The start state has an arrow pointing into it
+- Double circle is the accept state
+
+![Finite state machine](https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwiH-4uZjv7dAhWS_qQKHdBJCL0QjRx6BAgBEAU&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFinite-state_machine&psig=AOvVaw30USiIWK7v6i32xlJznYRN&ust=1539337769955250)
+
+### State transition tables
+
+- Alternative way to represent an FSM
+
+![State transition table](https://www.google.co.uk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjjrt3Kjv7dAhWIMewKHafJD4sQjRx6BAgBEAU&url=http%3A%2F%2Fwww2.elo.utfsm.cl%2F~lsb%2Felo211%2Faplicaciones%2Fkatz%2Fchapter9%2Fchapter09.doc2.html&psig=AOvVaw2GxNI-A6NEzylAea5mNZPL&ust=1539337869451123)
+
+### Mealy Machines
+
+- Is an FSM with an output
+- Outputs determined by both its current state and the current input
+
+## Sets
+
+### Definition of a set
+
+- A set is an unordered collection of values in which the value only occurs once
+- A set can be defined in three ways
+
+#### Defining a set by listing each member
+
+- The members of the set are enclosed in curly brackets:
+ - e.g. A = {2, 4, 6 ,8}
+ 
+#### Common sets
+
+
