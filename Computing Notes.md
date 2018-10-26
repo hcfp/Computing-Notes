@@ -1217,11 +1217,71 @@ Waits...                                Waits...
 - A set is an unordered collection of values in which the value only occurs once
 - A set can be defined in three ways
 
-#### Defining a set by listing each member
+### Defining a set by listing each member
 
 - The members of the set are enclosed in curly brackets:
- - e.g. A = {2, 4, 6 ,8}
- 
-#### Common sets
+  - e.g. A = {2, 4, 6 ,8}
 
+### Common sets
 
+- An empty set {} or ∅ has no elements
+- The infinite set of natural numbers ℕ = {0, 1, 2, ...}
+  - Numbers used for counting
+- Integers (+ve and -ve) Z = {-2, -1, 0, 1 , 2, ...}
+- The set of all rational numbers is Q.
+  - This includes all numbers that can be expressed as a fraction
+- R is the set of all real numbers
+  - Includes irrational numbers
+
+### Finite and infinite sets
+
+- A finite set's elements can be counted by natural numbers
+- The <b>cardinality</b> is the number of elements
+- ℕ is a countable infinite set
+- R is not countable
+
+### Defining a set by set comprehension
+
+- B = {n<sup>2</sup> | n ∈ ℕ <sub>^</sub> n < 5}
+- The | means such that
+- The ∈ means element of
+- The ^ means and
+- Therefore B = {0, 1, 4, 9, 16}
+
+### Defining a set using compact representation
+
+- A = {0<sup>n</sup>1<sup>n</sup>|n}
+- This means that A is the set containing all strings with an equal number of 0s and 1s
+- Therefore A = {01, 0011, 000111, 00001111}
+
+### Product of two sets
+
+- The product of sets A and B, written A x B is the set of all ordered pairs (a,b), where a is a member of A and b is a member of B
+- Eg A = {1,3,5} and B = {12,25,40}
+- A x B = {[1,12], [1,25], [1,40], [3,12], [3,25], [3,40], [5,12], [5,25], [5,40]}
+
+### Subsets
+
+- If every member of A is a member of B
+  - A is then a subset of B
+  - A ⊆ B
+  - or B ⊇ A
+- If A is a subset of B, but not equal to it, then A is a <b>proper subset</b> of B
+  - A ⊂ B
+
+### Set operations
+
+#### Union
+
+- A ∪ B
+  - This is a set containing every thing in A and B
+
+#### Intersection
+
+- A ∩ B
+  - This set contains all members in common
+
+#### Difference
+
+- A \ B
+  - All members that are in A but not in B
