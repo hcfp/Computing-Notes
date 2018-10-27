@@ -1209,6 +1209,13 @@ Waits...                                Waits...
 
 - Is an FSM with an output
 - Outputs determined by both its current state and the current input
+- Like an FSM, it can be represented by a diagram or a state transition table
+
+#### Applications of Mealy machines
+
+- Can provide a mode of cipher machines
+  - It can be designed to produce a cipher string when given a plaintext string
+- Can also represent traffic lights, timers, vending machines and electronic circuits
 
 ## Sets
 
@@ -1285,3 +1292,57 @@ Waits...                                Waits...
 
 - A \ B
   - All members that are in A but not in B
+
+## Regular expressions
+
+- Used to:
+  - match text patterns (searching for words in a word processor)
+  - by compilers to check if the syntax is correct
+  - validate user input
+
+- A regular expression is used to specify a set of strings that satisfy given conditions
+
+- The symbols:
+  - <b>|</b> - separates alternatives
+  - <b>?</b> - zero or one of the preceding element
+  - <b>*</b> - zero or more of the preceding element
+  - <sup>+</sup> - one or more of the preceding element
+
+### Regular language
+
+- A regular language can be expressed by a regular expression
+  - Or any language that a finite state machine will accept
+- All finite languages are regular, since a regular expression can be created that includes all words in the language
+
+## The Turing machine
+
+- Infinitely long tape divided into squares
+- Read/write head
+  - Reads symbols from the tape and makes decisions based on the contents of the cells and its current state
+
+- Can be though of as an FSM with infinite memory
+  - The FSM specifies the task to be performed
+
+- The possible operations are:
+  - Erase or write a symbol in the current cell
+  - Move the read/write head left or right
+
+- All Turing machines must have a halting state
+
+### Transition functions
+
+- δ(Current State, Input symbol) = (Next State, Output symbol, Movement)
+- δ(S1, 0) = (S2, 1, L)
+  - This means if the machines is in State 1 and a 0 is read then write a 1, move to the left and change the state to State 2
+
+### The Universal Turing machine
+
+- A Turing machine can theoretically represent any computation
+  - Therefore a different turing machine is needed for every computation
+- The Universal Turing machine can compute any computable sequence
+
+- The machine <b>U</b> is an interpreter that reads a description <M> of any Turing machine <b>M</b> then executes operations on data as <b>M</b> does. The description <M> is written to the start of the tape, followed by the data <b>D</b>
+
+- The definition of what is computable is anything that a Turing machine can compute
+- The universal machine reads the description of the machine and the input from its own tape
+  - This led to the stored program concept where the program and its data is held in memory
