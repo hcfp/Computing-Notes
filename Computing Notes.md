@@ -474,7 +474,7 @@ The following are the units to count bytes in base-2
 
 - The stored program concept : machine code instructions are fetch and executed serially by a processor that perform arithmetic and logical operations
   - Instructions are stored in main memory which are then fetch and executed by the processor. Programs can be moved in and out of memory
-  
+
 - Most computers run on the Von Neumann architecture which is where data and instructions are held in the same memory
 
 ![Von Neumann Architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/220px-Von_Neumann_Architecture.svg.png)
@@ -1182,6 +1182,8 @@ Waits...                                Waits...
 - Transactions are ordered in terms of their dependencies on each other and the time they were initiated
 - It can prevent deadlock by blocking one request until another is completed
 
+# Regular languages
+
 ## Mealy machines
 
 ### Finite state machines
@@ -1346,3 +1348,40 @@ Waits...                                Waits...
 - The definition of what is computable is anything that a Turing machine can compute
 - The universal machine reads the description of the machine and the input from its own tape
   - This led to the stored program concept where the program and its data is held in memory
+
+### The Halting problem
+
+- The Halting problem is about determining whether a program will halt with a given input
+- Turing proved that a machine <b>H</b> to solve the Halting problem for all possible programs and their inputs cannot exist.
+- The Halting problem shows that some problems are non-computable (cannot be solved by a computer)
+
+## Backus-Naur form
+
+### Defining the syntax of a language
+
+- A meta language is used to describe another language
+- Backus-Naur form is a meta language
+- More efficient method for checking syntax of programs etc. than regular expressions
+  - Constructs that could be described by regular expressions can be represented more compactly in BNF
+
+### BNF
+
+- LHS ::= RHS
+- ::= means is defined by
+- ::= is called a meta-symbol
+- e.g. \<point\> ::= .
+- \<point\> is called a meta-component
+- | means or
+- e.g. \<digit\> ::== 0|1|2|3|4|5|6|7|8|9
+
+#### Recursion in a BNF definition
+
+- The meta-component can be defined in terms of itself
+- e.g. \<variable list\> ::= \<variable\>\<variable\>, \<variable list\>
+
+### Syntax diagrams
+
+- Ovals represent terminal elements (cannot be broken down further)
+- Boxes are terminal elements (refer to another definition)
+
+![syntax diagram](https://bournetocode.com/projects/AQA_A_Theory/pages/img/syntaxDigramPositiveInteger.png)
