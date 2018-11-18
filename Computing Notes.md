@@ -1385,3 +1385,134 @@ Waits...                                Waits...
 - Boxes are terminal elements (refer to another definition)
 
 ![syntax diagram](https://bournetocode.com/projects/AQA_A_Theory/pages/img/syntaxDigramPositiveInteger.png)
+
+## Reverse Polish Notation
+
+- Reverse Polish, also known as postfix, is a method of writing expressions that is suited to use in computers
+
+### Advantages of RPN
+
+- No need for brackets
+- Produces expressions in a form suitable for evaluation on a stack
+- Used in interpreters based on a stack
+
+* The operator follows the operand
+
+### Binary expression trees
+
+- An expression cna be expressed as a tree
+- An in-order traversal will give the infix expression
+- A post-order traversal will give the postfix expression
+
+![Expression Tree](https://i.stack.imgur.com/8QFVk.gif)
+
+- The RPN will be 2 3 \* 2 1 - / 5 4 1 - \* +
+
+# Data structures
+
+- An abstract data type is a description of how the data is viewed and the operation that can be performed
+  - It is an example of data abstraction which created an encapsulation around the data and hides the details of the implementation
+  - Called information hiding
+
+## Static and dynamic data structures
+
+- A dynamic data structure is a portion of memory that can grow and shrink in size with the help of the heap
+  - The heap is the area of memory where memory is allocated and de-allocated as required
+- Dynamic data structures are useful in implementing structures such as queues where the maximum size of the data is not known in advance
+
+* A static data structure is fixed in size such as an array
+* The disadvantage of using an array to implement a dynamic data structure is that the size of the array has to be decided and now more memory can be added
+* The memory that is allocated cannot be reallocated
+* A static data structure is often simpler since pointers and other data does not need to be stored
+
+## Queues
+
+- Queues are First In First Out (FIFO)
+- New elements are added to the end and elements are retrieved from the front
+
+### Operations on a queue
+
+* An abstract data structure is defined by structure and the operations that can be performed on it
+
+- The following can be performed on a queue
+  - EnQueue(item)&nbsp;&nbsp;&nbsp; // Add item to rear of queue
+  - DeQueue(item)&nbsp;&nbsp;&nbsp;// Remove the front item
+  - isEmpty()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Return true if empty
+  - IsFull()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Return true if full
+
+### Implementing a linear queue
+
+- Can be an array or a list
+
+* As an item leaves the front of the queue, all other items have to move up one
+  * This could have significant processing time on a large queue
+* Can also be implemented with pointers to the front and rear with a variable holding the size of the array and the number of items in the queue
+* However if many items are added and deleted from the queue, space is created at the front of the queue which cannot be filled, and items are added until the rear pointer points to the last element
+
+### Circular queue
+
+- When the array is full and the rear pointer points to the last element of the array, it will be made to point at the first element
+
+```
+SUB initialise
+  front := 0
+  rear := -1
+  size := 0
+  maxSize := size of array
+ENDSUB
+```
+
+```
+SUB isEmpty
+  IF size = 0 then
+    RETURN True
+  ELSE
+    Return False
+  ENDIF
+ENDSUB
+```
+
+```
+SUB isFull
+  IF size = maxSize THEN
+    RETURN True
+  ELSE
+    RETURN False
+  ENDIF
+ENDSUB
+```
+
+```
+SUB enqueue(newItem)
+  IF isFull THEN
+    OUTPUT "Queue full"
+  ELSE
+    rear := (rear + 1) MOD maxSize
+    q[rear] := newItem
+    size := size + 1
+  ENDIF
+ENDSUB
+```
+
+```
+SUB dequeue
+  IF isEmpty THEN
+    OUTPUT "Queue empty"
+    item := NULL
+  ELSE
+    item := q[front]
+    front := (front + 1) MOD maxSize
+    size := size - 1
+  ENDIF
+  RETURN ITEM
+ENDSUB
+```
+
+### Priority queue
+
+- Items are dequeued in the same manner
+- Items with higher priority are at the front of the queue and items with low priority are at the back
+  - Therefore, a new item can join at the front
+- To implement this, the priority of an item is checked then starting at the rear it moves along until an item with the same or lower priority is found, at which point it is inserted
+
+## Lists
