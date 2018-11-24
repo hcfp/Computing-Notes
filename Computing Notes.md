@@ -1400,7 +1400,7 @@ Waits...                                Waits...
 
 ### Binary expression trees
 
-- An expression cna be expressed as a tree
+- An expression can be expressed as a tree
 - An in-order traversal will give the infix expression
 - A post-order traversal will give the postfix expression
 
@@ -1516,5 +1516,3 @@ ENDSUB
 - To implement this, the priority of an item is checked then starting at the rear it moves along until an item with the same or lower priority is found, at which point it is inserted
 
 ## Lists
-
-# Fundamentals of communication and networking
