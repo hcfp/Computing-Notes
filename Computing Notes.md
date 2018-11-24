@@ -1516,3 +1516,5 @@ ENDSUB
 - To implement this, the priority of an item is checked then starting at the rear it moves along until an item with the same or lower priority is found, at which point it is inserted
 
 ## Lists
+
+# Fundamentals of communication and networking
