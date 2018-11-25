@@ -864,6 +864,49 @@ The following are the units to count bytes in base-2
 * This counteracts the problem of hidden nodes
 * This is where a node can be heard by the WAP but not the node trying to transmit
 
+## Structure of the Internet
+
+- The internet is a network of networks to allow computers to communicate globally
+- The world wide web is a collection of webpages on computer connected to the internet
+  - It uses the internet as a service to communicate the information contained within the pages
+
+### Uniform Resource Locator
+
+- A URL is the address for a resource on the internet
+
+![URL](http://scc.losrios.edu/~library/tutorials/c/URLs/Domain_Names/img/url-analysis-b.png)
+
+### Internet registries and registrars
+
+- Registrars ensure that a domain name is only used one, and they hold records of all existing websites and details for domains that can be purchased
+- They act as sellers of domain names
+
+* Internet registries are global organisations with databases of all domain names currently issued
+* They allocate IP addresses and track which domain names are associated to which IP address as part of the Domain Name System
+
+### Domain names and DNS
+
+- A domain name identifies where a resource resides
+- They are structured in a hierarchy
+- Each domain name has one or more IP addresses
+
+* The DNS matches the domain name to an IP
+* When a webpage is requested using a URL, the browser requests the IP address from the DNS
+  * If it is not found at that DNS, the search is move to a larger DNS database
+
+### Fully Qualified Domain Names
+
+- A FQDN includes the host server name (www, mail, ftp) depending on the resource being requested
+
+* websitename.co.uk is a domain name
+* mail.websitename.co.uk is a FQDN
+
+### IP addresses
+
+- An internet protocol address is a unique address that is assigned to a network device
+- It indicates where a packet of data is being sent or is being sent from
+- Routers use the IP address to direct the packet
+
 # Fundamentals of databases
 
 ## Modelling data requirements
