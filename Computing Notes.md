@@ -907,6 +907,117 @@ The following are the units to count bytes in base-2
 - It indicates where a packet of data is being sent or is being sent from
 - Routers use the IP address to direct the packet
 
+## Packet switching and routing
+
+### Packet switching
+
+- It is a method of communicating packets of data across a network on which other communications are occurring simultaneously
+- Cables are shared between many communications
+
+### Data packets
+
+- Data that is being sent across a network is broken into smaller chunks called packets
+- Packets are of variable size
+- Packets contain a header and a payload
+- They may have a trailer which contains a checksum or a Cyclical Redundancy Check
+  - The CRC checksum is recalculated for each packet upon receipt and is used to check that no data changed during transmission
+  - If the CRC differs, the packet is rejected and a new copy is requested
+
+* The header includes the senders and recipient's IP addresses, the protocol and the number of the packet in the sequence
+* Also include Time to Live or the hop limit
+* Payload includes the information being sent
+
+### Routing packets across the internet
+
+- Packet switching allows the packets to be sent along different routes
+- They can be reassembled on the other end
+
+### Routers
+
+- Routers are used to connect at least two networks
+- Traversing between routers is called a hop
+- The router reads the recipient's IP address in each packet and forward it to them along and fastest and least congested route
+- Routers use a routing table to store and update the location of devices and find the fastest routes between them
+- Dijkstra's algorithm is used to find the fastest route, but it is often a bottleneck 
+
+## Internet security
+
+### Firewalls
+
+- A firewall provides unauthorised access between two networks
+- Typically consist of two NICs
+  - One connected to the internal network and one to the external network
+- Using firewall software, packets are analysed using packet filters or the firewall may act as a proxy server
+
+### Packet filtering
+
+- Also known as static filtering
+- The header of the packet is checked
+  - This includes the destination and source IP
+- If the destination IP is on the network's allowed list of IPs, it is accepted
+- Static filtering can also block packets based on port numbers and protocols
+
+### Stateful inspection
+
+- Also known as dynamic filtering
+- It also examines the payload
+- It creates temporary rules based on the rest of the conversation
+- Routers keep conversation data in a Connection Table that is dynamically updated
+- Can defend against port scanning since the Connection Table will not allow those connections as they were not requested by the computer
+
+### Proxy servers
+
+- Intercepts all packets arriving and leaving a network
+- Enables anonymous surfing
+- The proxy caches commonly visited websites to return them immediately
+  - Speeds up access to webpages and reduces traffic
+- The proxy makes all requests on behalf of the user and caches them
+
+## Encryption
+
+- Encryption is the process of turning plaintext to a ciphertext where the plaintext cannot be read without the key
+
+### Symmetric encryption
+
+- Also known as private key encryption
+- The same key is used to encrypt and decrypt data
+- The key must be transferred through key exchange
+
+### Asymmetric encryption
+
+- Uses a public and private key which are separate but related
+- The public key is for others to encrypt data which they are sending to you which can then be decrypted with your private key
+- Cannot deduce the private key from the public key
+
+### Digital signatures
+
+- A digest of the unencrypted message is calculated
+  - If there is a change in the message, the digest will be different
+- In a conversation between A and B
+  - The digest is encrypted using A's private key
+  - This is the digital signature
+    - Since only the owner of the private key could have encrypted it
+  - The signature is added to the message adn then encrypted with B's public key
+  - B then decrypts the message with their private key and decrypts the digest using the A's public key
+  - The digest is then recalculated
+    - If it matches, the message is deemed genuine (came from the sender and that the message did not change during transmission)
+  
+* The date and time of the message is recorded so that the message cannot be resent as it would change the value of the digest
+* Can be used for any message
+
+### Digital certificates
+
+- Hoax digital signatures can be created with a hoax private key to imitate a trusted individual
+- Digital certificates are issues by Certificate Authorities who verify the trustworthiness of the sender of website
+- The certificate allows the holder to use Public Key Infrastructure
+- It contains:
+  - a serial number
+  - expiry date
+  - the name of the holder
+  - their public key
+  - digital signature of the CA
+- They operate within the Transport layer of TCP/IP using TLS.
+
 # Fundamentals of databases
 
 ## Modelling data requirements
