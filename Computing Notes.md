@@ -938,7 +938,7 @@ The following are the units to count bytes in base-2
 - Traversing between routers is called a hop
 - The router reads the recipient's IP address in each packet and forward it to them along and fastest and least congested route
 - Routers use a routing table to store and update the location of devices and find the fastest routes between them
-- Dijkstra's algorithm is used to find the fastest route, but it is often a bottleneck 
+- Dijkstra's algorithm is used to find the fastest route, but it is often a bottleneck
 
 ## Internet security
 
