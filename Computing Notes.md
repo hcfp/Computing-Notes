@@ -938,7 +938,7 @@ The following are the units to count bytes in base-2
 - Traversing between routers is called a hop
 - The router reads the recipient's IP address in each packet and forward it to them along and fastest and least congested route
 - Routers use a routing table to store and update the location of devices and find the fastest routes between them
-- Dijkstra's algorithm is used to find the fastest route, but it is often a bottleneck 
+- Dijkstra's algorithm is used to find the fastest route, but it is often a bottleneck
 
 ## Internet security
 
@@ -1001,7 +1001,7 @@ The following are the units to count bytes in base-2
   - B then decrypts the message with their private key and decrypts the digest using the A's public key
   - The digest is then recalculated
     - If it matches, the message is deemed genuine (came from the sender and that the message did not change during transmission)
-  
+
 * The date and time of the message is recorded so that the message cannot be resent as it would change the value of the digest
 * Can be used for any message
 
@@ -1017,6 +1017,95 @@ The following are the units to count bytes in base-2
   - their public key
   - digital signature of the CA
 - They operate within the Transport layer of TCP/IP using TLS.
+
+## Worms, Trojans and viruses
+
+- These are all types of malware designed to cause inconvenience, loss or damage to programs, data or systems
+
+### Viruses
+
+- A virus has the ability to self-replicate by spreading copies of itself
+- Relies on the host files to be opened in order to spread
+- Viruses become memory resident when the host program is run
+- Programs become infected when they are loaded into memory
+
+#### Worms
+
+- Worms are a sub-class of viruses
+- Do not need to be opened to spread
+- Generally do not hide in other programs
+  - Enter through a vulnerability
+- A worm can spread to other computers
+  - Methods such as emailing all members of the address book are used
+
+### Trojans
+
+- A programs that appears to be something the user wanted
+- When installed, the payload is released
+- Often used to open a back door to the computer
+- Cannot self-replicate
+- Groups of infected computers are called bot nets
+
+### System vulnerabilities
+
+- Malware exploits many different vulnerabilities to gain access to the system
+  - Bugs in programs
+  - Disabled firewalls
+  - No anti-virus software
+  - Social engineering
+  - Phishing
+
+- To avoid this programs should be checked for common bugs that allow greater access to a system such as buffer overflows
+- To prevent social engineering people should be trained on how to physically protect access to systems and who it is safe to give details to
+- To avoid phishing there should be a spam filtering system and more education in the use of caution
+- There should be regular OS and anti-virus updates
+  - New versions of OS will have less vulnerabilities that could be exploited and new variants of anti-virus software can detect new malware
+
+## TCP/IP
+
+### The TCP/IP protocol stack
+
+- It is a set of protocols that working in four layers to pass incoming and outgoing data ip and down the layers
+
+### The application layer
+
+- At the top of the stack
+- It selects the appropriate high-level protocol for the application being used
+  - Eg if the web browser is being used, the application layer would select HTTP(S)
+
+### The transport layer
+
+- Uses TCP to establish an end-to-end connection with the recipient
+- Data is split into packets
+- The packet is labelled with the packet number and the total number of packets (packet sequencing)
+- The port number is added
+  - The port ensures it is handled by the correct application on the receiving end
+- It also acknowledges received packets and requests lost packets
+
+### The network layer
+
+- Adds the source and destination IP addresses
+- Where routers operate
+  - They use the IP addresses to forward the packets to the destination
+- The IP and port is combined to form a <b>socket</b>
+
+### The link layer
+
+- The physical connection between nodes
+- Adds the MAC address to identify the NIC of the source and destination
+- The MAC address changes at each hop
+  - The source MAC address is of the device sending the packets for that hop
+  - The destination MAC address is of the device receiving on that hop
+
+### What happens when packets are received?
+
+- The MAC address is stripped by the link layer
+  - Which then passes it to the network layer
+- The IP addresses are removed by the network layer
+  - Which passes it to the transport layer
+- The transport layer determines which application to send the packet to in the application layer then removes the port number and reassembles the packets in the correct order
+  - The packet is then sent to the application layer
+- The application layer presents the data to the user
 
 # Fundamentals of databases
 
