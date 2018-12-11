@@ -1759,3 +1759,189 @@ ENDSUB
 - To implement this, the priority of an item is checked then starting at the rear it moves along until an item with the same or lower priority is found, at which point it is inserted
 
 ## Lists
+
+- Consists of items of the same type in which the same item can occur more than once
+- The following operations can be performed on lists
+  - isEmpty()
+  - append(item) Adds item to end of list
+  - remove(item) Removes the first occurrence of an item
+  - search(item)
+  - length()
+  - index(item) Returns the position of the item
+  - insert(pos, item)
+  - pop() Removes and returns the last item
+  - pop(pos) Removes and returns the item at the position pos
+
+* An array can be used if the maximum number of data items is small and is known in advance
+* The empty array must be declared in advance and could be used to hold a priority queue
+
+- The algorithm for inserting an item into a sorted list
+
+```
+  IF iSFull() THEN
+    OUTPUT('FULL')
+  ELSE
+    Find first greater
+    starting at the end of the list, move all items one place
+    Insert item
+```
+
+- To delete all items following the item deleted need to be moved one place
+- This is done by copying all items to the previous index
+- Then deleting the final item which is duplicated
+
+### Linked lists
+
+- Dynamic lists are implemented as linked lists
+- When items are added to the list, pointers are adjusted to point to the new memory locations
+- When items are deleted the pointers are adjusted and the freed memory is de-allocated
+- As nodes are added, memory locations are pulled from the heap
+  - The heap is a pool of memory locations which can be allocated and de-allocated as required
+- The pointers are then changed to maintain the correct sequence
+
+![linked list](https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist_insert_middle.png)
+
+## Stacks
+
+to do
+
+## Hash tables and dictionaries
+
+to do
+
+## Graphs
+
+to do
+
+## Trees
+
+to do
+
+## Vectors
+
+to do
+
+# OOP and functional programming
+
+## Programming paradigms
+
+- A paradigm is a style of a language
+
+* Procedural programming rely on procedures defined by the user which are called in an order specified by the programmer
+* Object-oriented languages make it possible to abstract details of the implementation in order to make code reusable and easy to maintain
+* Declarative languages such as SQL is where you write statements to describe the problem to be solved and the language decides how to implement it
+* Functional programming is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output
+
+## Object-oriented programming
+
+to do
+
+## Functional programming
+
+### What is a function?
+
+- A mapping of a domain to a co-domain
+  - Eg f: A -> B where f(x) = x<sup>2</sup>
+- Does not have to be algebraic
+
+### Defining a function
+
+- Define a function as follows: add3int x y z = x + y + z
+- Giving a function an input is called function application
+  - add3int 1 2 3
+
+### First-class objects
+
+- A first-class object is an object which may:
+  - appear in expressions
+  - be assigned to a variable
+  - be assigned as an argument
+  - be returned in a function call
+* Functions are first-class objects and therefore can be passed as arguments
+
+### Advantages of functional languages
+
+#### Statelessness
+
+- The value of a variable cannot change
+  - The variable is said to be immutable
+  - This makes the program stateless
+
+#### There are no side effects
+
+- Functions only calculate and return and therefore have no side effects
+- Since the value of a variable cannot be changed, if a function is called twice with the same parameters, it will return the same result
+
+#### Less bugs
+
+- It is easier to write bug free programs
+- Small functions that can be easily be proved correct are used to construct larger, more complex functions
+
+### Functional composition
+
+- Two functions can be combined where the result of one function becomes the input of another
+  - g(f(x))
+    - Here the result of f with the input x is sent to g
+
+To produce g(f(x)) with x = 4 in Haskell
+
+```Haskell
+  f x = x + 3
+  g x = 2 * x^2
+  (g.f) 4
+```
+
+### Types and type-classes
+
+- In Haskell, types are sets of values, and type-classes are sets of types
+- Integer, Int, Double, Float are all in type-classes Num.
+  - Integer can represent any value whilst Int in bounded
+- The type of a function should be declared explicitly
+
+```Haskell
+  sumOfSquares :: Integer -> Integer -> Integer
+  sumOfSquares x y = x^2 + y^2
+```
+
+The last type in the type declaration is the type that is returned
+
+- Type variables represent any type
+
+## Function application
+
+### Higher-order functions
+
+- These take a function as an argument or returns a function as a result
+
+### How are functions evaluated?
+
+All functions in Haskell only take one argument
+Then how are statements such as
+
+```Haskell
+  add3Int x y z = x + y + z
+```
+
+possible
+
+- A function takes a parameter at a time
+
+```Haskell
+  add3Int :: integer -> integer -> integer -> integer
+  -- The type declaration can also be written as
+  add3Int :: integer -> (integer -> (integer -> integer))
+```
+
+What happens when `add3Int 2 4 5` is called
+
+- The function is applied to the arguments
+- It takes the first argument, 2, and produces a function to add 2 to its arguments
+- This function then produces another function that adds 5 to the value of the previous function
+
+* The function add3Int takes the argument of 2 and returns a function of type `(integer -> (integer -> integer))`
+* This function takes the argument of 4 and returns a function of type `(integer -> integer)`
+* This function takes the argument of 5 an returns an integer
+
+### Partial application
+
+to do
