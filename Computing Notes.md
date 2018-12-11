@@ -1774,7 +1774,6 @@ ENDSUB
 
 * An array can be used if the maximum number of data items is small and is known in advance
 * The empty array must be declared in advance and could be used to hold a priority queue
-
 - The algorithm for inserting an item into a sorted list
 
 ```
