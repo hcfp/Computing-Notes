@@ -1898,7 +1898,60 @@ ENDSUB
 
 ## Hash tables and dictionaries
 
-to do
+### Hashing
+
+- A hashing algorithm is applied to data of each record to produce an address
+- A common algorithm is take take the data and mod it by the number of available addresses
+  - `address = key mod availableAddresses`
+- A synonym is where two keys hash to the same value
+- A collision is where record keys hash to the same address
+  - To deal with this place in the next available free space
+
+* In a folding hash the item is divided into equal parts and added to give a hash then modded by the maximum number of addresses
+
+- A string is hashed using the sum of the ASCII characters
+
+### Hash table
+
+- A hash table is a collection of items stored so they can be quickly located
+- The hash of the item to be inserted is calculated
+- The item is then inserted at that address
+  - If the space is taken, it is placed in the next available space
+
+- How is a hash table searched for a value
+  - Hash the value
+  - Check the resulting cell
+  - If item is there, return
+  - If cell is empty the value is not present
+  - If there is an item, keep moving along until it is found or a blank is found
+
+#### Collision resolution
+
+- As a hash table grows, there will be more collisions
+- If the maximum number of data items is known, the table could be designed so that it is 70% full when all items are added to allow space for collisions
+
+* Rehashing is how the next empty slot is found after a collision
+* Following are some methods used:
+  * Look linearly for next free slot
+    * Loops to the start if end reached
+  * Every n'th cell could be checked
+  * The hash value could be incremented by a prime
+
+### Dictionaries
+
+- Made up of pairs of keys and values
+- When a key is supplied, the associated value is returned
+- `IDs = {342: 'Harry', 634:'Jasmine'}`
+
+#### Operations on dictionaries
+
+- Create a new dictionary
+- Add new `key:value` pair
+- Remove pair
+- Change value of pair
+- Return value associated with key
+- Return True or False whether a key is present
+- Return length of dictionary
 
 ## Graphs
 
@@ -1918,10 +1971,10 @@ to do
 
 - A paradigm is a style of a language
 
-* Procedural programming rely on procedures defined by the user which are called in an order specified by the programmer
-* Object-oriented languages make it possible to abstract details of the implementation in order to make code reusable and easy to maintain
-* Declarative languages such as SQL is where you write statements to describe the problem to be solved and the language decides how to implement it
-* Functional programming is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output
+- Procedural programming rely on procedures defined by the user which are called in an order specified by the programmer
+- Object-oriented languages make it possible to abstract details of the implementation in order to make code reusable and easy to maintain
+- Declarative languages such as SQL is where you write statements to describe the problem to be solved and the language decides how to implement it
+- Functional programming is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output
 
 ## Object-oriented programming
 
