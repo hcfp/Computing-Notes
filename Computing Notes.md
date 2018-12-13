@@ -1802,7 +1802,99 @@ ENDSUB
 
 ## Stacks
 
-to do
+- Stacks are last in first out
+- A stack can be implemented either as a static or dynamic data structure
+- When implemented as a static structure in an array, two extra variables are required
+  - Pointer to the top of the stack
+  - Holding the size of the array (max size of stack)
+
+### Operations on a stack
+
+- push(item) - adds item to TOP of stack
+- peek() - returns top item from stack
+- pop() - removes and returns item from TOP of stack
+- isEmpty() - returns boolean
+- isFull() - returns boolean
+
+```
+SUB isEmpty
+  IF top = -1 THEN
+    RETURN True
+  ELSE
+    RETURN False
+  ENDIF
+ENDSUB
+```
+
+```
+SUB isFull
+  IF top = maxSize THEN
+    RETURN True
+  ELSE
+    RETURN False
+  ENDIF
+ENDSUB
+```
+
+```
+SUB push(item)
+  IF isFull THEN
+    OUTPUT "Stack full"
+  ELSE
+    top := top + 1
+    s(top) := item
+  ENDIF
+ENDSUB
+```
+
+```
+SUB pop
+  IF isEmpty THEN
+    OUTPUT "Stack si empty"
+  ELSE
+    item := s(top)
+    top := top - 1
+    RETURN item
+  ENDIF
+ENDSUB
+```
+
+### Overflow and underflow
+
+- Stack has a maximum size
+  - If an item is pushed to a full stack, it will overflow
+- If the stack is empty
+  - and a item is popped, it will underflow
+
+### Call stack
+
+#### Holds return addresses
+
+- This is the address of the instruction that control should return to when a subroutine finishes
+- If subroutines are nested, the stack will grow as more return addresses are added which will be popped when the routine completes
+
+##### Recursion
+
+- With each call of a recursive routine a new return address is pushed to the stack
+- When the recursion ends, the return addresses are popped one at a time each time the end of a subroutine is reached
+- If the program is infinitely recursive, the stack will overflow
+
+#### Holds parameters
+
+- Parameters required for a subroutine will be held on the call stack
+- Each call of the subroutine will have a separate space on the call stack
+
+#### Local variables
+
+- Variables local to a subroutine is held on the call stack
+- Storing local variables on the call stack is more efficient than dynamic memory allocation which uses the heap
+
+#### Stack frames
+
+- The call stack is made of stack frames
+  - Each frame corresponds to a subroutine that is running
+
+![Stack frames](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Call_stack_layout.svg/342px-Call_stack_layout.svg.png)
 
 ## Hash tables and dictionaries
 
