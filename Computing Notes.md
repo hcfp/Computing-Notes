@@ -1955,11 +1955,106 @@ ENDSUB
 
 ## Graphs
 
-to do
+- A set of nodes connected by edges
+- Where all edges are bidirectional, it is an undirected graph
+- If all edges are one way, it is a directed graph
+- The edges may be weighted
+
+### Implementing a graph
+
+#### Adjacency matrix
+
+![Adjacency matrix](https://i.stack.imgur.com/Ucg3W.png)
+
+- In an undirected graph, the matrix will be symmetric
+- If the graph was weighted, the weighting would be stored instead of 1/0
+
+##### Advantages of an adjacency matrix
+
+- Easy to add edge
+- Easy to test for presence of edge
+
+##### Disadvantages of an adjacency matrix
+
+- In a graph with many nodes but few edges most cells will be empty
+  - The larger the graph, the more memory is wasted
+- It is hard to add or delete a node in a static two-dimensional array
+
+#### Adjacency list
+
+![Adjacency list](https://i.imgur.com/ylcZpyH.jpg)
+
+- More space-efficient
+- A list of nodes is created
+- Each node points to a list of all adjacent nodes
+- Can be implemented as a list of dictionaries if there are edge weights
+
+* Uses less memory when representing a sparsely connected graph
+
+##### Applications of graphs
+
+- Represent computer networks
+  - Edge weights are the bandwidth
+- Roads and towns
+  - Edge weights are distances
+- States in an FSM
+- Web pages and links
 
 ## Trees
 
-to do
+- <b>A tree is connected, undirected graph with no cycles</b>
+- Connected: Always possible to find a route from a node to any other node
+- No cycles: Cannot return to the same no without traversing an edge twice
+
+### Binary search tree
+
+- Rooted tree with at most two children
+- Holds items to allow them to be searched quickly
+- New items can be added easily
+
+### Traversing a binary tree
+
+#### Pre-order
+
+![pre-order](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sorted_binary_tree_preorder.svg/330px-Sorted_binary_tree_preorder.svg.png)
+
+- Output node when first encountered
+- F, B, A, D, C, E, G, I, H.
+- Used to produce prefix notation, used in functional programming
+
+#### In-order
+
+![in-order](https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Sorted_binary_tree_inorder.svg/330px-Sorted_binary_tree_inorder.svg.png)
+
+- Output when passing underneath
+
+#### Post-order
+
+![post-order](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sorted_binary_tree_postorder.svg/330px-Sorted_binary_tree_postorder.svg.png)
+
+- Output when passing for the last time
+- Used to produce RPN
+
+### Implementing a binary search tree
+
+- Array of records with each node consisting of
+  - Left pointer
+  - Data item
+  - Right pointer
+- A pointer of -1 indicated there is no child on that side
+
+| tree[index] | Left | Data | Right |
+|-------------|------|------|-------|
+| tree[0]     | 1    | 17   | 4     |
+| tree[1]     | 2    | 8    | 3     |
+| tree[2]     | -1   | 4    | 7     |
+| tree[3]     | -1   | 12   | 6     |
+| tree[4]     | 5    | 22   | 8     |
+| tree[5]     | -1   | 19   | -1    |
+| tree[6]     | -1   | 14   | -1    |
+| tree[7]     | -1   | 5    | -1    |
+| tree[8]     | 9    | 30   | -1    |
+| tree[9]     | -1   | 25   | -1    |
 
 ## Vectors
 
