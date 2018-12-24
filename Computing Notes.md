@@ -1494,7 +1494,7 @@ Waits...                                Waits...
 
 ### Defining a set by set comprehension
 
-- B = {n<sup>2</sup> | n ∈ ℕ <sub>^</sub> n < 5}
+- $ B = \{n^2 \vert n \in \N \land n < 5 \} $
 - The | means such that
 - The ∈ means element of
 - The ^ means and
@@ -1502,7 +1502,7 @@ Waits...                                Waits...
 
 ### Defining a set using compact representation
 
-- A = {0<sup>n</sup>1<sup>n</sup>|n}
+- $ A = \{ 0^n1^n \vert n \} $
 - This means that A is the set containing all strings with an equal number of 0s and 1s
 - Therefore A = {01, 0011, 000111, 00001111}
 
@@ -2058,7 +2058,50 @@ ENDSUB
 
 ## Vectors
 
-to do
+- Vectors can be represented as a:
+  - list of numbers
+  - function
+  - representation of a point in space
+
+There are different notations
+
+1. List [2.0, 3.14159, 2.71828]
+2. A n-vector over $ \mathbb{R} $ can be written $\mathbb{{R}}^n$
+  4-vector over R such as [2.0, 3.14159, 2.71828, -1.0] can be written $ \mathbb{R} ^ 4 $
+3. can be shown as a function
+  $ f : S \rightarrow \mathbb{R} $
+  $\text{ where } S \text{ is the set of } \{0,1,2,3\} \text{ and } \mathbb{R} \text{ is the set of all real numbers}$
+- Example:
+  - $0\rightarrow 2.0$
+  - $1\rightarrow \pi$
+
+### Uses vectors
+
+- Used when processing spacial information
+
+1. When controlling a robot arm the coordinates need to be tracked so that the computer can work out how to move to the next location
+2. Games and simulations have to work out how objects moving in 3D space can be represented
+3. Planes need to take in account wind speeds and direction when setting and holding a course in 3D
+
+### Convex combination of vectors
+
+- Used to find if object lies inside the area bound by two vectors
+
+$$\alpha u + \beta v \text{ where } \alpha + \beta = 1 \text{ and where } \alpha , \beta \geq 0 $$
+
+![Convex combination](https://i.imgur.com/275QEpv.png)
+
+### Dot product
+
+$$ u • v = u_1v_1 + u_2v_2 + ... + u_nv_n$$
+
+$$ [2,3,4] • [5,2,1] = 10 + 6 + 4 = 20 $$
+
+- The dot product is a number, not a vector, and can be used to compare vectors
+
+#### Finding angle between vectors
+
+$$ cos \Theta =  \frac{(u • v)}{(\Vert u \Vert • \Vert v \Vert)} $$
 
 # OOP and functional programming
 
@@ -2066,28 +2109,230 @@ to do
 
 - A paradigm is a style of a language
 
-- Procedural programming rely on procedures defined by the user which are called in an order specified by the programmer
-- Object-oriented languages make it possible to abstract details of the implementation in order to make code reusable and easy to maintain
-- Declarative languages such as SQL is where you write statements to describe the problem to be solved and the language decides how to implement it
-- Functional programming is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output
+- <b>Procedural programming</b> rely on procedures defined by the user which are called in an order specified by the programmer
+- <b>Object-oriented languages</b> make it possible to abstract details of the implementation in order to make code reusable and easy to maintain
+- <b>Declarative languages</b> such as SQL is where you write statements to describe the problem to be solved and the language decides how to implement it
+- <b>Functional programming</b> is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output
 
 ## Object-oriented programming
 
-to do
+- An object-oriented program is a number of interacting objects each of which is responsible for their own data and operations on that data
+- The program code creates objects and allows them to communicate by sending messages and receiving answers
+
+### Object attributes and behaviours
+
+- Object will have attributes
+  - For example a person object would have the attributes first name, last name and data of birth
+- An object has state
+  - For example a radio can be on or off, tuned to a station or set to a volume
+- The object's behaviours are the actions it can perform
+
+### Classes
+
+- A class is a template for an object where the attributes and methods are defined for all object of that class
+
+```
+  ClassName = Class
+    Public
+      //define all methods
+    Private
+      //define instance variables
+  End
+```
+
+- Generally, instance variables are private and methods are public
+- This is so that other classes may use the methods belonging to another class but not see or change their attributes
+
+* Information hiding it important
+  * This is where classes cannot directly access the private attributes of another class
+
+### Instantiation
+
+- This is how objects are created
+- If you wanted to add a book to a stock system
+- All objects in a class have the same structure and methods but each have their own data
+
+```
+  book1 = new StockItem("PT123", "Book" , "Computer Science", 35)
+```
+
+- This creates a reference variable called book of which is an instance of StockItem with the defined attributes
+- Reference variables are named areas in memory where information can be stored
+  - It does not store the object but instead holds a pointer
+
+- In variable reference diagrams the reference variable is shown as circles and primitive data types are shown as rectangles
+
+### Sending messages
+
+- Messages are either getters or setters
+- Getters are functions and setters are procedures
+
+* The state of an object can be examined or changed by sending it a message
+
+### Encapsulation
+
+- An object encapsulates its state and methods
+- The data and methods are wrapped into a single entity so that the attributes and methods of one object cannot affect another object
+- Encapsulation allows programmers to work on classes and not worry about how other it may affect other parts of the system
+- Methods from other classes can be used without knowing how they work
+- This is related to information hiding, where details of an object are hidden so that messages must be used to interact
+
+### Inheritance
+
+- A class can inherit data and methods from a parent class
+- A child class is called a subclass and a parent class is called a superclass
+
+![inheritance diagram](https://image.slidesharecdn.com/inheritancecontinues-1223274749680392-9/95/c-inheritance-composition-polymorphism-38-728.jpg?cb=1332142453)
+
+* Inheritance is used when object A is an object B
+* Eg. Cat is an Animal and therefore can inherit from animal
+
+- `Cat = Subclass(Animal)` or `Class Cat(Animal)` or `public class Cat extends Animal`
+
+## OOP Design principals
+
+### Association, aggregation and composition
+
+- Association is described as a "has a " relationship
+  - Eg. a teacher has a student and a student has a teacher
+- There is no ownership
+  - They have their own life-cycle and can be created and deleted independently
+
+* Aggregation is a type of association
+* Occurs when a class is a collection for other classes, but the contained classes do not have a strong life-cycle dependency on the container
+
+- Composition is a strong form of association
+- If the container is destroyed, all instances are destroyed
+
+![relationships](https://i.stack.imgur.com/bfBSY.png)
+
+### Polymorphism
+
+- This is the ability to process object differently depending on the class
+- For example when a move command is sent to a Cat class, it may move two spaces whilst a Rodent will only move one
+- The contents of the method is different but the name is the same
+- This is called overriding
+
+```
+  Animal = Class
+    Public
+      Procedure moveLeft
+      Procedure moveRight
+    Protected
+      Position : Integer
+    End
+  Cat = Subclass(Animal)
+    Public
+      Procedure moveLeft (Override)
+      Procedure moveRight (Override)
+      Procedure pounce
+    Private
+      Name : string
+    End
+```
+
+### Access modifiers
+
+- If a method or instance variable is declared
+  - Private only code within the class can access it
+  - Public code within any class an access it
+  - Protected
+    - Restricts access to members of a subclass or members in the same package or library of classes
+
+| Member is accessible | Public | Protected | Private |
+|--------------------------------------------|--------|-------------------------------------------------------------|---------|
+| Within the defining class | Yes | Yes | Yes |
+| Via inheritance | Yes | Yes | No |
+| Via a reference to an object  of the class | Yes | Only if it is in a subclass or if it is in the same package | No |
+
+- In class diagram, private is - and public is +
+
+![class digram with access specifiers](https://i.imgur.com/FxhUudl.png)
+
+### Favour composition over inheritance
+
+- Composition allows greater flexibility
+  - It is less rigid in relationships between objects
+- An object may consist of many other objects but cannot be said to inherit their characteristics
+- Eg. A house class will be made up of Walls, Doors, Windows and Roof classes
+
+```
+  House = Class
+    Public
+      Procedure drawHouse
+      Procedure getHousePosition
+      Procedure setHousePosition
+    Private
+      TheWall : Wall
+      TheDoor : Door
+      WindowLeft : Window
+      WindowRight : Window
+      TheRoof : Roof
+    End
+    Wall = Class
+      Public
+        Procedure drawWall
+      Private
+        WallHeight : Real
+        WallWidth : Real
+        WallColour : Integer
+```
+
+### Programming to an interface
+
+- Sometimes a number of different classes all need to understand a particular set of messages
+- For example switchOn could be sent to a microwave, lamp, oven and watch
+  - They will respond differently depending on the class
+
+* An interface is a collection of abstract methods that a group of unrelated classes may implement
+* The methods are specified in the interface but implemented in the class using the interface
+* The programmer does not need to know how the objects in each class will respond to the message
+
+```
+  Public interface Switches
+    Procedure SwitchOn
+    Procedure SwitchOff
+    Procedure SetTimer(aTime)
+    Procedure GetTimer
+  End
+```
+
+- A programmer who wants to implement the Switches interface in the Microwave class would do `Class Microwave Implements Switches`
+
+* The objects must be able to handle any of the messages from the interface
+* An advantage is new classes that use the interface can be added without affecting existing classes
+
+### Encapsulate what varies
+
+- Used to reduce maintenance and testing
+- If a change needs to be made only the mode containing the concept should have to change
+- The modules that are most likely to change should be considered and encapsulated during the design stage
+  - If they need to be changed in the future, the amount of code that needs to be modified is minimised
+
+* The concept could be implemented using interfaces where the methods are implemented differently by each class
+
+## Advantages of OOP
+
+1. Forces designers to plan extensively, which leads to better designs with fewer weaknesses
+2. Encapsulation allows code for an object to be written, tested and maintained independently of other objects
+3. Knowledge of how methods are implemented is not required once an object has been created
+4. New objects with small differences to existing ones can be easily created
+5. Objects that have already been defined, coded and tested can be easily re-used in different programs
+6. Easier to maintain due to the modular structure
 
 ## Functional programming
 
 ### What is a function?
 
 - A mapping of a domain to a co-domain
-  - Eg f: A -> B where f(x) = x<sup>2</sup>
+  - Eg $f: A \rightarrow B \vert f(x) = x^2$
 - Does not have to be algebraic
 
 ### Defining a function
 
-- Define a function as follows: add3int x y z = x + y + z
+- Define a function as follows: `add3int x y z = x + y + z`
 - Giving a function an input is called function application
-  - add3int 1 2 3
+  - `add3int 1 2 3`
 
 ### First-class objects
 
@@ -2183,4 +2428,109 @@ What happens when `add3Int 2 4 5` is called
 
 ### Partial application
 
-to do
+- This uses the way functions are evaluated by decomposing multi-argument functions into smaller functions with fewer arguments
+
+```Haskell
+  add :: Integer -> Integer -> Integer
+  add x y = x + y
+```
+
+- This means (add 3) 4
+- This function can then be partially applied as an argument for another function
+
+```
+  addSix :: Integer -> Integer
+  addSix = add 6
+```
+
+- The function add required more that one argument and only one is passed
+- It then returns a new function that takes the remaining argument and returns the result
+
+* Partial application means fixing the values of inputs to a function to produce a more specific function
+
+### Map
+
+- Map is a high-order function that takes a list and the function to be applied to all elements and returns a list after applying the function
+
+- Eg:
+
+```Haskell
+  map (max 3) [1,2,3,4,5]
+```
+
+- This will return `[3,3,4,5]`
+
+### Filter
+
+- A high-order function which takes a predicate and a list and returns the items that satisfy the condition
+
+- Eg:
+
+```Haskell
+  filter (>6) [2,5,6,8,9]
+```
+
+- This will return `8,9`
+
+- You can write your own predicate
+- Eg:
+
+```Haskell
+  isEven n = n `mod` 2 == 0
+  filter(isEven) [1,2,3,4,5,6]
+```
+
+- This will return `[2,4,6]`
+
+### Fold
+
+- Reduces a list to a single value using recursion
+
+```Haskell
+  foldl (+) 0 [2,3,4,5]
+```
+
+- The calculation that takes place is (((0 + 2) + 3) + 4) + 5
+
+* foldl starts the recursion at the left, foldr starts at the right
+
+## Lists in functional programming
+
+- Like variables, lists are immutable
+
+```Haskell
+  names = ["Anna", "Bob", "Jo", "Keira", "Tom", "George"]
+  numbers = [3,7,14,83,2,77]
+  head names
+  tail names
+  head numbers
+  tail numbers
+```
+
+- This will return
+
+```
+  ["Anna"]
+  ["Bob", "Jo", "Keira", "Tom", "George"]
+  [3]
+  [7,14,83,2,77]
+```
+
+- Tail can be applied repeatedly
+
+* The following defines a new list and checks if it is empty
+
+```Haskell
+  let newList = []
+  null newList
+```
+
+- This will return `True`
+
+- To prepend an element to a list use `:`
+  - Eg. 5:Numbers
+- To prepend a list use `++`
+  - `[6,10] ++ Numbers`
+  - `Numbers ++ [6,10]` will append
+
+* `length numbers` returns the length of numbers
