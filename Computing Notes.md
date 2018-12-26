@@ -1087,7 +1087,7 @@ The following are the units to count bytes in base-2
 - Adds the source and destination IP addresses
 - Where routers operate
   - They use the IP addresses to forward the packets to the destination
-- The IP and port is combined to form a <b>socket</b>
+- The IP and port is combined to form a **socket**
 
 ### The link layer
 
@@ -1488,7 +1488,7 @@ Waits...                                Waits...
 ### Finite and infinite sets
 
 - A finite set's elements can be counted by natural numbers
-- The <b>cardinality</b> is the number of elements
+- The **cardinality** is the number of elements
 - ℕ is a countable infinite set
 - R is not countable
 
@@ -1518,7 +1518,7 @@ Waits...                                Waits...
   - A is then a subset of B
   - A ⊆ B
   - or B ⊇ A
-- If A is a subset of B, but not equal to it, then A is a <b>proper subset</b> of B
+- If A is a subset of B, but not equal to it, then A is a **proper subset** of B
   - A ⊂ B
 
 ### Set operations
@@ -1548,9 +1548,9 @@ Waits...                                Waits...
 - A regular expression is used to specify a set of strings that satisfy given conditions
 
 - The symbols:
-  - <b>|</b> - separates alternatives
-  - <b>?</b> - zero or one of the preceding element
-  - <b>*</b> - zero or more of the preceding element
+  - **|** - separates alternatives
+  - **?** - zero or one of the preceding element
+  - ***** - zero or more of the preceding element
   - <sup>+</sup> - one or more of the preceding element
 
 ### Regular language
@@ -1586,7 +1586,7 @@ Waits...                                Waits...
   - Therefore a different turing machine is needed for every computation
 - The Universal Turing machine can compute any computable sequence
 
-- The machine <b>U</b> is an interpreter that reads a description <M> of any Turing machine <b>M</b> then executes operations on data as <b>M</b> does. The description <M> is written to the start of the tape, followed by the data <b>D</b>
+- The machine **U** is an interpreter that reads a description <M> of any Turing machine **M** then executes operations on data as **M** does. The description <M> is written to the start of the tape, followed by the data **D**
 
 - The definition of what is computable is anything that a Turing machine can compute
 - The universal machine reads the description of the machine and the input from its own tape
@@ -1595,7 +1595,7 @@ Waits...                                Waits...
 ### The Halting problem
 
 - The Halting problem is about determining whether a program will halt with a given input
-- Turing proved that a machine <b>H</b> to solve the Halting problem for all possible programs and their inputs cannot exist.
+- Turing proved that a machine **H** to solve the Halting problem for all possible programs and their inputs cannot exist.
 - The Halting problem shows that some problems are non-computable (cannot be solved by a computer)
 
 ## Backus-Naur form
@@ -1612,10 +1612,10 @@ Waits...                                Waits...
 - LHS ::= RHS
 - ::= means is defined by
 - ::= is called a meta-symbol
-- e.g. \<point\> ::= .
-- \<point\> is called a meta-component
+- e.g. <point\> ::= .
+- <point\> is called a meta-component
 - | means or
-- e.g. \<digit\> ::== 0|1|2|3|4|5|6|7|8|9
+- e.g. <digit\> ::== 0|1|2|3|4|5|6|7|8|9
 
 #### Recursion in a BNF definition
 
@@ -2002,7 +2002,7 @@ ENDSUB
 
 ## Trees
 
-- <b>A tree is connected, undirected graph with no cycles</b>
+- **A tree is connected, undirected graph with no cycles**
 - Connected: Always possible to find a route from a node to any other node
 - No cycles: Cannot return to the same no without traversing an edge twice
 
@@ -2109,10 +2109,10 @@ $$ cos \Theta =  \frac{(u • v)}{(\Vert u \Vert • \Vert v \Vert)} $$
 
 - A paradigm is a style of a language
 
-- <b>Procedural programming</b> rely on procedures defined by the user which are called in an order specified by the programmer
-- <b>Object-oriented languages</b> make it possible to abstract details of the implementation in order to make code reusable and easy to maintain
-- <b>Declarative languages</b> such as SQL is where you write statements to describe the problem to be solved and the language decides how to implement it
-- <b>Functional programming</b> is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output
+- **Procedural programming** rely on procedures defined by the user which are called in an order specified by the programmer
+- **Object-oriented languages** make it possible to abstract details of the implementation in order to make code reusable and easy to maintain
+- **Declarative languages** such as SQL is where you write statements to describe the problem to be solved and the language decides how to implement it
+- **Functional programming** is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output
 
 ## Object-oriented programming
 
