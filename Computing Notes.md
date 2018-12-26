@@ -177,7 +177,7 @@ The following are the units to count bytes in base-2
   * border = black
 
 - The image is redrawn when resized ∴ no quality loss
-- Smaller file size for geometric shapes since less data is stores
+- Smaller file size for geometric shapes since less data is stored
 - This means they are often used as logos since they can be infinitely scaled and the smaller file size allows for faster transmission
 - Vectors are bad for photographs
 
@@ -186,7 +186,7 @@ The following are the units to count bytes in base-2
 - Sample rate - samples taken per second
 - Bit depth - bits per sample
 
-* Sound is an analogue continuous wave, that muse be converted to digital and discrete data
+* Sound is an analogue continuous wave, that must be converted to digital and discrete data
 
 - Amplitude is measured and recorded at given intervals. More samples = more accurate sound
 - Increasing the bit depth increases the levels of amplitude that can be measured which increases the sound quality
@@ -218,10 +218,10 @@ The following are the units to count bytes in base-2
 
 - Compression is used to use less storage space and increase transmission speeds
 
-* Lossy compression removed non essential information
+* Lossy compression removes non essential information
   * This reduces the files size but leads to a loss in quality
   * MP3 is a common lossy form of compression used for audio files. It removes sound that is out of the hearing range and that may be drowned out by other sounds
-* Lossless compression records patterns in the data are compresses in a way that can be reversed
+* Lossless compression records patterns in the data are compressed in a way that can be reversed
   * No data is lost ∴ useful for program files
   * File sizes may be larger than lossy compression
 
@@ -256,7 +256,7 @@ The following are the units to count bytes in base-2
 ### The Vernam cipher
 
 - The Vernam cipher is an implementation of a class of ciphers known as one-time pad ciphers
-- The one-time pad must be equal to ore longer than the plaintext, be truly random and be used only once
+- The one-time pad must be equal to or longer than the plaintext, be truly random and be used only once
 - The key must be shared in person and destroyed after use
 - If the key is truly random no amount of cryptanalysis will produce meaningful results since the distribution of characters will be random
 - The binary representation of each character and the corresponding character on the one-time pad are XOR'd
