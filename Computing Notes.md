@@ -1480,9 +1480,9 @@ Waits...                                Waits...
 - The infinite set of natural numbers ℕ = {0, 1, 2, ...}
   - Numbers used for counting
 - Integers (+ve and -ve) Z = {-2, -1, 0, 1 , 2, ...}
-- The set of all rational numbers is Q.
+- The set of all rational numbers is $\mathbb{Q}$.
   - This includes all numbers that can be expressed as a fraction
-- R is the set of all real numbers
+  - $\mathbb{R}$ is the set of all real numbers
   - Includes irrational numbers
 
 ### Finite and infinite sets
@@ -1490,7 +1490,7 @@ Waits...                                Waits...
 - A finite set's elements can be counted by natural numbers
 - The **cardinality** is the number of elements
 - ℕ is a countable infinite set
-- R is not countable
+- $\mathbb{R}$ is not countable
 
 ### Defining a set by set comprehension
 
