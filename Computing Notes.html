@@ -840,11 +840,25 @@ code.language-yaml {
 <li>Opcodes are replaced with mnemonics which indicate what the opcode represents</li>
 <li>The operand is replaced by a decimal or hexadecimal number</li>
 </ul>
+<h4 class="mume-header" id="advantages-of-assembly-over-hll">Advantages of Assembly over HLL</h4>
+
+<ul>
+<li>May execute more quickly</li>
+<li>May use less memory</li>
+<li>Gives direct access to hardware</li>
+</ul>
 <h3 class="mume-header" id="high-level-languages">High-level languages</h3>
 
 <ul>
 <li>High-level languages allow programmer to think in terms of algorithms instead of small steps and details such as where a variable will be stored in memory</li>
 <li>Imperative high-level languages are where instructions are executed in a programmer defined order which describes how to solve a problem</li>
+</ul>
+<h4 class="mume-header" id="advantages-of-hll-over-assembly">Advantages of HLL over Assembly</h4>
+
+<ul>
+<li>Code is easier to read and maintain</li>
+<li>Faster development</li>
+<li>More portable (Assembly only works for processors with same instruction set)</li>
 </ul>
 <h2 class="mume-header" id="program-translators">Program translators</h2>
 
@@ -1030,7 +1044,9 @@ Some CPUs have Level 3 cache</li>
 <li>Some computers run on the Harvard architecture
 <ul>
 <li>Different buses for data and instructions. Both stored in different memory</li>
-<li>Data and instructions can be fetch in parallel &#x2234; instructions handled more quickly</li>
+<li>Data and instructions can be fetch simultaneously</li>
+<li>Reduces delays waiting for memory fetches</li>
+<li>Data cannot be executed as code</li>
 <li>Used in embedded systems and digital signal processing</li>
 </ul>
 </li>
@@ -2591,7 +2607,7 @@ Waits...                                Waits...
 <ul>
 <li><strong>|</strong> - separates alternatives</li>
 <li><strong>?</strong> - zero or one of the preceding element</li>
-<li>***** - zero or more of the preceding element</li>
+<li>* - zero or more of the preceding element</li>
 <li><sup>+</sup> - one or more of the preceding element</li>
 </ul>
 </li>
@@ -2619,7 +2635,7 @@ Waits...                                Waits...
 </ul>
 </li>
 <li>
-<p>Can be though of as an FSM with infinite memory</p>
+<p>Can be thought of as an FSM with infinite memory</p>
 <ul>
 <li>The FSM specifies the task to be performed</li>
 </ul>
@@ -2711,7 +2727,7 @@ Waits...                                Waits...
 
 <ul>
 <li>Ovals represent terminal elements (cannot be broken down further)</li>
-<li>Boxes are terminal elements (refer to another definition)</li>
+<li>Boxes are non-terminal elements (refer to another definition)</li>
 </ul>
 <p><img src="https://bournetocode.com/projects/AQA_A_Theory/pages/img/syntaxDigramPositiveInteger.png" alt="syntax diagram"></p>
 <h2 class="mume-header" id="reverse-polish-notation">Reverse Polish Notation</h2>

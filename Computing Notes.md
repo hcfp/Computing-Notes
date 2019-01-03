@@ -341,10 +341,22 @@ The following are the units to count bytes in base-2
 - Opcodes are replaced with mnemonics which indicate what the opcode represents
 - The operand is replaced by a decimal or hexadecimal number
 
+#### Advantages of Assembly over HLL
+
+- May execute more quickly
+- May use less memory
+- Gives direct access to hardware
+
 ### High-level languages
 
 - High-level languages allow programmer to think in terms of algorithms instead of small steps and details such as where a variable will be stored in memory
 - Imperative high-level languages are where instructions are executed in a programmer defined order which describes how to solve a problem
+
+#### Advantages of HLL over Assembly
+
+- Code is easier to read and maintain
+- Faster development
+- More portable (Assembly only works for processors with same instruction set)
 
 ## Program translators
 
@@ -481,7 +493,9 @@ The following are the units to count bytes in base-2
 
 - Some computers run on the Harvard architecture
   - Different buses for data and instructions. Both stored in different memory
-  - Data and instructions can be fetch in parallel ∴ instructions handled more quickly
+  - Data and instructions can be fetch simultaneously
+  - Reduces delays waiting for memory fetches
+  - Data cannot be executed as code
   - Used in embedded systems and digital signal processing
 
 ![Harvard Architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Harvard_architecture.svg/220px-Harvard_architecture.svg.png)
@@ -1550,7 +1564,7 @@ Waits...                                Waits...
 - The symbols:
   - **|** - separates alternatives
   - **?** - zero or one of the preceding element
-  - ***** - zero or more of the preceding element
+  - \* - zero or more of the preceding element
   - <sup>+</sup> - one or more of the preceding element
 
 ### Regular language
@@ -1565,7 +1579,7 @@ Waits...                                Waits...
 - Read/write head
   - Reads symbols from the tape and makes decisions based on the contents of the cells and its current state
 
-- Can be though of as an FSM with infinite memory
+- Can be thought of as an FSM with infinite memory
   - The FSM specifies the task to be performed
 
 - The possible operations are:
@@ -1625,7 +1639,7 @@ Waits...                                Waits...
 ### Syntax diagrams
 
 - Ovals represent terminal elements (cannot be broken down further)
-- Boxes are terminal elements (refer to another definition)
+- Boxes are non-terminal elements (refer to another definition)
 
 ![syntax diagram](https://bournetocode.com/projects/AQA_A_Theory/pages/img/syntaxDigramPositiveInteger.png)
 
