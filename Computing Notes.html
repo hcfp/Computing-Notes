@@ -1,230 +1,37 @@
-<!DOCTYPE html><html><head>
-      <title>Computing Notes</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-      <style> 
-      /**
- * prism.js Github theme based on GitHub's theme.
- * @author Sam Clarke
- */
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #333;
-  background: none;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.4;
-
-  -moz-tab-size: 8;
-  -o-tab-size: 8;
-  tab-size: 8;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-  padding: .8em;
-  overflow: auto;
-  /* border: 1px solid #ddd; */
-  border-radius: 3px;
-  /* background: #fff; */
-  background: #f5f5f5;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-  background: #f5f5f5;
-}
-
-.token.comment,
-.token.blockquote {
-  color: #969896;
-}
-
-.token.cdata {
-  color: #183691;
-}
-
-.token.doctype,
-.token.punctuation,
-.token.variable,
-.token.macro.property {
-  color: #333;
-}
-
-.token.operator,
-.token.important,
-.token.keyword,
-.token.rule,
-.token.builtin {
-  color: #a71d5d;
-}
-
-.token.string,
-.token.url,
-.token.regex,
-.token.attr-value {
-  color: #183691;
-}
-
-.token.property,
-.token.number,
-.token.boolean,
-.token.entity,
-.token.atrule,
-.token.constant,
-.token.symbol,
-.token.command,
-.token.code {
-  color: #0086b3;
-}
-
-.token.tag,
-.token.selector,
-.token.prolog {
-  color: #63a35c;
-}
-
-.token.function,
-.token.namespace,
-.token.pseudo-element,
-.token.class,
-.token.class-name,
-.token.pseudo-class,
-.token.id,
-.token.url-reference .token.variable,
-.token.attr-name {
-  color: #795da3;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.title,
-.token.title .token.punctuation {
-  font-weight: bold;
-  color: #1d3e81;
-}
-
-.token.list {
-  color: #ed6a43;
-}
-
-.token.inserted {
-  background-color: #eaffea;
-  color: #55a532;
-}
-
-.token.deleted {
-  background-color: #ffecec;
-  color: #bd2c00;
-}
-
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-
-/* JSON */
-.language-json .token.property {
-  color: #183691;
-}
-
-.language-markup .token.tag .token.punctuation {
-  color: #333;
-}
-
-/* CSS */
-code.language-css,
-.language-css .token.function {
-  color: #0086b3;
-}
-
-/* YAML */
-.language-yaml .token.atrule {
-  color: #63a35c;
-}
-
-code.language-yaml {
-  color: #183691;
-}
-
-/* Ruby */
-.language-ruby .token.function {
-  color: #333;
-}
-
-/* Markdown */
-.language-markdown .token.url {
-  color: #795da3;
-}
-
-/* Makefile */
-.language-makefile .token.symbol {
-  color: #795da3;
-}
-
-.language-makefile .token.variable {
-  color: #183691;
-}
-
-.language-makefile .token.builtin {
-  color: #0086b3;
-}
-
-/* Bash */
-.language-bash .token.keyword {
-  color: #0086b3;
-}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
- 
-      </style>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Fundamentals of data representation</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
     </head>
-    <body for="html-export">
-      <div class="mume markdown-preview   ">
-      <h1 class="mume-header" id="fundamentals-of-data-representation">Fundamentals of data representation</h1>
-
-<h2 class="mume-header" id="number-systems">Number systems</h2>
-
+    <body>
+        <h1 id="fundamentals-of-data-representation">Fundamentals of data representation</h1>
+<h2 id="number-systems">Number systems</h2>
 <ul>
-<li>Natural numbers - &#x2115; = {0, 1, 2, 3, &#x2026; }</li>
-<li>Integer numbers - &#x2124; = { &#x2026;, -3, -2, -1, 0, 1, 2, 3, &#x2026; }</li>
-<li>Rational numbers - &#x211A; Any number that can be represented as a fraction</li>
+<li>Natural numbers - ℕ = {0, 1, 2, 3, … }</li>
+<li>Integer numbers - ℤ = { …, -3, -2, -1, 0, 1, 2, 3, … }</li>
+<li>Rational numbers - ℚ Any number that can be represented as a fraction</li>
 <li>Irrational numbers - Any number that <strong>cannot</strong> be represented as a fraction</li>
-<li>Real numbers - &#x211D; is the set of all &apos;possible real world quantities&apos;. This includes natural, rational and irrational numbers</li>
+<li>Real numbers - ℝ is the set of all 'possible real world quantities'. This includes natural, rational and irrational numbers</li>
 <li>Ordinal numbers - Describes the numerical position of objects</li>
 </ul>
-<h2 class="mume-header" id="number-bases">Number Bases</h2>
-
+<h2 id="number-bases">Number Bases</h2>
 <ul>
 <li>Binary (Base-2)</li>
 </ul>
@@ -314,14 +121,13 @@ code.language-yaml {
 </table>
 <ul>
 <li>To convert from binary to hexadecimal, split the number into group of four, then convert them to hexadecimal</li>
-<li>Binary to hex : 0011101011111001 &#x2192; 0011 1010 1111 1001 &#x2192; 3AF9</li>
+<li>Binary to hex : 0011101011111001 → 0011 1010 1111 1001 → 3AF9</li>
 </ul>
 <ul>
 <li>Hexadecimal is often used in favour of binary since it is easier for a human to read and remember. One byte can be represented in two digits in hexadecimal instead of eight in binary.</li>
 <li>Hexadecimal is commonly used for memory addresses and RGB colour codes</li>
 </ul>
-<h2 class="mume-header" id="units-of-information">Units of information</h2>
-
+<h2 id="units-of-information">Units of information</h2>
 <ul>
 <li>Bit - 1 or 0</li>
 <li>Byte - 8 bits</li>
@@ -329,7 +135,7 @@ code.language-yaml {
 </ul>
 <ul>
 <li>Number of values that can be represented in n bits is 2<sup>n</sup> where is largest value is 2<sup>n</sup> - 1</li>
-<li>&#x2234; 8 bits can represent 2<sup>8</sup> (256) values in the range of 0 ... 2<sup>8</sup> - 1 (0 - 255)</li>
+<li>∴ 8 bits can represent 2<sup>8</sup> (256) values in the range of 0 ... 2<sup>8</sup> - 1 (0 - 255)</li>
 </ul>
 <p>The following are the units to count bytes in base-10</p>
 <ul>
@@ -345,10 +151,8 @@ code.language-yaml {
 <li>Gibibyte - GiB - 2<sup>30</sup> B</li>
 <li>Tebibyte - TiB - 2<sup>40</sup> B</li>
 </ul>
-<h2 class="mume-header" id="binary-number-system">Binary number system</h2>
-
-<h3 class="mume-header" id="addition">Addition</h3>
-
+<h2 id="binary-number-system">Binary number system</h2>
+<h3 id="addition">Addition</h3>
 <ul>
 <li>0 + 0 = 0</li>
 <li>0 + 1 = 1</li>
@@ -359,15 +163,13 @@ code.language-yaml {
 <ul>
 <li>The result of an addition may overflow. This could cause a negative result</li>
 </ul>
-<h3 class="mume-header" id="multiplication">Multiplication</h3>
-
+<h3 id="multiplication">Multiplication</h3>
 <ul>
 <li>Shift one place to the left for every digit</li>
 <li>If multiplying by 1, copy the top number</li>
 <li>Ignore and shift if multiplying by 0</li>
 </ul>
-<h3 class="mume-header" id="twos-complement">Two&apos;s complement</h3>
-
+<h3 id="twos-complement">Two's complement</h3>
 <ul>
 <li>Common method to represent a negative number</li>
 <li>The most significant bit is negative</li>
@@ -418,14 +220,13 @@ code.language-yaml {
 </tbody>
 </table>
 <ul>
-<li>The range of a two&apos;s complement number is - (2<sup>n-1</sup>) ... 2<sup>n-1</sup> - 1</li>
+<li>The range of a two's complement number is - (2<sup>n-1</sup>) ... 2<sup>n-1</sup> - 1</li>
 <li>It is n-1 since the MSB is used as the sign bit</li>
 </ul>
 <ul>
-<li>Two&apos;s complement can be used for subtraction by converting the number you want to subtract to a negative then add the two numbers</li>
+<li>Two's complement can be used for subtraction by converting the number you want to subtract to a negative then add the two numbers</li>
 </ul>
-<h3 class="mume-header" id="fixed-point-binary">Fixed point binary</h3>
-
+<h3 id="fixed-point-binary">Fixed point binary</h3>
 <ul>
 <li>This is used to represent numbers with a fractional part</li>
 </ul>
@@ -460,44 +261,39 @@ code.language-yaml {
 <ul>
 <li>0101 1100 represents 5.75 in fixed point binary</li>
 </ul>
-<h2 class="mume-header" id="information-coding-systems">Information coding systems</h2>
-
+<h2 id="information-coding-systems">Information coding systems</h2>
 <ul>
 <li>A character code is a unique number that represents a character</li>
 </ul>
-<h3 class="mume-header" id="ascii">ASCII</h3>
-
+<h3 id="ascii">ASCII</h3>
 <ul>
 <li>A method to represent characters</li>
 <li>Uses 7 bits for 128 combination</li>
 <li>This is enough for all english characters and other common printed and non-printed characters</li>
 </ul>
 <ul>
-<li>The character &apos;A&apos; is represented by the character code 65 in decimal and 1000001 in binary</li>
+<li>The character 'A' is represented by the character code 65 in decimal and 1000001 in binary</li>
 <li>This character code cannot be used  for arithmetic since the numerical value is not the not the same as the character value</li>
 </ul>
-<h3 class="mume-header" id="unicode">Unicode</h3>
-
+<h3 id="unicode">Unicode</h3>
 <ul>
 <li>There were many incompatible coding systems</li>
 <li>Unicode-16 allows 16 bits per character</li>
 <li>UTF-32 has over 1 million combinations</li>
 </ul>
 <ul>
-<li>Unicode requires more bits than ASCII &#x2234; increases file size</li>
+<li>Unicode requires more bits than ASCII ∴ increases file size</li>
 </ul>
-<h3 class="mume-header" id="parity-bits">Parity bits</h3>
-
+<h3 id="parity-bits">Parity bits</h3>
 <ul>
 <li>These are addition bits to check if bits were sent correctly</li>
-<li>Odd or even parity can be used. This represents an odd or even number of 1&apos;s in the bit pattern</li>
+<li>Odd or even parity can be used. This represents an odd or even number of 1's in the bit pattern</li>
 <li>With ASCII characters, the 8th bit is the parity bit</li>
 </ul>
 <ul>
-<li>eg. The letter &apos;R&apos; in ASCII is 1010010. With even parity it would be 11010010. There are four 1&apos;s</li>
+<li>eg. The letter 'R' in ASCII is 1010010. With even parity it would be 11010010. There are four 1's</li>
 </ul>
-<h3 class="mume-header" id="majority-voting">Majority voting</h3>
-
+<h3 id="majority-voting">Majority voting</h3>
 <ul>
 <li>Each bit is sent multiple times</li>
 <li>You accept the most common</li>
@@ -505,15 +301,13 @@ code.language-yaml {
 <li>You would accept 0   1   0</li>
 <li>A downside is that more data is sent. In this case 3x the data is sent.</li>
 </ul>
-<h3 class="mume-header" id="check-digit">Check digit</h3>
-
+<h3 id="check-digit">Check digit</h3>
 <ul>
 <li>Additional digit at the end of a string of numbers</li>
 <li>If once number changes the check digit will change</li>
 <li>Commonly used on barcodes and ISBN numbers</li>
 </ul>
-<h2 class="mume-header" id="bitmap-graphics">Bitmap graphics</h2>
-
+<h2 id="bitmap-graphics">Bitmap graphics</h2>
 <ul>
 <li>A pixel is a picture element</li>
 <li>Each pixel has a binary which represents a single colour</li>
@@ -537,8 +331,7 @@ code.language-yaml {
 <ul>
 <li>Metadata - data held within the image to allow it to be interpreted corrected. Eg. date last modified, file size, file format, colour depth</li>
 </ul>
-<h2 class="mume-header" id="vector-graphics">Vector graphics</h2>
-
+<h2 id="vector-graphics">Vector graphics</h2>
 <ul>
 <li>Not stored as pixels</li>
 <li>Stored as a formula for shapes and objects</li>
@@ -555,13 +348,12 @@ code.language-yaml {
 </li>
 </ul>
 <ul>
-<li>The image is redrawn when resized &#x2234; no quality loss</li>
+<li>The image is redrawn when resized ∴ no quality loss</li>
 <li>Smaller file size for geometric shapes since less data is stored</li>
 <li>This means they are often used as logos since they can be infinitely scaled and the smaller file size allows for faster transmission</li>
 <li>Vectors are bad for photographs</li>
 </ul>
-<h2 class="mume-header" id="digital-sound">Digital sound</h2>
-
+<h2 id="digital-sound">Digital sound</h2>
 <ul>
 <li>Sample rate - samples taken per second</li>
 <li>Bit depth - bits per sample</li>
@@ -576,7 +368,7 @@ code.language-yaml {
 </ul>
 <ul>
 <li>Nyquist theorem - for an accurate recording, the sample rate must be double the original frequency</li>
-<li>The average human hearing has a maximum frequency of 22,000 &#x2234; 44,000 is the standard sample rate for a high definition recording</li>
+<li>The average human hearing has a maximum frequency of 22,000 ∴ 44,000 is the standard sample rate for a high definition recording</li>
 </ul>
 <ul>
 <li>To calculate the size of a sound file:
@@ -613,8 +405,7 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="data-compression">Data compression</h2>
-
+<h2 id="data-compression">Data compression</h2>
 <ul>
 <li>Compression is used to use less storage space and increase transmission speeds</li>
 </ul>
@@ -627,7 +418,7 @@ code.language-yaml {
 </li>
 <li>Lossless compression records patterns in the data are compressed in a way that can be reversed
 <ul>
-<li>No data is lost &#x2234; useful for program files</li>
+<li>No data is lost ∴ useful for program files</li>
 <li>File sizes may be larger than lossy compression</li>
 </ul>
 </li>
@@ -644,8 +435,7 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="data-encryption">Data encryption</h2>
-
+<h2 id="data-encryption">Data encryption</h2>
 <ul>
 <li>Encryption is the transformation of data from one form to another to prevent third parties from being able to understand it</li>
 </ul>
@@ -653,8 +443,7 @@ code.language-yaml {
 <li>The original data is known as plaintext</li>
 <li>The encrypted data is known as ciphertext</li>
 </ul>
-<h3 class="mume-header" id="the-caesar-cipher">The Caesar cipher</h3>
-
+<h3 id="the-caesar-cipher">The Caesar cipher</h3>
 <ul>
 <li>This is a type of substitution cipher</li>
 <li>The letters of the alphabet are shifted along a number which is the key.</li>
@@ -664,21 +453,19 @@ code.language-yaml {
 <li>This is a very weak cipher. It can be easily brute forced since there are only 25 possible keys</li>
 <li>For longer messages cryptanalysis could be used by finding the most common letter</li>
 </ul>
-<h3 class="mume-header" id="cryptanalysis-and-perfect-security">Cryptanalysis and perfect security</h3>
-
+<h3 id="cryptanalysis-and-perfect-security">Cryptanalysis and perfect security</h3>
 <ul>
 <li>Ciphers that use non random keys are open to cryptanalytic attacks and can also be brute forced given enough time and resources</li>
 <li>Random numbers that are generated by an algorithm can be broken since they are not actually random</li>
 <li>To get truly random numbers, the sequence must be collected from a physical and unpredictable phenomenon such as radioactive decay</li>
 </ul>
-<h3 class="mume-header" id="the-vernam-cipher">The Vernam cipher</h3>
-
+<h3 id="the-vernam-cipher">The Vernam cipher</h3>
 <ul>
 <li>The Vernam cipher is an implementation of a class of ciphers known as one-time pad ciphers</li>
 <li>The one-time pad must be equal to or longer than the plaintext, be truly random and be used only once</li>
 <li>The key must be shared in person and destroyed after use</li>
 <li>If the key is truly random no amount of cryptanalysis will produce meaningful results since the distribution of characters will be random</li>
-<li>The binary representation of each character and the corresponding character on the one-time pad are XOR&apos;d</li>
+<li>The binary representation of each character and the corresponding character on the one-time pad are XOR'd</li>
 </ul>
 <table>
 <thead>
@@ -726,18 +513,14 @@ code.language-yaml {
 </tr>
 </tbody>
 </table>
-<h1 class="mume-header" id="fundamentals-of-computer-systems">Fundamentals of computer systems</h1>
-
-<h2 class="mume-header" id="hardware-and-software">Hardware and software</h2>
-
+<h1 id="fundamentals-of-computer-systems">Fundamentals of computer systems</h1>
+<h2 id="hardware-and-software">Hardware and software</h2>
 <ul>
 <li>Hardware is the term for the physical parts of a computer used for input, output and storage</li>
 <li>Software is the term for the programs that run on the hardware</li>
 </ul>
-<h2 class="mume-header" id="system-software">System software</h2>
-
-<h3 class="mume-header" id="operating-system">Operating system</h3>
-
+<h2 id="system-software">System software</h2>
+<h3 id="operating-system">Operating system</h3>
 <ul>
 <li>The operating system provides a user interface between user and the hardware</li>
 <li>The operating system has the following functions:
@@ -770,8 +553,7 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="utility-programs">Utility programs</h3>
-
+<h3 id="utility-programs">Utility programs</h3>
 <ul>
 <li>These are programs that are used to configure, optimise and maintain the computer</li>
 <li>For example:
@@ -783,8 +565,7 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="translators">Translators</h3>
-
+<h3 id="translators">Translators</h3>
 <ul>
 <li>
 <p>All translators convert source code to machine code</p>
@@ -792,7 +573,7 @@ code.language-yaml {
 <li>
 <p>Assembler</p>
 <ul>
-<li>assembly is a low level language which means it is similar to the processor&apos;s instruction set</li>
+<li>assembly is a low level language which means it is similar to the processor's instruction set</li>
 <li>Each processor has a different instruction set</li>
 <li>The assembly turns the assembly into code that is executable on the processor</li>
 </ul>
@@ -813,8 +594,7 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="programming-language-classification">Programming language classification</h2>
-
+<h2 id="programming-language-classification">Programming language classification</h2>
 <ul>
 <li>Opcode - This is the instruction that the processor will execute. This may be an operation such as LOAD or ADD</li>
 <li>Operand - This is the data to be operated on or the address for the data. This can take two forms
@@ -824,8 +604,7 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="machine-code">Machine Code</h3>
-
+<h3 id="machine-code">Machine Code</h3>
 <ul>
 <li>Machine code - This is the binary that the computer can understand</li>
 <li>It is a low level language since the code reflects how the computer carries out the instruction</li>
@@ -833,35 +612,30 @@ code.language-yaml {
 <li>The length is often 32 bits</li>
 <li>eg. 0000 may represent a LOAD instruction and 1000 may represent HALT</li>
 </ul>
-<h3 class="mume-header" id="assembly-language">Assembly language</h3>
-
+<h3 id="assembly-language">Assembly language</h3>
 <ul>
 <li>A one to one mapping of machine code</li>
 <li>Opcodes are replaced with mnemonics which indicate what the opcode represents</li>
 <li>The operand is replaced by a decimal or hexadecimal number</li>
 </ul>
-<h4 class="mume-header" id="advantages-of-assembly-over-hll">Advantages of Assembly over HLL</h4>
-
+<h4 id="advantages-of-assembly-over-hll">Advantages of Assembly over HLL</h4>
 <ul>
 <li>May execute more quickly</li>
 <li>May use less memory</li>
 <li>Gives direct access to hardware</li>
 </ul>
-<h3 class="mume-header" id="high-level-languages">High-level languages</h3>
-
+<h3 id="high-level-languages">High-level languages</h3>
 <ul>
 <li>High-level languages allow programmer to think in terms of algorithms instead of small steps and details such as where a variable will be stored in memory</li>
 <li>Imperative high-level languages are where instructions are executed in a programmer defined order which describes how to solve a problem</li>
 </ul>
-<h4 class="mume-header" id="advantages-of-hll-over-assembly">Advantages of HLL over Assembly</h4>
-
+<h4 id="advantages-of-hll-over-assembly">Advantages of HLL over Assembly</h4>
 <ul>
 <li>Code is easier to read and maintain</li>
 <li>Faster development</li>
 <li>More portable (Assembly only works for processors with same instruction set)</li>
 </ul>
-<h2 class="mume-header" id="program-translators">Program translators</h2>
-
+<h2 id="program-translators">Program translators</h2>
 <ul>
 <li>
 <p>Different translators are used depending on the source code</p>
@@ -890,7 +664,7 @@ code.language-yaml {
 <ul>
 <li>The executable code that is produced can be saved an run without compiling</li>
 <li>The executable can then be distributed and executed without a compiler</li>
-<li>Source code cannot be read after it has been complied &#x2234; it is more secure</li>
+<li>Source code cannot be read after it has been complied ∴ it is more secure</li>
 </ul>
 </li>
 <li>
@@ -912,13 +686,12 @@ code.language-yaml {
 <p>Bytecode</p>
 <ul>
 <li>It is an instruction set executed using a virtual machine</li>
-<li>The virtual machine emulates the architecture of a computer &#x2234; faster to execute than an interpreted language however it is still slower than a natively compiled program</li>
+<li>The virtual machine emulates the architecture of a computer ∴ faster to execute than an interpreted language however it is still slower than a natively compiled program</li>
 <li>Guards form malicious programs since it is not run directly on the hardware</li>
 </ul>
 </li>
 </ul>
-<h1 class="mume-header" id="fundamentals-of-computer-organisation-and-architecture">Fundamentals of computer organisation and architecture</h1>
-
+<h1 id="fundamentals-of-computer-organisation-and-architecture">Fundamentals of computer organisation and architecture</h1>
 <ul>
 <li>A computer system is made up of both internal and external components</li>
 <li>Internal components include
@@ -930,68 +703,56 @@ code.language-yaml {
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="the-processor">The processor</h2>
-
+<h2 id="the-processor">The processor</h2>
 <ul>
 <li>The processor is made up of the following components</li>
 </ul>
-<h3 class="mume-header" id="arithmetic-logic-unit-alu">Arithmetic Logic Unit (ALU)</h3>
-
+<h3 id="arithmetic-logic-unit-alu">Arithmetic Logic Unit (ALU)</h3>
 <ul>
 <li>Performs arithmetic and logical operations on the data. Such as ADD, SUBTRACT, MULTIPLY and DIVIDE.</li>
 <li>Can also shift bits to the left or right within a register</li>
 <li>Can carry out boolean logic and compare values using AND, OR, NOT, XOR</li>
 </ul>
-<h3 class="mume-header" id="control-unit">Control unit</h3>
-
+<h3 id="control-unit">Control unit</h3>
 <ul>
 <li>Controls and coordinates the actions of the CPU</li>
 <li>Directs the flow of data between the CPU and other components</li>
 <li>It accepts instructions, breaks down the steps required to process the instruction, manages the execution and store the resulting data back in memory and registers</li>
 </ul>
-<h3 class="mume-header" id="the-system-clock">The system clock</h3>
-
+<h3 id="the-system-clock">The system clock</h3>
 <ul>
-<li>The clock synchronises the CPU&apos;s operations by switching between 0 and 1 billions of times per second</li>
+<li>The clock synchronises the CPU's operations by switching between 0 and 1 billions of times per second</li>
 <li>The clock speed is measured in Hz</li>
 <li>Some CPU operations take multiple clock cycles</li>
 </ul>
-<h3 class="mume-header" id="general-purpose-registers">General-purpose registers</h3>
-
+<h3 id="general-purpose-registers">General-purpose registers</h3>
 <ul>
 <li>These are small and very past areas of memory inside the processor that is used to hold data that is being operated on</li>
 <li>The accumulator is where the result of a calculation or logical expression is held</li>
 </ul>
-<h3 class="mume-header" id="dedicated-registers">Dedicated registers</h3>
-
-<h4 class="mume-header" id="program-counter">Program counter</h4>
-
+<h3 id="dedicated-registers">Dedicated registers</h3>
+<h4 id="program-counter">Program counter</h4>
 <ul>
 <li>Holds the address of the next instruction to be executed</li>
 <li>This may be the next area in memory or the target of a branch operation</li>
 </ul>
-<h4 class="mume-header" id="current-instruction-register">Current instruction register</h4>
-
+<h4 id="current-instruction-register">Current instruction register</h4>
 <ul>
 <li>Holds the instruction currently being executed</li>
 </ul>
-<h4 class="mume-header" id="memory-buffer-register">Memory buffer register</h4>
-
+<h4 id="memory-buffer-register">Memory buffer register</h4>
 <ul>
 <li>Use to temporarily store data read or written to memory</li>
 <li>Also called the memory data register</li>
 </ul>
-<h4 class="mume-header" id="status-register">Status register</h4>
-
+<h4 id="status-register">Status register</h4>
 <ul>
 <li>Contains bits that are set or cleared based on the result of an instruction</li>
 <li>eg. A bit may be set if an overflow occurred</li>
 <li>A bit may be set to show if the result of the last instruction was negative, zero or caused a carry</li>
 </ul>
-<h3 class="mume-header" id="the-fetch-execute-cycle">The fetch-execute cycle</h3>
-
-<h4 class="mume-header" id="fetch">Fetch</h4>
-
+<h3 id="the-fetch-execute-cycle">The fetch-execute cycle</h3>
+<h4 id="fetch">Fetch</h4>
 <ul>
 <li>Contents of the PC to MAR</li>
 <li>Transferred to main memory via the address bus</li>
@@ -1000,34 +761,30 @@ code.language-yaml {
 <li>PC incremented</li>
 <li>MBR to CIR</li>
 </ul>
-<h4 class="mume-header" id="decode">Decode</h4>
-
+<h4 id="decode">Decode</h4>
 <ul>
 <li>The instruction hed in the CIR is decoded</li>
 <li>The instruction is split into an opcode and operand</li>
 <li>The opcode determines the type of instruction</li>
 <li>Additional data is fetch if necessary</li>
 </ul>
-<h4 class="mume-header" id="execute">Execute</h4>
-
+<h4 id="execute">Execute</h4>
 <ul>
 <li>The instruction is executes</li>
 <li>The result is stored in the accumulator, a general purpose register or main memory</li>
 </ul>
-<h3 class="mume-header" id="factors-affecting-processor-performance">Factors affecting processor performance</h3>
-
+<h3 id="factors-affecting-processor-performance">Factors affecting processor performance</h3>
 <ul>
 <li>Clock speed - Increasing the clock speed means more instructions executed per second</li>
 <li>Bus width - More data is transferred per clock cycle</li>
 <li>Word length -  Related to the bus width. Higher bus width can process more data at once</li>
 <li>Multiple cores - Many instructions can be fetched and executed in parallel</li>
-<li>Cache - Data that may be needed for the next instruction in held in the cache which can be accessed faster than main memory<br>
-Level 1 cache is fast but small<br>
-Level 2 is fairly fast and medium sized<br>
+<li>Cache - Data that may be needed for the next instruction in held in the cache which can be accessed faster than main memory
+Level 1 cache is fast but small
+Level 2 is fairly fast and medium sized
 Some CPUs have Level 3 cache</li>
 </ul>
-<h3 class="mume-header" id="memory-and-the-stored-program-concept">Memory and the stored program concept</h3>
-
+<h3 id="memory-and-the-stored-program-concept">Memory and the stored program concept</h3>
 <ul>
 <li>
 <p>The stored program concept : machine code instructions are fetch and executed serially by a processor that perform arithmetic and logical operations</p>
@@ -1052,35 +809,30 @@ Some CPUs have Level 3 cache</li>
 </li>
 </ul>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Harvard_architecture.svg/220px-Harvard_architecture.svg.png" alt="Harvard Architecture"></p>
-<h3 class="mume-header" id="address-control-and-data-bus">Address, control and data bus</h3>
-
+<h3 id="address-control-and-data-bus">Address, control and data bus</h3>
 <ul>
 <li>A bus is a set of parallel wires connecting two or more components of a computer</li>
 <li>The address, control and data buses connect the processor to main memory</li>
 </ul>
-<h4 class="mume-header" id="control-bus">Control bus</h4>
-
+<h4 id="control-bus">Control bus</h4>
 <ul>
 <li>A bi-direction bus that transmits command, timing and specific status information between components</li>
 <li>Controls the flow of data between the processors and other components</li>
 <li>Achieved by syncing signals and having control of access to data</li>
 </ul>
-<h4 class="mume-header" id="data-bus">Data bus</h4>
-
+<h4 id="data-bus">Data bus</h4>
 <ul>
 <li>A bi-directional bus to transfer data between the processor and main memory</li>
 <li>The width of the bus is key to overall performance of the CPU</li>
 </ul>
-<h4 class="mume-header" id="address-bus">Address bus</h4>
-
+<h4 id="address-bus">Address bus</h4>
 <ul>
 <li>A unidirectional bus from processor to main memory</li>
 <li>It carries the address of the next instruction or data item</li>
 <li>An 8 bit address bus would be able to address 2<sup>8</sup> memory locations</li>
 </ul>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Computer_system_bus.svg/350px-Computer_system_bus.svg.png" alt="Connection of buses to the processor"></p>
-<h3 class="mume-header" id="io-controller">I/O controller</h3>
-
+<h3 id="io-controller">I/O controller</h3>
 <ul>
 <li>Interfaces between and I/O devices and the processor</li>
 <li>Each device has a separate controller which connects to the control bus</li>
@@ -1090,14 +842,12 @@ Some CPUs have Level 3 cache</li>
 <ul>
 <li>An interface for connection of the controller to the system or I/O bus</li>
 <li>Data, command and status registers</li>
-<li>An interface to connect the controller to the device&apos;s cable</li>
+<li>An interface to connect the controller to the device's cable</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="io-devices">I/O devices</h2>
-
-<h3 class="mume-header" id="barcodes">Barcodes</h3>
-
+<h2 id="io-devices">I/O devices</h2>
+<h3 id="barcodes">Barcodes</h3>
 <ul>
 <li>There are two types of barcode
 <ul>
@@ -1106,8 +856,7 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>There are four types of readers : pen type, laser scanner, CCD and camera based</li>
 </ul>
-<h4 class="mume-header" id="pen-type">Pen type</h4>
-
+<h4 id="pen-type">Pen type</h4>
 <ul>
 <li>The pen is dragged across the bars at an even speed</li>
 <li>The photo diode measure the intensity of light reflected back from the light source</li>
@@ -1120,26 +869,22 @@ Some CPUs have Level 3 cache</li>
 <li>Must be in direct contact with the barcode</li>
 <li>Portable</li>
 </ul>
-<h4 class="mume-header" id="laser-scanner">Laser scanner</h4>
-
+<h4 id="laser-scanner">Laser scanner</h4>
 <ul>
 <li>Works the same as a pen scanner</li>
 <li>The laser reflects off a mirror allowing it to be read in many positions</li>
 </ul>
-<h4 class="mume-header" id="ccd">CCD</h4>
-
+<h4 id="ccd">CCD</h4>
 <ul>
 <li>Uses hundreds of light sensors which measure the light intensity directly in front of them</li>
 <li>The voltage pattern produced is identical to the barcode generated by reading voltages in a row</li>
 </ul>
-<h4 class="mume-header" id="camera-based">Camera based</h4>
-
+<h4 id="camera-based">Camera based</h4>
 <ul>
 <li>Uses camera and image processing</li>
 <li>Can be read off any surface and even if the barcode is in a bad condition</li>
 </ul>
-<h3 class="mume-header" id="digital-cameras">Digital cameras</h3>
-
+<h3 id="digital-cameras">Digital cameras</h3>
 <ul>
 <li>Uses CCD sensor</li>
 <li>When the shutter opens it projects an image onto the sensors</li>
@@ -1150,8 +895,7 @@ Some CPUs have Level 3 cache</li>
 <li>CCD is higher quality and more reliable</li>
 <li>However uses 100x the power of CMOS</li>
 </ul>
-<h3 class="mume-header" id="rfid">RFID</h3>
-
+<h3 id="rfid">RFID</h3>
 <ul>
 <li>Reader sends a wave to the tag</li>
 <li>The tag is then energised by the waves</li>
@@ -1161,8 +905,7 @@ Some CPUs have Level 3 cache</li>
 <li>Works without a line of sight up to 300m</li>
 <li>Can pass stored data from the tag to the receiver and vice versa</li>
 </ul>
-<h3 class="mume-header" id="laser-printer">Laser printer</h3>
-
+<h3 id="laser-printer">Laser printer</h3>
 <ul>
 <li>The drum is coated in a positive charge</li>
 <li>Printer generated a bitmap from the data</li>
@@ -1174,21 +917,18 @@ Some CPUs have Level 3 cache</li>
 <li>The toner is fused to the paper by heated rollers</li>
 <li>This is then repeated 4 times for colour (CMYK)</li>
 </ul>
-<h2 class="mume-header" id="storage-devices">Storage devices</h2>
-
+<h2 id="storage-devices">Storage devices</h2>
 <ul>
-<li>Secondary storage is not directly accessible by the processor &#x2234; slower access times than RAM</li>
+<li>Secondary storage is not directly accessible by the processor ∴ slower access times than RAM</li>
 <li>Secondary storage retains contents without power (non-volatile) unlike RAM which is volatile</li>
 </ul>
-<h3 class="mume-header" id="hard-disk">Hard disk</h3>
-
+<h3 id="hard-disk">Hard disk</h3>
 <ul>
 <li>Iron particles are polarised to 0 or 1</li>
 <li>A R/W head moves across the spinning disk to access different tracks and sectors</li>
 <li>Data is read or written to the disk when the disk passes under the R/W head</li>
 </ul>
-<h3 class="mume-header" id="solid-state-drive">Solid state drive</h3>
-
+<h3 id="solid-state-drive">Solid state drive</h3>
 <ul>
 <li>Uses NAND flash memory</li>
 <li>Data is stored in floating gate transistors</li>
@@ -1225,8 +965,7 @@ Some CPUs have Level 3 cache</li>
 </tr>
 </tbody>
 </table>
-<h3 class="mume-header" id="optical-disk">Optical disk</h3>
-
+<h3 id="optical-disk">Optical disk</h3>
 <ul>
 <li>Three types - ROM, R, RW</li>
 </ul>
@@ -1249,10 +988,8 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h1 class="mume-header" id="fundamentals-of-communication-and-networking">Fundamentals of communication and networking</h1>
-
-<h2 class="mume-header" id="serial-and-parallel">Serial and parallel</h2>
-
+<h1 id="fundamentals-of-communication-and-networking">Fundamentals of communication and networking</h1>
+<h2 id="serial-and-parallel">Serial and parallel</h2>
 <ul>
 <li>Serial
 <ul>
@@ -1269,16 +1006,14 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="advantages-of-serial">Advantages of serial</h3>
-
+<h3 id="advantages-of-serial">Advantages of serial</h3>
 <ul>
 <li>Serial is reliable over much longer distances than parallel</li>
 <li>Interference between parallel lines leads to corrupted words which means data will have to be sent again</li>
 <li>Simpler and smaller connectors which means a lower cost</li>
 <li>Because of the lack of interference at high frequencies, signal frequency can be higher meaning there is a higher net transfer rate even though less data is transmitted per cycle</li>
 </ul>
-<h3 class="mume-header" id="bit-and-baud-rate">Bit and baud rate</h3>
-
+<h3 id="bit-and-baud-rate">Bit and baud rate</h3>
 <ul>
 <li>Bit rate
 <ul>
@@ -1296,39 +1031,34 @@ Some CPUs have Level 3 cache</li>
 <li>Bit rate = baud rate x bits per signal</li>
 <li>bit rate and baud rate can be different if a signal contains one or more bits</li>
 </ul>
-<h3 class="mume-header" id="bandwidth">Bandwidth</h3>
-
+<h3 id="bandwidth">Bandwidth</h3>
 <ul>
 <li>Range of frequencies that a transmission median can carry</li>
 <li>Increasing bandwidth increases the amount of data transferred per unit time</li>
 <li>There is a direct relationship between bandwidth and bit rate</li>
 </ul>
-<h3 class="mume-header" id="latency">Latency</h3>
-
+<h3 id="latency">Latency</h3>
 <ul>
 <li>Time delay between the moment of transmission of the first packet and when it is received</li>
 <li>High latency will lead to a large delay</li>
 </ul>
-<h3 class="mume-header" id="synchronous-transmission">Synchronous transmission</h3>
-
+<h3 id="synchronous-transmission">Synchronous transmission</h3>
 <ul>
 <li>Data is transferred at regular intervals controlled by a clock signal</li>
 <li>Used in parallel communication since the clock allows for constant, reliable transmission of time sensitive data</li>
 </ul>
-<h3 class="mume-header" id="asynchronous-transmission">Asynchronous transmission</h3>
-
+<h3 id="asynchronous-transmission">Asynchronous transmission</h3>
 <ul>
 <li>Data is sent intermittently rather than as a continuous stream</li>
 <li>Start bit synchronises the clock in the receiver</li>
-<li>Receiver&apos;s baud rate must be the same</li>
+<li>Receiver's baud rate must be the same</li>
 </ul>
 <ul>
 <li>Parity bit is used for error checking</li>
 <li>Start and stop bit must be different</li>
 </ul>
 <p><img src="https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.networkcomm/figures/asyco21.jpg" alt="Asynchronous transmission"></p>
-<h3 class="mume-header" id="protocol">Protocol</h3>
-
+<h3 id="protocol">Protocol</h3>
 <ul>
 <li>A protocol is the rules for communication between devices</li>
 </ul>
@@ -1346,8 +1076,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="network-topology">Network topology</h2>
-
+<h2 id="network-topology">Network topology</h2>
 <ul>
 <li>Local areas network
 <ul>
@@ -1356,15 +1085,13 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="bus-topology">Bus topology</h2>
-
+<h2 id="bus-topology">Bus topology</h2>
 <ul>
 <li>Computer connected to a single cable</li>
 <li>Ends of cable connected to a terminator</li>
 </ul>
 <p><img src="http://www.bbc.co.uk/staticarchive/9933e41867b45fa9319fa74db5ac7f33b71d44c8.gif" alt="Bus topology"></p>
-<h3 class="mume-header" id="advantages-of-bus-topology">Advantages of bus topology</h3>
-
+<h3 id="advantages-of-bus-topology">Advantages of bus topology</h3>
 <ul>
 <li>Inexpensive
 <ul>
@@ -1373,8 +1100,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="disadvantages-of-bus-topology">Disadvantages of bus topology</h3>
-
+<h3 id="disadvantages-of-bus-topology">Disadvantages of bus topology</h3>
 <ul>
 <li>If the main cable fails, network data can no longer be transmitted</li>
 <li>Performance degrades with heavy traffic</li>
@@ -1384,13 +1110,11 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="physical-star-topology">Physical star topology</h2>
-
+<h2 id="physical-star-topology">Physical star topology</h2>
 <ul>
 <li>A central node (switch/server) acts as a router</li>
 </ul>
-<h3 class="mume-header" id="advantages-of-a-star-topology">Advantages of a star topology</h3>
-
+<h3 id="advantages-of-a-star-topology">Advantages of a star topology</h3>
 <ul>
 <li>Faults isolated
 <ul>
@@ -1406,8 +1130,7 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>Easy to add new stations</li>
 </ul>
-<h3 class="mume-header" id="disadvantages-of-a-star-topology">Disadvantages of a star topology</h3>
-
+<h3 id="disadvantages-of-a-star-topology">Disadvantages of a star topology</h3>
 <ul>
 <li>More cable required
 <ul>
@@ -1416,13 +1139,11 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>Network transmission is not possible if the central node fails</li>
 </ul>
-<h3 class="mume-header" id="operation-of-a-star-network">Operation of a star network</h3>
-
+<h3 id="operation-of-a-star-network">Operation of a star network</h3>
 <ul>
 <li>A central node such as a switch records the MAC address of each device to identify where to send data</li>
 </ul>
-<h3 class="mume-header" id="mac-address">MAC address</h3>
-
+<h3 id="mac-address">MAC address</h3>
 <ul>
 <li>Every network interface card (NIC) has a unique MAC address.
 <ul>
@@ -1430,15 +1151,12 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="physical-vs-logical-topology">Physical vs logical topology</h2>
-
-<h3 class="mume-header" id="physical">Physical</h3>
-
+<h2 id="physical-vs-logical-topology">Physical vs logical topology</h2>
+<h3 id="physical">Physical</h3>
 <ul>
 <li>The physical topology is the actual layout and design of the network ie. the shape of the wiring</li>
 </ul>
-<h3 class="mume-header" id="logical">Logical</h3>
-
+<h3 id="logical">Logical</h3>
 <ul>
 <li>The shape of the path that the data travels in</li>
 <li>How components communicate across the physical topology</li>
@@ -1449,15 +1167,13 @@ Some CPUs have Level 3 cache</li>
 <li>Ont he right, computers are connected in a physical star network</li>
 <li>However, logically, the right hand side can be arranged as a bus network</li>
 </ul>
-<h3 class="mume-header" id="operation-of-a-logical-bus-network">Operation of a logical bus network</h3>
-
+<h3 id="operation-of-a-logical-bus-network">Operation of a logical bus network</h3>
 <ul>
 <li>Data cannot be transmitted in both directions</li>
 <li>Every station receives all network traffic</li>
 <li>Traffic from each station has equal transmission priority</li>
 </ul>
-<h2 class="mume-header" id="client-server-networking">Client-server networking</h2>
-
+<h2 id="client-server-networking">Client-server networking</h2>
 <ul>
 <li>
 <p>Clients connect to a central computer called a servers</p>
@@ -1465,7 +1181,7 @@ Some CPUs have Level 3 cache</li>
 <li>
 <p>There are different servers to handle different content</p>
 <ul>
-<li>File server holds and manages client&apos;s data</li>
+<li>File server holds and manages client's data</li>
 <li>Mail server manages email system</li>
 <li>Web server manages requests to access the web</li>
 </ul>
@@ -1474,8 +1190,7 @@ Some CPUs have Level 3 cache</li>
 <p>A client makes a request to the server which then processes it</p>
 </li>
 </ul>
-<h3 class="mume-header" id="advantages-of-client-server">Advantages of client-server</h3>
-
+<h3 id="advantages-of-client-server">Advantages of client-server</h3>
 <ul>
 <li>Better security
 <ul>
@@ -1485,19 +1200,16 @@ Some CPUs have Level 3 cache</li>
 <li>Backups are done centrally</li>
 <li>Data and hardware can be shared</li>
 </ul>
-<h3 class="mume-header" id="disadvantages-of-client-server">Disadvantages of client-server</h3>
-
+<h3 id="disadvantages-of-client-server">Disadvantages of client-server</h3>
 <ul>
 <li>Expensive to install and manage</li>
 <li>Staff needed to maintain and run the server and network</li>
 </ul>
-<h2 class="mume-header" id="peer-to-peer-network">Peer to peer network</h2>
-
+<h2 id="peer-to-peer-network">Peer to peer network</h2>
 <ul>
 <li>Individual computers connected to each other</li>
 </ul>
-<h3 class="mume-header" id="advantages-of-a-peer-to-peer-network">Advantages of a peer to peer network</h3>
-
+<h3 id="advantages-of-a-peer-to-peer-network">Advantages of a peer to peer network</h3>
 <ul>
 <li>Easy and inexpensive setup</li>
 <li>Resources can be shared</li>
@@ -1507,13 +1219,11 @@ Some CPUs have Level 3 cache</li>
 <li>Peer to peer is often used for online piracy</li>
 </ul>
 <p><img src="https://qph.fs.quoracdn.net/main-qimg-519efe190098cd9b0276806ee7d39091" alt="P2P vs client server"></p>
-<h2 class="mume-header" id="wi-fi">Wi-Fi</h2>
-
+<h2 id="wi-fi">Wi-Fi</h2>
 <ul>
 <li>Local areas wireless technology that enables you to connect a device to the internet via a wireless access point (WAP)</li>
 </ul>
-<h3 class="mume-header" id="components-required-for-wireless-networking">Components required for wireless networking</h3>
-
+<h3 id="components-required-for-wireless-networking">Components required for wireless networking</h3>
 <ul>
 <li>Wireless network adapter</li>
 <li>A computer and interface controller is called a station</li>
@@ -1524,10 +1234,8 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>To connect to the internet, the WAP usually connects to a router</li>
 </ul>
-<h2 class="mume-header" id="security-of-a-wireless-network">Security of a wireless network</h2>
-
-<h3 class="mume-header" id="wpa">WPA</h3>
-
+<h2 id="security-of-a-wireless-network">Security of a wireless network</h2>
+<h3 id="wpa">WPA</h3>
 <ul>
 <li>Wi-Fi Protected Access and WPA2 are security protocols and security certification programs</li>
 <li>WPA2 is build into NICs
@@ -1537,8 +1245,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="ssid">SSID</h3>
-
+<h3 id="ssid">SSID</h3>
 <ul>
 <li>Each wireless network has a Service Set ID (SSID)
 <ul>
@@ -1553,20 +1260,17 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="whitelists">Whitelists</h3>
-
+<h3 id="whitelists">Whitelists</h3>
 <ul>
 <li>A MAC address whitelist controls who is allowed on a network</li>
 <li>If a MAC address is not on the whitelist, the device will not be able to connect</li>
 </ul>
-<h2 class="mume-header" id="csmaca">CSMA/CA</h2>
-
+<h2 id="csmaca">CSMA/CA</h2>
 <ul>
 <li>Carrier Sense Multiple Access / Collision Avoidance</li>
 </ul>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Csma_ca.svg/1200px-Csma_ca.svg.png" alt="CSMA/CA with RTS/CTS" width="200">
-<h3 class="mume-header" id="csmaca-with-rtscts-shown-in-dotted-box">CSMA/CA with RTS/CTS (Shown in dotted box)</h3>
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Csma_ca.svg/1200px-Csma_ca.svg.png" alt="CSMA/CA with RTS/CTS" width="200"/>
+<h3 id="csmaca-with-rtscts-shown-in-dotted-box">CSMA/CA with RTS/CTS (Shown in dotted box)</h3>
 <ul>
 <li>If no other note is transmitting, the stations send a Request to Send (RTS) signal</li>
 <li>WAP sends a Clear to Send (CTS) if and when the channel is idle</li>
@@ -1575,8 +1279,7 @@ Some CPUs have Level 3 cache</li>
 <li>This counteracts the problem of hidden nodes</li>
 <li>This is where a node can be heard by the WAP but not the node trying to transmit</li>
 </ul>
-<h2 class="mume-header" id="structure-of-the-internet">Structure of the Internet</h2>
-
+<h2 id="structure-of-the-internet">Structure of the Internet</h2>
 <ul>
 <li>The internet is a network of networks to allow computers to communicate globally</li>
 <li>The world wide web is a collection of webpages on computer connected to the internet
@@ -1585,14 +1288,12 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="uniform-resource-locator">Uniform Resource Locator</h3>
-
+<h3 id="uniform-resource-locator">Uniform Resource Locator</h3>
 <ul>
 <li>A URL is the address for a resource on the internet</li>
 </ul>
 <p><img src="http://scc.losrios.edu/~library/tutorials/c/URLs/Domain_Names/img/url-analysis-b.png" alt="URL"></p>
-<h3 class="mume-header" id="internet-registries-and-registrars">Internet registries and registrars</h3>
-
+<h3 id="internet-registries-and-registrars">Internet registries and registrars</h3>
 <ul>
 <li>Registrars ensure that a domain name is only used one, and they hold records of all existing websites and details for domains that can be purchased</li>
 <li>They act as sellers of domain names</li>
@@ -1601,8 +1302,7 @@ Some CPUs have Level 3 cache</li>
 <li>Internet registries are global organisations with databases of all domain names currently issued</li>
 <li>They allocate IP addresses and track which domain names are associated to which IP address as part of the Domain Name System</li>
 </ul>
-<h3 class="mume-header" id="domain-names-and-dns">Domain names and DNS</h3>
-
+<h3 id="domain-names-and-dns">Domain names and DNS</h3>
 <ul>
 <li>A domain name identifies where a resource resides</li>
 <li>They are structured in a hierarchy</li>
@@ -1616,8 +1316,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="fully-qualified-domain-names">Fully Qualified Domain Names</h3>
-
+<h3 id="fully-qualified-domain-names">Fully Qualified Domain Names</h3>
 <ul>
 <li>A FQDN includes the host server name (www, mail, ftp) depending on the resource being requested</li>
 </ul>
@@ -1625,23 +1324,19 @@ Some CPUs have Level 3 cache</li>
 <li><a href="http://websitename.co.uk">websitename.co.uk</a> is a domain name</li>
 <li><a href="http://mail.websitename.co.uk">mail.websitename.co.uk</a> is a FQDN</li>
 </ul>
-<h3 class="mume-header" id="ip-addresses">IP addresses</h3>
-
+<h3 id="ip-addresses">IP addresses</h3>
 <ul>
 <li>An internet protocol address is a unique address that is assigned to a network device</li>
 <li>It indicates where a packet of data is being sent or is being sent from</li>
 <li>Routers use the IP address to direct the packet</li>
 </ul>
-<h2 class="mume-header" id="packet-switching-and-routing">Packet switching and routing</h2>
-
-<h3 class="mume-header" id="packet-switching">Packet switching</h3>
-
+<h2 id="packet-switching-and-routing">Packet switching and routing</h2>
+<h3 id="packet-switching">Packet switching</h3>
 <ul>
 <li>It is a method of communicating packets of data across a network on which other communications are occurring simultaneously</li>
 <li>Cables are shared between many communications</li>
 </ul>
-<h3 class="mume-header" id="data-packets">Data packets</h3>
-
+<h3 id="data-packets">Data packets</h3>
 <ul>
 <li>Data that is being sent across a network is broken into smaller chunks called packets</li>
 <li>Packets are of variable size</li>
@@ -1654,29 +1349,25 @@ Some CPUs have Level 3 cache</li>
 </li>
 </ul>
 <ul>
-<li>The header includes the senders and recipient&apos;s IP addresses, the protocol and the number of the packet in the sequence</li>
+<li>The header includes the senders and recipient's IP addresses, the protocol and the number of the packet in the sequence</li>
 <li>Also include Time to Live or the hop limit</li>
 <li>Payload includes the information being sent</li>
 </ul>
-<h3 class="mume-header" id="routing-packets-across-the-internet">Routing packets across the internet</h3>
-
+<h3 id="routing-packets-across-the-internet">Routing packets across the internet</h3>
 <ul>
 <li>Packet switching allows the packets to be sent along different routes</li>
 <li>They can be reassembled on the other end</li>
 </ul>
-<h3 class="mume-header" id="routers">Routers</h3>
-
+<h3 id="routers">Routers</h3>
 <ul>
 <li>Routers are used to connect at least two networks</li>
 <li>Traversing between routers is called a hop</li>
-<li>The router reads the recipient&apos;s IP address in each packet and forward it to them along and fastest and least congested route</li>
+<li>The router reads the recipient's IP address in each packet and forward it to them along and fastest and least congested route</li>
 <li>Routers use a routing table to store and update the location of devices and find the fastest routes between them</li>
-<li>Dijkstra&apos;s algorithm is used to find the fastest route, but it is often a bottleneck</li>
+<li>Dijkstra's algorithm is used to find the fastest route, but it is often a bottleneck</li>
 </ul>
-<h2 class="mume-header" id="internet-security">Internet security</h2>
-
-<h3 class="mume-header" id="firewalls">Firewalls</h3>
-
+<h2 id="internet-security">Internet security</h2>
+<h3 id="firewalls">Firewalls</h3>
 <ul>
 <li>A firewall provides unauthorised access between two networks</li>
 <li>Typically consist of two NICs
@@ -1686,8 +1377,7 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>Using firewall software, packets are analysed using packet filters or the firewall may act as a proxy server</li>
 </ul>
-<h3 class="mume-header" id="packet-filtering">Packet filtering</h3>
-
+<h3 id="packet-filtering">Packet filtering</h3>
 <ul>
 <li>Also known as static filtering</li>
 <li>The header of the packet is checked
@@ -1695,11 +1385,10 @@ Some CPUs have Level 3 cache</li>
 <li>This includes the destination and source IP</li>
 </ul>
 </li>
-<li>If the destination IP is on the network&apos;s allowed list of IPs, it is accepted</li>
+<li>If the destination IP is on the network's allowed list of IPs, it is accepted</li>
 <li>Static filtering can also block packets based on port numbers and protocols</li>
 </ul>
-<h3 class="mume-header" id="stateful-inspection">Stateful inspection</h3>
-
+<h3 id="stateful-inspection">Stateful inspection</h3>
 <ul>
 <li>Also known as dynamic filtering</li>
 <li>It also examines the payload</li>
@@ -1707,8 +1396,7 @@ Some CPUs have Level 3 cache</li>
 <li>Routers keep conversation data in a Connection Table that is dynamically updated</li>
 <li>Can defend against port scanning since the Connection Table will not allow those connections as they were not requested by the computer</li>
 </ul>
-<h3 class="mume-header" id="proxy-servers">Proxy servers</h3>
-
+<h3 id="proxy-servers">Proxy servers</h3>
 <ul>
 <li>Intercepts all packets arriving and leaving a network</li>
 <li>Enables anonymous surfing</li>
@@ -1719,27 +1407,23 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>The proxy makes all requests on behalf of the user and caches them</li>
 </ul>
-<h2 class="mume-header" id="encryption">Encryption</h2>
-
+<h2 id="encryption">Encryption</h2>
 <ul>
 <li>Encryption is the process of turning plaintext to a ciphertext where the plaintext cannot be read without the key</li>
 </ul>
-<h3 class="mume-header" id="symmetric-encryption">Symmetric encryption</h3>
-
+<h3 id="symmetric-encryption">Symmetric encryption</h3>
 <ul>
 <li>Also known as private key encryption</li>
 <li>The same key is used to encrypt and decrypt data</li>
 <li>The key must be transferred through key exchange</li>
 </ul>
-<h3 class="mume-header" id="asymmetric-encryption">Asymmetric encryption</h3>
-
+<h3 id="asymmetric-encryption">Asymmetric encryption</h3>
 <ul>
 <li>Uses a public and private key which are separate but related</li>
 <li>The public key is for others to encrypt data which they are sending to you which can then be decrypted with your private key</li>
 <li>Cannot deduce the private key from the public key</li>
 </ul>
-<h3 class="mume-header" id="digital-signatures">Digital signatures</h3>
-
+<h3 id="digital-signatures">Digital signatures</h3>
 <ul>
 <li>A digest of the unencrypted message is calculated
 <ul>
@@ -1748,14 +1432,14 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>In a conversation between A and B
 <ul>
-<li>The digest is encrypted using A&apos;s private key</li>
+<li>The digest is encrypted using A's private key</li>
 <li>This is the digital signature
 <ul>
 <li>Since only the owner of the private key could have encrypted it</li>
 </ul>
 </li>
-<li>The signature is added to the message adn then encrypted with B&apos;s public key</li>
-<li>B then decrypts the message with their private key and decrypts the digest using the A&apos;s public key</li>
+<li>The signature is added to the message adn then encrypted with B's public key</li>
+<li>B then decrypts the message with their private key and decrypts the digest using the A's public key</li>
 <li>The digest is then recalculated
 <ul>
 <li>If it matches, the message is deemed genuine (came from the sender and that the message did not change during transmission)</li>
@@ -1768,8 +1452,7 @@ Some CPUs have Level 3 cache</li>
 <li>The date and time of the message is recorded so that the message cannot be resent as it would change the value of the digest</li>
 <li>Can be used for any message</li>
 </ul>
-<h3 class="mume-header" id="digital-certificates">Digital certificates</h3>
-
+<h3 id="digital-certificates">Digital certificates</h3>
 <ul>
 <li>Hoax digital signatures can be created with a hoax private key to imitate a trusted individual</li>
 <li>Digital certificates are issues by Certificate Authorities who verify the trustworthiness of the sender of website</li>
@@ -1785,21 +1468,18 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>They operate within the Transport layer of TCP/IP using TLS.</li>
 </ul>
-<h2 class="mume-header" id="worms-trojans-and-viruses">Worms, Trojans and viruses</h2>
-
+<h2 id="worms-trojans-and-viruses">Worms, Trojans and viruses</h2>
 <ul>
 <li>These are all types of malware designed to cause inconvenience, loss or damage to programs, data or systems</li>
 </ul>
-<h3 class="mume-header" id="viruses">Viruses</h3>
-
+<h3 id="viruses">Viruses</h3>
 <ul>
 <li>A virus has the ability to self-replicate by spreading copies of itself</li>
 <li>Relies on the host files to be opened in order to spread</li>
 <li>Viruses become memory resident when the host program is run</li>
 <li>Programs become infected when they are loaded into memory</li>
 </ul>
-<h4 class="mume-header" id="worms">Worms</h4>
-
+<h4 id="worms">Worms</h4>
 <ul>
 <li>Worms are a sub-class of viruses</li>
 <li>Do not need to be opened to spread</li>
@@ -1814,8 +1494,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="trojans">Trojans</h3>
-
+<h3 id="trojans">Trojans</h3>
 <ul>
 <li>A programs that appears to be something the user wanted</li>
 <li>When installed, the payload is released</li>
@@ -1823,8 +1502,7 @@ Some CPUs have Level 3 cache</li>
 <li>Cannot self-replicate</li>
 <li>Groups of infected computers are called bot nets</li>
 </ul>
-<h3 class="mume-header" id="system-vulnerabilities">System vulnerabilities</h3>
-
+<h3 id="system-vulnerabilities">System vulnerabilities</h3>
 <ul>
 <li>
 <p>Malware exploits many different vulnerabilities to gain access to the system</p>
@@ -1852,15 +1530,12 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="tcpip">TCP/IP</h2>
-
-<h3 class="mume-header" id="the-tcpip-protocol-stack">The TCP/IP protocol stack</h3>
-
+<h2 id="tcpip">TCP/IP</h2>
+<h3 id="the-tcpip-protocol-stack">The TCP/IP protocol stack</h3>
 <ul>
 <li>It is a set of protocols that working in four layers to pass incoming and outgoing data ip and down the layers</li>
 </ul>
-<h3 class="mume-header" id="the-application-layer">The application layer</h3>
-
+<h3 id="the-application-layer">The application layer</h3>
 <ul>
 <li>At the top of the stack</li>
 <li>It selects the appropriate high-level protocol for the application being used
@@ -1869,8 +1544,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="the-transport-layer">The transport layer</h3>
-
+<h3 id="the-transport-layer">The transport layer</h3>
 <ul>
 <li>Uses TCP to establish an end-to-end connection with the recipient</li>
 <li>Data is split into packets</li>
@@ -1882,8 +1556,7 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>It also acknowledges received packets and requests lost packets</li>
 </ul>
-<h3 class="mume-header" id="the-network-layer">The network layer</h3>
-
+<h3 id="the-network-layer">The network layer</h3>
 <ul>
 <li>Adds the source and destination IP addresses</li>
 <li>Where routers operate
@@ -1893,8 +1566,7 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>The IP and port is combined to form a <strong>socket</strong></li>
 </ul>
-<h3 class="mume-header" id="the-link-layer">The link layer</h3>
-
+<h3 id="the-link-layer">The link layer</h3>
 <ul>
 <li>The physical connection between nodes</li>
 <li>Adds the MAC address to identify the NIC of the source and destination</li>
@@ -1905,8 +1577,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="what-happens-when-packets-are-received">What happens when packets are received?</h3>
-
+<h3 id="what-happens-when-packets-are-received">What happens when packets are received?</h3>
 <ul>
 <li>The MAC address is stripped by the link layer
 <ul>
@@ -1925,10 +1596,57 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>The application layer presents the data to the user</li>
 </ul>
-<h1 class="mume-header" id="fundamentals-of-databases">Fundamentals of databases</h1>
-
-<h2 class="mume-header" id="modelling-data-requirements">Modelling data requirements</h2>
-
+<h2 id="mac-addresses">MAC addresses</h2>
+<ul>
+<li>Media access control addresses</li>
+<li>12 digits of hexadecimal hardcoded into a NIC</li>
+<li>Uniquely identifies any device</li>
+</ul>
+<h2 id="well-known-ports">Well known ports</h2>
+<ul>
+<li>The port determines the application that deals with the packet</li>
+</ul>
+<ul>
+<li>20 - FPT data</li>
+<li>21 - FTP control</li>
+<li>22  SSH</li>
+<li>23 - Telnet</li>
+<li>25 - SMTP</li>
+<li>80 &amp; 8080 - HTTP</li>
+<li>110 - POP3</li>
+<li>143 - IMAP</li>
+<li>443 - HTTPS</li>
+</ul>
+<ul>
+<li>The client port that a server responds to is temporary and arbitrary
+<ul>
+<li>Stops hackers from knowing which ports are open</li>
+</ul>
+</li>
+</ul>
+<h2 id="transferring-files-with-ftp">Transferring files with FTP</h2>
+<ul>
+<li>FTP is used to transfer data across a network such as the internet</li>
+<li>It is a high level protocol in the application layer</li>
+<li>The FTP software uses the protocol to generate FTP commands automatically</li>
+<li>FTP may be used by software companies to offer updates, photographers to transfer images to newspapers</li>
+<li>Generally require a username and password, could be configured for anonymous use</li>
+</ul>
+<h2 id="ssh">SSH</h2>
+<ul>
+<li>Allows secure remote access to manage a computer</li>
+<li>It is a secure and modern replacement for Telnet which does not use encryption</li>
+<li>It uses public key cryptography and a digital certificate</li>
+<li>Used by network administrators to manage servers</li>
+<li>The commands are similar to Linux</li>
+</ul>
+<h3 id="using-application-level-protocols-with-ssh">Using application level protocols with SSH</h3>
+<ul>
+<li>You can create a tunnel through the SSH (port 22) through with HTTP, POP3 and SMTP can operate</li>
+<li>Eg. a HTTP get request can be sent securely using SSH but also bypasses the restrictions on the port</li>
+</ul>
+<h1 id="fundamentals-of-databases">Fundamentals of databases</h1>
+<h2 id="modelling-data-requirements">Modelling data requirements</h2>
 <ul>
 <li>When designing a new database system, one of the first things that must be done is examine the data that needs to be input, processed and stored and determine what the data entities are</li>
 </ul>
@@ -1937,14 +1655,12 @@ Some CPUs have Level 3 cache</li>
 <li>Each entity in a database system has attributes (field)</li>
 <li>eg the patient entity may include the attributes of Title, Firstname, Surname, Address, Telephone</li>
 </ul>
-<h2 class="mume-header" id="entity-descriptions">Entity descriptions</h2>
-
+<h2 id="entity-descriptions">Entity descriptions</h2>
 <ul>
 <li>Written in the format Entity1(Attribute1, Attribute2)</li>
 <li>Therefore the entity description for Dentist would be Dentist(Title, Firstname, Surname, Qualification)</li>
 </ul>
-<h2 class="mume-header" id="primary-key">Primary key</h2>
-
+<h2 id="primary-key">Primary key</h2>
 <ul>
 <li>The primary key uniquely identifies an entity</li>
 <li>In the dentist example none of the attributes are suitable
@@ -1955,8 +1671,7 @@ Some CPUs have Level 3 cache</li>
 <li>In the entity description, the primary key is underlined</li>
 <li>Dentist(<u>DentistID</u>, Title, Firstname, Surname, Qualification)</li>
 </ul>
-<h2 class="mume-header" id="relationships-between-entities">Relationships between entities</h2>
-
+<h2 id="relationships-between-entities">Relationships between entities</h2>
 <ul>
 <li>One-to-one
 <ul>
@@ -1974,28 +1689,24 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="entity-relationship-diagram">Entity relationship diagram</h2>
-
+<h2 id="entity-relationship-diagram">Entity relationship diagram</h2>
 <ul>
 <li>A way to represent the relationships between entities</li>
 </ul>
 <p><img src="https://bam.files.bbci.co.uk/bam/live/content/zbtcjxs/small" alt="One-to-one"></p>
 <p><img src="https://bam.files.bbci.co.uk/bam/live/content/zqkh34j/large" alt="One-to-many"></p>
 <p><img src="https://bam.files.bbci.co.uk/bam/live/content/z78pb9q/large" alt="Many-to-many"></p>
-<h2 class="mume-header" id="relational-database">Relational database</h2>
-
+<h2 id="relational-database">Relational database</h2>
 <ul>
 <li>In a relational database, a separate table is created for each entity</li>
 </ul>
-<h3 class="mume-header" id="foreign-key">Foreign key</h3>
-
+<h3 id="foreign-key">Foreign key</h3>
 <ul>
 <li>A foreign key is an attribute that joins two tables</li>
 <li>It must be common to both tables</li>
 <li>The primary key of one table is the foreign key in the table it is linked to</li>
 </ul>
-<h3 class="mume-header" id="linking-tables-in-a-many-to-many-relationship">Linking tables in a many-to-many relationship</h3>
-
+<h3 id="linking-tables-in-a-many-to-many-relationship">Linking tables in a many-to-many relationship</h3>
 <ul>
 <li>Two tables cannot be directly linked if there is a many-to-many relationship between them</li>
 <li>Eg. the relationship between Student and Course
@@ -2024,8 +1735,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="relational-databases-and-normalisation">Relational databases and normalisation</h2>
-
+<h2 id="relational-databases-and-normalisation">Relational databases and normalisation</h2>
 <ul>
 <li>A relational database is a collection of tables in which relationships are modelled by shared attributes</li>
 </ul>
@@ -2066,8 +1776,7 @@ Some CPUs have Level 3 cache</li>
 <ul>
 <li>This table is described by Book(<u>BookID</u>, DeweyCode, Title, Author, DatePublished)</li>
 </ul>
-<h2 class="mume-header" id="normalisation">Normalisation</h2>
-
+<h2 id="normalisation">Normalisation</h2>
 <ul>
 <li>Normalisation is a process to come up with the best design for a relational database</li>
 </ul>
@@ -2081,13 +1790,11 @@ Some CPUs have Level 3 cache</li>
 <li>The structure of each table allows you to add any number of items</li>
 <li>The structure should allow complex queries relating data from different tables</li>
 </ul>
-<h3 class="mume-header" id="first-normal-form">First normal form</h3>
-
+<h3 id="first-normal-form">First normal form</h3>
 <ul>
 <li>A table is in first normal form if it contains no repeating attributes or groups of attributes</li>
 </ul>
-<h3 class="mume-header" id="second-normal-form">Second normal form</h3>
-
+<h3 id="second-normal-form">Second normal form</h3>
 <ul>
 <li>A table is in second normal form if it is in first normal form and contains no partial dependencies
 <ul>
@@ -2095,8 +1802,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="third-normal-form">Third normal form</h3>
-
+<h3 id="third-normal-form">Third normal form</h3>
 <ul>
 <li>A table is in third normal form if it is in second normal form and contains no non-key dependencies
 <ul>
@@ -2104,28 +1810,23 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="the-importance-of-normalisation">The importance of normalisation</h2>
-
-<h3 class="mume-header" id="maintaining-and-modifying-the-database">Maintaining and modifying the database</h3>
-
+<h2 id="the-importance-of-normalisation">The importance of normalisation</h2>
+<h3 id="maintaining-and-modifying-the-database">Maintaining and modifying the database</h3>
 <ul>
 <li>Data integrity is maintained since there is no unnecessary duplication of data</li>
 <li>If there is a change in data, it only has to be changed in one place</li>
 </ul>
-<h3 class="mume-header" id="faster-sorting-and-searching">Faster sorting and searching</h3>
-
+<h3 id="faster-sorting-and-searching">Faster sorting and searching</h3>
 <ul>
 <li>Normalising will produce smaller tables with fewer fields</li>
 <li>This results in faster searching, sorting and indexing</li>
 <li>Since data is only held once it saves storage space</li>
 </ul>
-<h3 class="mume-header" id="deleting-records">Deleting records</h3>
-
+<h3 id="deleting-records">Deleting records</h3>
 <ul>
 <li>A normalised database with correct relationships will not allow records in a table in the one side of a one-to-many relationships to be accidentally deleted</li>
 </ul>
-<h2 class="mume-header" id="sql">SQL</h2>
-
+<h2 id="sql">SQL</h2>
 <table>
 <thead>
 <tr>
@@ -2156,8 +1857,7 @@ Some CPUs have Level 3 cache</li>
 </tr>
 </tbody>
 </table>
-<h3 class="mume-header" id="conditions">Conditions</h3>
-
+<h3 id="conditions">Conditions</h3>
 <table>
 <thead>
 <tr>
@@ -2220,8 +1920,7 @@ Some CPUs have Level 3 cache</li>
 </tr>
 </tbody>
 </table>
-<h3 class="mume-header" id="data-types">Data types</h3>
-
+<h3 id="data-types">Data types</h3>
 <table>
 <thead>
 <tr>
@@ -2273,26 +1972,27 @@ Some CPUs have Level 3 cache</li>
 </tr>
 </tbody>
 </table>
-<h3 class="mume-header" id="altering-a-table-structure">Altering a table structure</h3>
-
+<h3 id="altering-a-table-structure">Altering a table structure</h3>
 <ul>
 <li>The ALTER TABLE statement is used to add, delete or modify fields</li>
 <li>To add a column:</li>
 </ul>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Employee
-<span class="token keyword">ADD</span> Department <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
-</pre><ul>
+<pre><code class="language-sql"><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
+<span class="hljs-keyword">ADD</span> Department <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">10</span>)
+</div></code></pre>
+<ul>
 <li>To delete a column:</li>
 </ul>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Employee
-<span class="token keyword">DROP</span> <span class="token keyword">COLUMN</span> HireDate
-</pre><ul>
+<pre><code class="language-sql"><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> HireDate
+</div></code></pre>
+<ul>
 <li>To change the data type of a column:</li>
 </ul>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> Employee
-<span class="token keyword">MODIFY</span> <span class="token keyword">COLUMN</span> EmpName <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
-</pre><h3 class="mume-header" id="defining-linked-tables">Defining linked tables</h3>
-
+<pre><code class="language-sql"><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
+<span class="hljs-keyword">MODIFY</span> <span class="hljs-keyword">COLUMN</span> EmpName <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+</div></code></pre>
+<h3 id="defining-linked-tables">Defining linked tables</h3>
 <p><img src="https://image.ibb.co/cUdgA9/linkedtables.png" alt="Linked Tables"></p>
 <ul>
 <li>The structure of employee table is:
@@ -2326,57 +2026,57 @@ Some CPUs have Level 3 cache</li>
 <ul>
 <li>The CourseAttendance table is created using the SQL statements:</li>
 </ul>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> CourseAttendance
-<span class="token punctuation">(</span>
+<pre><code class="language-sql"><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> CourseAttendance
+(
 
-  CourseID <span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
-  EmpID <span class="token keyword">INTEGER</span> <span class="token operator">NOT</span> MULL<span class="token punctuation">,</span>
-  CourseDate <span class="token keyword">DATE</span><span class="token punctuation">,</span>
-  <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> CourseID <span class="token keyword">REFERENCES</span> Course<span class="token punctuation">(</span>CourseID<span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> EmpID <span class="token keyword">REFERENCES</span> Employee<span class="token punctuation">(</span>EmpID<span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>CourseID<span class="token punctuation">,</span> EmpID<span class="token punctuation">)</span>
+  CourseID <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">6</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  EmpID <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> MULL,
+  CourseDate <span class="hljs-built_in">DATE</span>,
+  <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> CourseID <span class="hljs-keyword">REFERENCES</span> Course(CourseID),
+  <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> EmpID <span class="hljs-keyword">REFERENCES</span> Employee(EmpID),
+  PRIMARY <span class="hljs-keyword">KEY</span> (CourseID, EmpID)
 
-<span class="token punctuation">)</span>
+)
 
-</pre><h3 class="mume-header" id="inserting-updating-and-deleting-data-using-sql">Inserting, updating and deleting data using SQL</h3>
-
+</div></code></pre>
+<h3 id="inserting-updating-and-deleting-data-using-sql">Inserting, updating and deleting data using SQL</h3>
 <ul>
 <li>INSERT INTO</li>
 <li>This statement is used to insert a new record into a table. The syntax is:</li>
 </ul>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tableName<span class="token punctuation">(</span>column1<span class="token punctuation">,</span> column2<span class="token punctuation">)</span>
-<span class="token keyword">VALUES</span> <span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">)</span>
-</pre><ul>
+<pre><code class="language-sql"><div><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> tableName(column1, column2)
+<span class="hljs-keyword">VALUES</span> (value1, value2)
+</div></code></pre>
+<ul>
 <li>UPDATE</li>
 <li>This statement is used to update a record. The syntax is:</li>
 </ul>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword">UPDATE</span> tableName
-<span class="token keyword">SET</span> column1 <span class="token operator">=</span> value1<span class="token punctuation">,</span> column2 <span class="token operator">=</span> value2<span class="token punctuation">,</span>
-<span class="token keyword">WHERE</span> columnX <span class="token operator">=</span> <span class="token keyword">value</span>
-</pre><ul>
+<pre><code class="language-sql"><div><span class="hljs-keyword">UPDATE</span> tableName
+<span class="hljs-keyword">SET</span> column1 = value1, column2 = value2,
+<span class="hljs-keyword">WHERE</span> columnX = <span class="hljs-keyword">value</span>
+</div></code></pre>
+<ul>
 <li>DELETE</li>
 <li>This statement is used to delete a record from a database table. The syntax is:</li>
 </ul>
-<pre data-role="codeBlock" data-info="sql" class="language-sql"><span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> tableName
-<span class="token keyword">WHERE</span> columnX <span class="token operator">=</span> <span class="token keyword">value</span>
-</pre><h2 class="mume-header" id="client-server-databases">Client-Server databases</h2>
-
+<pre><code class="language-sql"><div><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> tableName
+<span class="hljs-keyword">WHERE</span> columnX = <span class="hljs-keyword">value</span>
+</div></code></pre>
+<h2 id="client-server-databases">Client-Server databases</h2>
 <ul>
 <li>Many database management systems (DBMS) allow the DBMS server software to run on a server, and the client software runs on individual workstations</li>
 <li>The server processes requests for searches and reports</li>
 <li>Without client-server capability, databases that have to be accessed from many workstations would have to be copied to the workstation where client side software would process the search</li>
 <li>It takes a long tme to transmit mostly irrelevant data and the search may be longer as the client will be less powerful than the server</li>
 </ul>
-<h3 class="mume-header" id="advantages-of-client-server-databases">Advantages of Client-Server databases</h3>
-
+<h3 id="advantages-of-client-server-databases">Advantages of Client-Server databases</h3>
 <ul>
 <li>The consistency of the data base is maintained because only one copy of the data is held</li>
 <li>A powerful computer and a large database can be made available to many users</li>
 <li>Access right and security can be managed and controlled centrally</li>
 <li>Backup and recovery can be managed centrally</li>
 </ul>
-<h3 class="mume-header" id="problems-with-client-server">Problems with client-server</h3>
-
+<h3 id="problems-with-client-server">Problems with client-server</h3>
 <ul>
 <li>When multiple users update a database at the same time, only one of the changes will be applied</li>
 </ul>
@@ -2388,33 +2088,30 @@ Some CPUs have Level 3 cache</li>
 <ul>
 <li>There are several method to avoid the loss of updates</li>
 </ul>
-<h2 class="mume-header" id="record-locks">Record Locks</h2>
-
+<h2 id="record-locks">Record Locks</h2>
 <ul>
 <li>This prevents simultaneous access to objects in a database to prevent updates being lost or inconsistencies arising</li>
 <li>A record is locked whenever a user retrieves it or is editing it.</li>
 <li>Anyone else attempting to retrieve the same record is denied access until the action is completed.</li>
 </ul>
-<h3 class="mume-header" id="problem-with-record-locking">Problem with record locking</h3>
-
+<h3 id="problem-with-record-locking">Problem with record locking</h3>
 <ul>
 <li>If two users are attempting to update two records, deadlock can occur where neither can proceed</li>
 </ul>
-<pre data-role="codeBlock" data-info="text" class="language-text"><code>User1                                   User2
-Locks Customer A&apos;s record               Locks Customer B&apos;s record
-Tries to access Customer B&apos;s record     Tries to access Customer A&apos;s record
+<pre><code class="language-text"><div>User1                                   User2
+Locks Customer A's record               Locks Customer B's record
+Tries to access Customer B's record     Tries to access Customer A's record
 Waits...                                Waits...
 
 
                                 DEADLOCK!
-</code></pre><h3 class="mume-header" id="serialisation">Serialisation</h3>
-
+</div></code></pre>
+<h3 id="serialisation">Serialisation</h3>
 <ul>
 <li>This ensures that transactions do not overlap in time and therefore cannot interfere with each other</li>
 <li>A transaction cannot start until the previous one finished</li>
 </ul>
-<h3 class="mume-header" id="timestamp-ordering">Timestamp ordering</h3>
-
+<h3 id="timestamp-ordering">Timestamp ordering</h3>
 <ul>
 <li>When a transaction starts, it is given a timestamp</li>
 <li>If two transactions affect the same object, the transaction with the earlier timestamp is applied first</li>
@@ -2427,48 +2124,40 @@ Waits...                                Waits...
 <li>Before the updated data is written, the read timestamp is checked</li>
 <li>If it is not the same as the one set at the start, it will know that a transaction is taking place on the record</li>
 </ul>
-<h3 class="mume-header" id="commitment-ordering">Commitment ordering</h3>
-
+<h3 id="commitment-ordering">Commitment ordering</h3>
 <ul>
 <li>This ensures that transactions are not lost when two or more users are simultaneously trying to access the same object</li>
 <li>Transactions are ordered in terms of their dependencies on each other and the time they were initiated</li>
 <li>It can prevent deadlock by blocking one request until another is completed</li>
 </ul>
-<h1 class="mume-header" id="regular-languages">Regular languages</h1>
-
-<h2 class="mume-header" id="mealy-machines">Mealy machines</h2>
-
-<h3 class="mume-header" id="finite-state-machines">Finite state machines</h3>
-
+<h1 id="regular-languages">Regular languages</h1>
+<h2 id="mealy-machines">Mealy machines</h2>
+<h3 id="finite-state-machines">Finite state machines</h3>
 <ul>
 <li>Does not have output</li>
 <li>Sometimes called finite state automaton</li>
 <li>Model for computation</li>
 </ul>
-<h3 class="mume-header" id="state-transition-diagrams">State transition diagrams</h3>
-
+<h3 id="state-transition-diagrams">State transition diagrams</h3>
 <ul>
 <li>Circles represent states that a system may be in</li>
 <li>Arrows represent the transition between states</li>
 <li>The start state has an arrow pointing into it</li>
 <li>Double circle is the accept state</li>
 </ul>
-<p><img src="https://www.google.co.uk/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=imgres&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiH-4uZjv7dAhWS_qQKHdBJCL0QjRx6BAgBEAU&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFinite-state_machine&amp;psig=AOvVaw30USiIWK7v6i32xlJznYRN&amp;ust=1539337769955250" alt="Finite state machine"></p>
-<h3 class="mume-header" id="state-transition-tables">State transition tables</h3>
-
+<p><img src="https://www.google.co.uk/url?sa%3Di%26amp%3Brct%3Dj%26amp%3Bq%3D%26amp%3Besrc%3Ds%26amp%3Bsource%3Dimgres%26amp%3Bcd%3D%26amp%3Bcad%3Drja%26amp%3Buact%3D8%26amp%3Bved%3D2ahUKEwiH-4uZjv7dAhWS_qQKHdBJCL0QjRx6BAgBEAU%26amp%3Burl%3Dhttps%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFinite-state_machine%26amp%3Bpsig%3DAOvVaw30USiIWK7v6i32xlJznYRN%26amp%3Bust%3D1539337769955250" alt="Finite state machine"></p>
+<h3 id="state-transition-tables">State transition tables</h3>
 <ul>
 <li>Alternative way to represent an FSM</li>
 </ul>
-<p><img src="https://www.google.co.uk/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=images&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjjrt3Kjv7dAhWIMewKHafJD4sQjRx6BAgBEAU&amp;url=http%3A%2F%2Fwww2.elo.utfsm.cl%2F~lsb%2Felo211%2Faplicaciones%2Fkatz%2Fchapter9%2Fchapter09.doc2.html&amp;psig=AOvVaw2GxNI-A6NEzylAea5mNZPL&amp;ust=1539337869451123" alt="State transition table"></p>
-<h3 class="mume-header" id="mealy-machines-1">Mealy Machines</h3>
-
+<p><img src="https://www.google.co.uk/url?sa%3Di%26amp%3Brct%3Dj%26amp%3Bq%3D%26amp%3Besrc%3Ds%26amp%3Bsource%3Dimages%26amp%3Bcd%3D%26amp%3Bcad%3Drja%26amp%3Buact%3D8%26amp%3Bved%3D2ahUKEwjjrt3Kjv7dAhWIMewKHafJD4sQjRx6BAgBEAU%26amp%3Burl%3Dhttp%3A%2F%2Fwww2.elo.utfsm.cl%2F~lsb%2Felo211%2Faplicaciones%2Fkatz%2Fchapter9%2Fchapter09.doc2.html%26amp%3Bpsig%3DAOvVaw2GxNI-A6NEzylAea5mNZPL%26amp%3Bust%3D1539337869451123" alt="State transition table"></p>
+<h3 id="mealy-machines-1">Mealy Machines</h3>
 <ul>
 <li>Is an FSM with an output</li>
 <li>Outputs determined by both its current state and the current input</li>
 <li>Like an FSM, it can be represented by a diagram or a state transition table</li>
 </ul>
-<h4 class="mume-header" id="applications-of-mealy-machines">Applications of Mealy machines</h4>
-
+<h4 id="applications-of-mealy-machines">Applications of Mealy machines</h4>
 <ul>
 <li>Can provide a mode of cipher machines
 <ul>
@@ -2477,16 +2166,13 @@ Waits...                                Waits...
 </li>
 <li>Can also represent traffic lights, timers, vending machines and electronic circuits</li>
 </ul>
-<h2 class="mume-header" id="sets">Sets</h2>
-
-<h3 class="mume-header" id="definition-of-a-set">Definition of a set</h3>
-
+<h2 id="sets">Sets</h2>
+<h3 id="definition-of-a-set">Definition of a set</h3>
 <ul>
 <li>A set is an unordered collection of values in which the value only occurs once</li>
 <li>A set can be defined in three ways</li>
 </ul>
-<h3 class="mume-header" id="defining-a-set-by-listing-each-member">Defining a set by listing each member</h3>
-
+<h3 id="defining-a-set-by-listing-each-member">Defining a set by listing each member</h3>
 <ul>
 <li>The members of the set are enclosed in curly brackets:
 <ul>
@@ -2494,11 +2180,10 @@ Waits...                                Waits...
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="common-sets">Common sets</h3>
-
+<h3 id="common-sets">Common sets</h3>
 <ul>
-<li>An empty set {} or &#x2205; has no elements</li>
-<li>The infinite set of natural numbers &#x2115; = {0, 1, 2, ...}
+<li>An empty set {} or ∅ has no elements</li>
+<li>The infinite set of natural numbers ℕ = {0, 1, 2, ...}
 <ul>
 <li>Numbers used for counting</li>
 </ul>
@@ -2512,75 +2197,66 @@ Waits...                                Waits...
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="finite-and-infinite-sets">Finite and infinite sets</h3>
-
+<h3 id="finite-and-infinite-sets">Finite and infinite sets</h3>
 <ul>
-<li>A finite set&apos;s elements can be counted by natural numbers</li>
+<li>A finite set's elements can be counted by natural numbers</li>
 <li>The <strong>cardinality</strong> is the number of elements</li>
-<li>&#x2115; is a countable infinite set</li>
+<li>ℕ is a countable infinite set</li>
 <li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">R</span></span></span></span></span> is not countable</li>
 </ul>
-<h3 class="mume-header" id="defining-a-set-by-set-comprehension">Defining a set by set comprehension</h3>
-
+<h3 id="defining-a-set-by-set-comprehension">Defining a set by set comprehension</h3>
 <ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>=</mo><mo>{</mo><msup><mi>n</mi><mn>2</mn></msup><mi mathvariant="normal">&#x2223;</mi><mi>n</mi><mo>&#x2208;</mo><mi mathvariant="double-struck">N</mi><mo>&#x2227;</mo><mi>n</mi><mo>&lt;</mo><mn>5</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">B = \{n^2 \vert n \in \N \land n &lt; 5 \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord mathit">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord">&#x2223;</span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2208;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">N</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2227;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mclose">}</span></span></span></span></li>
+<li>$ B = {n^2 \vert n \in \N \land n &lt; 5 } $</li>
 <li>The | means such that</li>
-<li>The &#x2208; means element of</li>
+<li>The ∈ means element of</li>
 <li>The ^ means and</li>
 <li>Therefore B = {0, 1, 4, 9, 16}</li>
 </ul>
-<h3 class="mume-header" id="defining-a-set-using-compact-representation">Defining a set using compact representation</h3>
-
+<h3 id="defining-a-set-using-compact-representation">Defining a set using compact representation</h3>
 <ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mo>{</mo><msup><mn>0</mn><mi>n</mi></msup><msup><mn>1</mn><mi>n</mi></msup><mi mathvariant="normal">&#x2223;</mi><mi>n</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">A = \{ 0^n1^n \vert n \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span><span class="mord">&#x2223;</span><span class="mord mathit">n</span><span class="mclose">}</span></span></span></span></li>
+<li>$ A = { 0^n1^n \vert n } $</li>
 <li>This means that A is the set containing all strings with an equal number of 0s and 1s</li>
 <li>Therefore A = {01, 0011, 000111, 00001111}</li>
 </ul>
-<h3 class="mume-header" id="product-of-two-sets">Product of two sets</h3>
-
+<h3 id="product-of-two-sets">Product of two sets</h3>
 <ul>
 <li>The product of sets A and B, written A x B is the set of all ordered pairs (a,b), where a is a member of A and b is a member of B</li>
 <li>Eg A = {1,3,5} and B = {12,25,40}</li>
 <li>A x B = {[1,12], [1,25], [1,40], [3,12], [3,25], [3,40], [5,12], [5,25], [5,40]}</li>
 </ul>
-<h3 class="mume-header" id="subsets">Subsets</h3>
-
+<h3 id="subsets">Subsets</h3>
 <ul>
 <li>If every member of A is a member of B
 <ul>
 <li>A is then a subset of B</li>
-<li>A &#x2286; B</li>
-<li>or B &#x2287; A</li>
+<li>A ⊆ B</li>
+<li>or B ⊇ A</li>
 </ul>
 </li>
 <li>If A is a subset of B, but not equal to it, then A is a <strong>proper subset</strong> of B
 <ul>
-<li>A &#x2282; B</li>
+<li>A ⊂ B</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="set-operations">Set operations</h3>
-
-<h4 class="mume-header" id="union">Union</h4>
-
+<h3 id="set-operations">Set operations</h3>
+<h4 id="union">Union</h4>
 <ul>
-<li>A &#x222A; B
+<li>A ∪ B
 <ul>
 <li>This is a set containing every thing in A and B</li>
 </ul>
 </li>
 </ul>
-<h4 class="mume-header" id="intersection">Intersection</h4>
-
+<h4 id="intersection">Intersection</h4>
 <ul>
-<li>A &#x2229; B
+<li>A ∩ B
 <ul>
 <li>This set contains all members in common</li>
 </ul>
 </li>
 </ul>
-<h4 class="mume-header" id="difference">Difference</h4>
-
+<h4 id="difference">Difference</h4>
 <ul>
 <li>A \ B
 <ul>
@@ -2588,8 +2264,7 @@ Waits...                                Waits...
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="regular-expressions">Regular expressions</h2>
-
+<h2 id="regular-expressions">Regular expressions</h2>
 <ul>
 <li>
 <p>Used to:</p>
@@ -2612,8 +2287,7 @@ Waits...                                Waits...
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="regular-language">Regular language</h3>
-
+<h3 id="regular-language">Regular language</h3>
 <ul>
 <li>A regular language can be expressed by a regular expression
 <ul>
@@ -2622,8 +2296,7 @@ Waits...                                Waits...
 </li>
 <li>All finite languages are regular, since a regular expression can be created that includes all words in the language</li>
 </ul>
-<h2 class="mume-header" id="the-turing-machine">The Turing machine</h2>
-
+<h2 id="the-turing-machine">The Turing machine</h2>
 <ul>
 <li>
 <p>Infinitely long tape divided into squares</p>
@@ -2651,18 +2324,16 @@ Waits...                                Waits...
 <p>All Turing machines must have a halting state</p>
 </li>
 </ul>
-<h3 class="mume-header" id="transition-functions">Transition functions</h3>
-
+<h3 id="transition-functions">Transition functions</h3>
 <ul>
-<li>&#x3B4;(Current State, Input symbol) = (Next State, Output symbol, Movement)</li>
-<li>&#x3B4;(S1, 0) = (S2, 1, L)
+<li>δ(Current State, Input symbol) = (Next State, Output symbol, Movement)</li>
+<li>δ(S1, 0) = (S2, 1, L)
 <ul>
 <li>This means if the machines is in State 1 and a 0 is read then write a 1, move to the left and change the state to State 2</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="the-universal-turing-machine">The Universal Turing machine</h3>
-
+<h3 id="the-universal-turing-machine">The Universal Turing machine</h3>
 <ul>
 <li>
 <p>A Turing machine can theoretically represent any computation</p>
@@ -2674,7 +2345,7 @@ Waits...                                Waits...
 <p>The Universal Turing machine can compute any computable sequence</p>
 </li>
 <li>
-<p>The machine <strong>U</strong> is an interpreter that reads a description <m> of any Turing machine <strong>M</strong> then executes operations on data as <strong>M</strong> does. The description <m> is written to the start of the tape, followed by the data <strong>D</strong></m></m></p>
+<p>The machine <strong>U</strong> is an interpreter that reads a description <M> of any Turing machine <strong>M</strong> then executes operations on data as <strong>M</strong> does. The description <M> is written to the start of the tape, followed by the data <strong>D</strong></p>
 </li>
 <li>
 <p>The definition of what is computable is anything that a Turing machine can compute</p>
@@ -2686,17 +2357,14 @@ Waits...                                Waits...
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="the-halting-problem">The Halting problem</h3>
-
+<h3 id="the-halting-problem">The Halting problem</h3>
 <ul>
 <li>The Halting problem is about determining whether a program will halt with a given input</li>
 <li>Turing proved that a machine <strong>H</strong> to solve the Halting problem for all possible programs and their inputs cannot exist.</li>
 <li>The Halting problem shows that some problems are non-computable (cannot be solved by a computer)</li>
 </ul>
-<h2 class="mume-header" id="backus-naur-form">Backus-Naur form</h2>
-
-<h3 class="mume-header" id="defining-the-syntax-of-a-language">Defining the syntax of a language</h3>
-
+<h2 id="backus-naur-form">Backus-Naur form</h2>
+<h3 id="defining-the-syntax-of-a-language">Defining the syntax of a language</h3>
 <ul>
 <li>A meta language is used to describe another language</li>
 <li>Backus-Naur form is a meta language</li>
@@ -2706,8 +2374,7 @@ Waits...                                Waits...
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="bnf">BNF</h3>
-
+<h3 id="bnf">BNF</h3>
 <ul>
 <li>LHS ::= RHS</li>
 <li>::= means is defined by</li>
@@ -2717,26 +2384,22 @@ Waits...                                Waits...
 <li>| means or</li>
 <li>e.g. &lt;digit&gt; ::== 0|1|2|3|4|5|6|7|8|9</li>
 </ul>
-<h4 class="mume-header" id="recursion-in-a-bnf-definition">Recursion in a BNF definition</h4>
-
+<h4 id="recursion-in-a-bnf-definition">Recursion in a BNF definition</h4>
 <ul>
 <li>The meta-component can be defined in terms of itself</li>
 <li>e.g. &lt;variable list&gt; ::= &lt;variable&gt;&lt;variable&gt;, &lt;variable list&gt;</li>
 </ul>
-<h3 class="mume-header" id="syntax-diagrams">Syntax diagrams</h3>
-
+<h3 id="syntax-diagrams">Syntax diagrams</h3>
 <ul>
 <li>Ovals represent terminal elements (cannot be broken down further)</li>
 <li>Boxes are non-terminal elements (refer to another definition)</li>
 </ul>
 <p><img src="https://bournetocode.com/projects/AQA_A_Theory/pages/img/syntaxDigramPositiveInteger.png" alt="syntax diagram"></p>
-<h2 class="mume-header" id="reverse-polish-notation">Reverse Polish Notation</h2>
-
+<h2 id="reverse-polish-notation">Reverse Polish Notation</h2>
 <ul>
 <li>Reverse Polish, also known as postfix, is a method of writing expressions that is suited to use in computers</li>
 </ul>
-<h3 class="mume-header" id="advantages-of-rpn">Advantages of RPN</h3>
-
+<h3 id="advantages-of-rpn">Advantages of RPN</h3>
 <ul>
 <li>No need for brackets</li>
 <li>Produces expressions in a form suitable for evaluation on a stack</li>
@@ -2745,8 +2408,7 @@ Waits...                                Waits...
 <ul>
 <li>The operator follows the operand</li>
 </ul>
-<h3 class="mume-header" id="binary-expression-trees">Binary expression trees</h3>
-
+<h3 id="binary-expression-trees">Binary expression trees</h3>
 <ul>
 <li>An expression can be expressed as a tree</li>
 <li>An in-order traversal will give the infix expression</li>
@@ -2756,8 +2418,7 @@ Waits...                                Waits...
 <ul>
 <li>The RPN will be 2 3 * 2 1 - / 5 4 1 - * +</li>
 </ul>
-<h1 class="mume-header" id="data-structures">Data structures</h1>
-
+<h1 id="data-structures">Data structures</h1>
 <ul>
 <li>An abstract data type is a description of how the data is viewed and the operation that can be performed
 <ul>
@@ -2766,8 +2427,7 @@ Waits...                                Waits...
 </ul>
 </li>
 </ul>
-<h2 class="mume-header" id="static-and-dynamic-data-structures">Static and dynamic data structures</h2>
-
+<h2 id="static-and-dynamic-data-structures">Static and dynamic data structures</h2>
 <ul>
 <li>A dynamic data structure is a portion of memory that can grow and shrink in size with the help of the heap
 <ul>
@@ -2782,29 +2442,26 @@ Waits...                                Waits...
 <li>The memory that is allocated cannot be reallocated</li>
 <li>A static data structure is often simpler since pointers and other data does not need to be stored</li>
 </ul>
-<h2 class="mume-header" id="queues">Queues</h2>
-
+<h2 id="queues">Queues</h2>
 <ul>
 <li>Queues are First In First Out (FIFO)</li>
 <li>New elements are added to the end and elements are retrieved from the front</li>
 </ul>
-<h3 class="mume-header" id="operations-on-a-queue">Operations on a queue</h3>
-
+<h3 id="operations-on-a-queue">Operations on a queue</h3>
 <ul>
 <li>An abstract data structure is defined by structure and the operations that can be performed on it</li>
 </ul>
 <ul>
 <li>The following can be performed on a queue
 <ul>
-<li>EnQueue(item)&#xA0;&#xA0;&#xA0; // Add item to rear of queue</li>
-<li>DeQueue(item)&#xA0;&#xA0;&#xA0;// Remove the front item</li>
-<li>isEmpty()&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;// Return true if empty</li>
-<li>IsFull()&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; // Return true if full</li>
+<li>EnQueue(item)    // Add item to rear of queue</li>
+<li>DeQueue(item)   // Remove the front item</li>
+<li>isEmpty()            // Return true if empty</li>
+<li>IsFull()                // Return true if full</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="implementing-a-linear-queue">Implementing a linear queue</h3>
-
+<h3 id="implementing-a-linear-queue">Implementing a linear queue</h3>
 <ul>
 <li>Can be an array or a list</li>
 </ul>
@@ -2817,32 +2474,34 @@ Waits...                                Waits...
 <li>Can also be implemented with pointers to the front and rear with a variable holding the size of the array and the number of items in the queue</li>
 <li>However if many items are added and deleted from the queue, space is created at the front of the queue which cannot be filled, and items are added until the rear pointer points to the last element</li>
 </ul>
-<h3 class="mume-header" id="circular-queue">Circular queue</h3>
-
+<h3 id="circular-queue">Circular queue</h3>
 <ul>
 <li>When the array is full and the rear pointer points to the last element of the array, it will be made to point at the first element</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>SUB initialise
+<pre><code><div>SUB initialise
   front := 0
   rear := -1
   size := 0
   maxSize := size of array
 ENDSUB
-</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>SUB isEmpty
+</div></code></pre>
+<pre><code><div>SUB isEmpty
   IF size = 0 then
     RETURN True
   ELSE
     Return False
   ENDIF
 ENDSUB
-</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>SUB isFull
+</div></code></pre>
+<pre><code><div>SUB isFull
   IF size = maxSize THEN
     RETURN True
   ELSE
     RETURN False
   ENDIF
 ENDSUB
-</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>SUB enqueue(newItem)
+</div></code></pre>
+<pre><code><div>SUB enqueue(newItem)
   IF isFull THEN
     OUTPUT &quot;Queue full&quot;
   ELSE
@@ -2851,7 +2510,8 @@ ENDSUB
     size := size + 1
   ENDIF
 ENDSUB
-</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>SUB dequeue
+</div></code></pre>
+<pre><code><div>SUB dequeue
   IF isEmpty THEN
     OUTPUT &quot;Queue empty&quot;
     item := NULL
@@ -2862,8 +2522,8 @@ ENDSUB
   ENDIF
   RETURN ITEM
 ENDSUB
-</code></pre><h3 class="mume-header" id="priority-queue">Priority queue</h3>
-
+</div></code></pre>
+<h3 id="priority-queue">Priority queue</h3>
 <ul>
 <li>Items are dequeued in the same manner</li>
 <li>Items with higher priority are at the front of the queue and items with low priority are at the back
@@ -2873,8 +2533,7 @@ ENDSUB
 </li>
 <li>To implement this, the priority of an item is checked then starting at the rear it moves along until an item with the same or lower priority is found, at which point it is inserted</li>
 </ul>
-<h2 class="mume-header" id="lists">Lists</h2>
-
+<h2 id="lists">Lists</h2>
 <ul>
 <li>Consists of items of the same type in which the same item can occur more than once</li>
 <li>The following operations can be performed on lists
@@ -2898,19 +2557,19 @@ ENDSUB
 <ul>
 <li>The algorithm for inserting an item into a sorted list</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  IF iSFull() THEN
-    OUTPUT(&apos;FULL&apos;)
+<pre><code><div>  IF iSFull() THEN
+    OUTPUT('FULL')
   ELSE
     Find first greater
     starting at the end of the list, move all items one place
     Insert item
-</code></pre><ul>
+</div></code></pre>
+<ul>
 <li>To delete all items following the item deleted need to be moved one place</li>
 <li>This is done by copying all items to the previous index</li>
 <li>Then deleting the final item which is duplicated</li>
 </ul>
-<h3 class="mume-header" id="linked-lists">Linked lists</h3>
-
+<h3 id="linked-lists">Linked lists</h3>
 <ul>
 <li>Dynamic lists are implemented as linked lists</li>
 <li>When items are added to the list, pointers are adjusted to point to the new memory locations</li>
@@ -2923,8 +2582,7 @@ ENDSUB
 <li>The pointers are then changed to maintain the correct sequence</li>
 </ul>
 <p><img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist_insert_middle.png" alt="linked list"></p>
-<h2 class="mume-header" id="stacks">Stacks</h2>
-
+<h2 id="stacks">Stacks</h2>
 <ul>
 <li>Stacks are last in first out</li>
 <li>A stack can be implemented either as a static or dynamic data structure</li>
@@ -2935,8 +2593,7 @@ ENDSUB
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="operations-on-a-stack">Operations on a stack</h3>
-
+<h3 id="operations-on-a-stack">Operations on a stack</h3>
 <ul>
 <li>push(item) - adds item to TOP of stack</li>
 <li>peek() - returns top item from stack</li>
@@ -2944,21 +2601,23 @@ ENDSUB
 <li>isEmpty() - returns boolean</li>
 <li>isFull() - returns boolean</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>SUB isEmpty
+<pre><code><div>SUB isEmpty
   IF top = -1 THEN
     RETURN True
   ELSE
     RETURN False
   ENDIF
 ENDSUB
-</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>SUB isFull
+</div></code></pre>
+<pre><code><div>SUB isFull
   IF top = maxSize THEN
     RETURN True
   ELSE
     RETURN False
   ENDIF
 ENDSUB
-</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>SUB push(item)
+</div></code></pre>
+<pre><code><div>SUB push(item)
   IF isFull THEN
     OUTPUT &quot;Stack full&quot;
   ELSE
@@ -2966,7 +2625,8 @@ ENDSUB
     s(top) := item
   ENDIF
 ENDSUB
-</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>SUB pop
+</div></code></pre>
+<pre><code><div>SUB pop
   IF isEmpty THEN
     OUTPUT &quot;Stack si empty&quot;
   ELSE
@@ -2975,8 +2635,8 @@ ENDSUB
     RETURN item
   ENDIF
 ENDSUB
-</code></pre><h3 class="mume-header" id="overflow-and-underflow">Overflow and underflow</h3>
-
+</div></code></pre>
+<h3 id="overflow-and-underflow">Overflow and underflow</h3>
 <ul>
 <li>Stack has a maximum size
 <ul>
@@ -2989,35 +2649,29 @@ ENDSUB
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="call-stack">Call stack</h3>
-
-<h4 class="mume-header" id="holds-return-addresses">Holds return addresses</h4>
-
+<h3 id="call-stack">Call stack</h3>
+<h4 id="holds-return-addresses">Holds return addresses</h4>
 <ul>
 <li>This is the address of the instruction that control should return to when a subroutine finishes</li>
 <li>If subroutines are nested, the stack will grow as more return addresses are added which will be popped when the routine completes</li>
 </ul>
-<h5 class="mume-header" id="recursion">Recursion</h5>
-
+<h5 id="recursion">Recursion</h5>
 <ul>
 <li>With each call of a recursive routine a new return address is pushed to the stack</li>
 <li>When the recursion ends, the return addresses are popped one at a time each time the end of a subroutine is reached</li>
 <li>If the program is infinitely recursive, the stack will overflow</li>
 </ul>
-<h4 class="mume-header" id="holds-parameters">Holds parameters</h4>
-
+<h4 id="holds-parameters">Holds parameters</h4>
 <ul>
 <li>Parameters required for a subroutine will be held on the call stack</li>
 <li>Each call of the subroutine will have a separate space on the call stack</li>
 </ul>
-<h4 class="mume-header" id="local-variables">Local variables</h4>
-
+<h4 id="local-variables">Local variables</h4>
 <ul>
 <li>Variables local to a subroutine is held on the call stack</li>
 <li>Storing local variables on the call stack is more efficient than dynamic memory allocation which uses the heap</li>
 </ul>
-<h4 class="mume-header" id="stack-frames">Stack frames</h4>
-
+<h4 id="stack-frames">Stack frames</h4>
 <ul>
 <li>The call stack is made of stack frames
 <ul>
@@ -3026,10 +2680,8 @@ ENDSUB
 </li>
 </ul>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Call_stack_layout.svg/342px-Call_stack_layout.svg.png" alt="Stack frames"></p>
-<h2 class="mume-header" id="hash-tables-and-dictionaries">Hash tables and dictionaries</h2>
-
-<h3 class="mume-header" id="hashing">Hashing</h3>
-
+<h2 id="hash-tables-and-dictionaries">Hash tables and dictionaries</h2>
+<h3 id="hashing">Hashing</h3>
 <ul>
 <li>A hashing algorithm is applied to data of each record to produce an address</li>
 <li>A common algorithm is take take the data and mod it by the number of available addresses
@@ -3050,8 +2702,7 @@ ENDSUB
 <ul>
 <li>A string is hashed using the sum of the ASCII characters</li>
 </ul>
-<h3 class="mume-header" id="hash-table">Hash table</h3>
-
+<h3 id="hash-table">Hash table</h3>
 <ul>
 <li>
 <p>A hash table is a collection of items stored so they can be quickly located</p>
@@ -3076,8 +2727,7 @@ ENDSUB
 </ul>
 </li>
 </ul>
-<h4 class="mume-header" id="collision-resolution">Collision resolution</h4>
-
+<h4 id="collision-resolution">Collision resolution</h4>
 <ul>
 <li>As a hash table grows, there will be more collisions</li>
 <li>If the maximum number of data items is known, the table could be designed so that it is 70% full when all items are added to allow space for collisions</li>
@@ -3091,20 +2741,18 @@ ENDSUB
 <li>Loops to the start if end reached</li>
 </ul>
 </li>
-<li>Every n&apos;th cell could be checked</li>
+<li>Every n'th cell could be checked</li>
 <li>The hash value could be incremented by a prime</li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="dictionaries">Dictionaries</h3>
-
+<h3 id="dictionaries">Dictionaries</h3>
 <ul>
 <li>Made up of pairs of keys and values</li>
 <li>When a key is supplied, the associated value is returned</li>
-<li><code>IDs = {342: &apos;Harry&apos;, 634:&apos;Jasmine&apos;}</code></li>
+<li><code>IDs = {342: 'Harry', 634:'Jasmine'}</code></li>
 </ul>
-<h4 class="mume-header" id="operations-on-dictionaries">Operations on dictionaries</h4>
-
+<h4 id="operations-on-dictionaries">Operations on dictionaries</h4>
 <ul>
 <li>Create a new dictionary</li>
 <li>Add new <code>key:value</code> pair</li>
@@ -3114,31 +2762,26 @@ ENDSUB
 <li>Return True or False whether a key is present</li>
 <li>Return length of dictionary</li>
 </ul>
-<h2 class="mume-header" id="graphs">Graphs</h2>
-
+<h2 id="graphs">Graphs</h2>
 <ul>
 <li>A set of nodes connected by edges</li>
 <li>Where all edges are bidirectional, it is an undirected graph</li>
 <li>If all edges are one way, it is a directed graph</li>
 <li>The edges may be weighted</li>
 </ul>
-<h3 class="mume-header" id="implementing-a-graph">Implementing a graph</h3>
-
-<h4 class="mume-header" id="adjacency-matrix">Adjacency matrix</h4>
-
+<h3 id="implementing-a-graph">Implementing a graph</h3>
+<h4 id="adjacency-matrix">Adjacency matrix</h4>
 <p><img src="https://i.stack.imgur.com/Ucg3W.png" alt="Adjacency matrix"></p>
 <ul>
 <li>In an undirected graph, the matrix will be symmetric</li>
 <li>If the graph was weighted, the weighting would be stored instead of 1/0</li>
 </ul>
-<h5 class="mume-header" id="advantages-of-an-adjacency-matrix">Advantages of an adjacency matrix</h5>
-
+<h5 id="advantages-of-an-adjacency-matrix">Advantages of an adjacency matrix</h5>
 <ul>
 <li>Easy to add edge</li>
 <li>Easy to test for presence of edge</li>
 </ul>
-<h5 class="mume-header" id="disadvantages-of-an-adjacency-matrix">Disadvantages of an adjacency matrix</h5>
-
+<h5 id="disadvantages-of-an-adjacency-matrix">Disadvantages of an adjacency matrix</h5>
 <ul>
 <li>In a graph with many nodes but few edges most cells will be empty
 <ul>
@@ -3147,8 +2790,7 @@ ENDSUB
 </li>
 <li>It is hard to add or delete a node in a static two-dimensional array</li>
 </ul>
-<h4 class="mume-header" id="adjacency-list">Adjacency list</h4>
-
+<h4 id="adjacency-list">Adjacency list</h4>
 <p><img src="https://i.imgur.com/ylcZpyH.jpg" alt="Adjacency list"></p>
 <ul>
 <li>More space-efficient</li>
@@ -3159,8 +2801,7 @@ ENDSUB
 <ul>
 <li>Uses less memory when representing a sparsely connected graph</li>
 </ul>
-<h5 class="mume-header" id="applications-of-graphs">Applications of graphs</h5>
-
+<h5 id="applications-of-graphs">Applications of graphs</h5>
 <ul>
 <li>Represent computer networks
 <ul>
@@ -3175,45 +2816,38 @@ ENDSUB
 <li>States in an FSM</li>
 <li>Web pages and links</li>
 </ul>
-<h2 class="mume-header" id="trees">Trees</h2>
-
+<h2 id="trees">Trees</h2>
 <ul>
 <li><strong>A tree is connected, undirected graph with no cycles</strong></li>
 <li>Connected: Always possible to find a route from a node to any other node</li>
 <li>No cycles: Cannot return to the same no without traversing an edge twice</li>
 </ul>
-<h3 class="mume-header" id="binary-search-tree">Binary search tree</h3>
-
+<h3 id="binary-search-tree">Binary search tree</h3>
 <ul>
 <li>Rooted tree with at most two children</li>
 <li>Holds items to allow them to be searched quickly</li>
 <li>New items can be added easily</li>
 </ul>
-<h3 class="mume-header" id="traversing-a-binary-tree">Traversing a binary tree</h3>
-
-<h4 class="mume-header" id="pre-order">Pre-order</h4>
-
+<h3 id="traversing-a-binary-tree">Traversing a binary tree</h3>
+<h4 id="pre-order">Pre-order</h4>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sorted_binary_tree_preorder.svg/330px-Sorted_binary_tree_preorder.svg.png" alt="pre-order"></p>
 <ul>
 <li>Output node when first encountered</li>
 <li>F, B, A, D, C, E, G, I, H.</li>
 <li>Used to produce prefix notation, used in functional programming</li>
 </ul>
-<h4 class="mume-header" id="in-order">In-order</h4>
-
+<h4 id="in-order">In-order</h4>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Sorted_binary_tree_inorder.svg/330px-Sorted_binary_tree_inorder.svg.png" alt="in-order"></p>
 <ul>
 <li>Output when passing underneath</li>
 </ul>
-<h4 class="mume-header" id="post-order">Post-order</h4>
-
+<h4 id="post-order">Post-order</h4>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sorted_binary_tree_postorder.svg/330px-Sorted_binary_tree_postorder.svg.png" alt="post-order"></p>
 <ul>
 <li>Output when passing for the last time</li>
 <li>Used to produce RPN</li>
 </ul>
-<h3 class="mume-header" id="implementing-a-binary-search-tree">Implementing a binary search tree</h3>
-
+<h3 id="implementing-a-binary-search-tree">Implementing a binary search tree</h3>
 <ul>
 <li>Array of records with each node consisting of
 <ul>
@@ -3296,8 +2930,7 @@ ENDSUB
 </tr>
 </tbody>
 </table>
-<h2 class="mume-header" id="vectors">Vectors</h2>
-
+<h2 id="vectors">Vectors</h2>
 <ul>
 <li>Vectors can be represented as a:
 <ul>
@@ -3310,22 +2943,21 @@ ENDSUB
 <p>There are different notations</p>
 <ol>
 <li>List [2.0, 3.14159, 2.71828]</li>
-<li>A n-vector over <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">R</span></span></span></span></span> can be written <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\mathbb{{R}}^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span></span></span></span><br>
-4-vector over R such as [2.0, 3.14159, 2.71828, -1.0] can be written <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb{R} ^ 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></li>
-<li>can be shown as a function<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>:</mo><mi>S</mi><mo>&#x2192;</mo><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">f : S \rightarrow \mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2192;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">R</span></span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>&#xA0;where&#xA0;</mtext><mi>S</mi><mtext>&#xA0;is&#xA0;the&#xA0;set&#xA0;of&#xA0;</mtext><mo>{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo>}</mo><mtext>&#xA0;and&#xA0;</mtext><mi mathvariant="double-struck">R</mi><mtext>&#xA0;is&#xA0;the&#xA0;set&#xA0;of&#xA0;all&#xA0;real&#xA0;numbers</mtext></mrow><annotation encoding="application/x-tex">\text{ where } S \text{ is the set of } \{0,1,2,3\} \text{ and } \mathbb{R} \text{ is the set of all real numbers}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">&#xA0;where&#xA0;</span></span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord text"><span class="mord">&#xA0;is&#xA0;the&#xA0;set&#xA0;of&#xA0;</span></span><span class="mopen">{</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">}</span><span class="mord text"><span class="mord">&#xA0;and&#xA0;</span></span><span class="mord"><span class="mord mathbb">R</span></span><span class="mord text"><span class="mord">&#xA0;is&#xA0;the&#xA0;set&#xA0;of&#xA0;all&#xA0;real&#xA0;numbers</span></span></span></span></span></li>
+<li>A n-vector over $ \mathbb{R} $ can be written <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\mathbb{{R}}^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span>
+4-vector over R such as [2.0, 3.14159, 2.71828, -1.0] can be written $ \mathbb{R} ^ 4 $</li>
+<li>can be shown as a function
+$ f : S \rightarrow \mathbb{R} <span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span>\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text{ is the set of all real numbers}$</li>
 </ol>
 <ul>
 <li>Example:
 <ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&#x2192;</mo><mn>2.0</mn></mrow><annotation encoding="application/x-tex">0\rightarrow 2.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2192;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">0</span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>&#x2192;</mo><mi>&#x3C0;</mi></mrow><annotation encoding="application/x-tex">1\rightarrow \pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2192;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.03588em;">&#x3C0;</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>→</mo><mn>2.0</mn></mrow><annotation encoding="application/x-tex">0\rightarrow 2.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">0</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>→</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">1\rightarrow \pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span></span></li>
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="uses-vectors">Uses vectors</h3>
-
+<h3 id="uses-vectors">Uses vectors</h3>
 <ul>
 <li>Used when processing spacial information</li>
 </ul>
@@ -3334,27 +2966,26 @@ ENDSUB
 <li>Games and simulations have to work out how objects moving in 3D space can be represented</li>
 <li>Planes need to take in account wind speeds and direction when setting and holding a course in 3D</li>
 </ol>
-<h3 class="mume-header" id="convex-combination-of-vectors">Convex combination of vectors</h3>
-
+<h3 id="convex-combination-of-vectors">Convex combination of vectors</h3>
 <ul>
 <li>Used to find if object lies inside the area bound by two vectors</li>
 </ul>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B1;</mi><mi>u</mi><mo>+</mo><mi>&#x3B2;</mi><mi>v</mi><mtext>&#xA0;where&#xA0;</mtext><mi>&#x3B1;</mi><mo>+</mo><mi>&#x3B2;</mi><mo>=</mo><mn>1</mn><mtext>&#xA0;and&#xA0;where&#xA0;</mtext><mi>&#x3B1;</mi><mo separator="true">,</mo><mi>&#x3B2;</mi><mo>&#x2265;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha u + \beta v \text{ where } \alpha + \beta = 1 \text{ and where } \alpha , \beta \geq 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mord mathit">u</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.05278em;">&#x3B2;</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord text"><span class="mord">&#xA0;where&#xA0;</span></span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.05278em;">&#x3B2;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord text"><span class="mord">&#xA0;and&#xA0;where&#xA0;</span></span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.05278em;">&#x3B2;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2265;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mi>u</mi><mo>+</mo><mi>β</mi><mi>v</mi><mtext> where </mtext><mi>α</mi><mo>+</mo><mi>β</mi><mo>=</mo><mn>1</mn><mtext> and where </mtext><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha u + \beta v \text{ where } \alpha + \beta = 1 \text{ and where } \alpha , \beta \geq 0 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord text"><span class="mord"> where </span></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord text"><span class="mord"> and where </span></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span></p>
 <p><img src="https://i.imgur.com/275QEpv.png" alt="Convex combination"></p>
-<h3 class="mume-header" id="dot-product">Dot product</h3>
-
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mi mathvariant="normal">&#x2022;</mi><mi>v</mi><mo>=</mo><msub><mi>u</mi><mn>1</mn></msub><msub><mi>v</mi><mn>1</mn></msub><mo>+</mo><msub><mi>u</mi><mn>2</mn></msub><msub><mi>v</mi><mn>2</mn></msub><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><msub><mi>u</mi><mi>n</mi></msub><msub><mi>v</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">u &#x2022; v = u_1v_1 + u_2v_2 + ... + u_nv_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">u</span><span class="mord">&#x2022;</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathit">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathit">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathit">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo>]</mo><mi mathvariant="normal">&#x2022;</mi><mo>[</mo><mn>5</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo><mo>=</mo><mn>10</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">[2,3,4] &#x2022; [5,2,1] = 10 + 6 + 4 = 20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mclose">]</span><span class="mord">&#x2022;</span><span class="mopen">[</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span></span></p>
+<h3 id="dot-product">Dot product</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mi mathvariant="normal">•</mi><mi>v</mi><mo>=</mo><msub><mi>u</mi><mn>1</mn></msub><msub><mi>v</mi><mn>1</mn></msub><mo>+</mo><msub><mi>u</mi><mn>2</mn></msub><msub><mi>v</mi><mn>2</mn></msub><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><msub><mi>u</mi><mi>n</mi></msub><msub><mi>v</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">u • v = u_1v_1 + u_2v_2 + ... + u_nv_n
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mord">•</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo>]</mo><mi mathvariant="normal">•</mi><mo>[</mo><mn>5</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo><mo>=</mo><mn>10</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">[2,3,4] • [5,2,1] = 10 + 6 + 4 = 20 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mclose">]</span><span class="mord">•</span><span class="mopen">[</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span></span></p>
 <ul>
 <li>The dot product is a number, not a vector, and can be used to compare vectors</li>
 </ul>
-<h4 class="mume-header" id="finding-angle-between-vectors">Finding angle between vectors</h4>
-
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi mathvariant="normal">&#x398;</mi><mo>=</mo><mfrac><mrow><mo>(</mo><mi>u</mi><mi mathvariant="normal">&#x2022;</mi><mi>v</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi mathvariant="normal">&#x2225;</mi><mi>u</mi><mi mathvariant="normal">&#x2225;</mi><mi mathvariant="normal">&#x2022;</mi><mi mathvariant="normal">&#x2225;</mi><mi>v</mi><mi mathvariant="normal">&#x2225;</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">cos \Theta =  \frac{(u &#x2022; v)}{(\Vert u \Vert &#x2022; \Vert v \Vert)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mord">&#x398;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">&#x2225;</span><span class="mord mathit">u</span><span class="mord">&#x2225;</span><span class="mord">&#x2022;</span><span class="mord">&#x2225;</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord">&#x2225;</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathit">u</span><span class="mord">&#x2022;</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<h1 class="mume-header" id="oop-and-functional-programming">OOP and functional programming</h1>
-
-<h2 class="mume-header" id="programming-paradigms">Programming paradigms</h2>
-
+<h4 id="finding-angle-between-vectors">Finding angle between vectors</h4>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi mathvariant="normal">Θ</mi><mo>=</mo><mfrac><mrow><mo>(</mo><mi>u</mi><mi mathvariant="normal">•</mi><mi>v</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi mathvariant="normal">∥</mi><mi>u</mi><mi mathvariant="normal">∥</mi><mi mathvariant="normal">•</mi><mi mathvariant="normal">∥</mi><mi>v</mi><mi mathvariant="normal">∥</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">cos \Theta =  \frac{(u • v)}{(\Vert u \Vert • \Vert v \Vert)} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord">Θ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">∥</span><span class="mord mathdefault">u</span><span class="mord">∥</span><span class="mord">•</span><span class="mord">∥</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord">∥</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mord">•</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<h1 id="oop-and-functional-programming">OOP and functional programming</h1>
+<h2 id="programming-paradigms">Programming paradigms</h2>
 <ul>
 <li>
 <p>A paradigm is a style of a language</p>
@@ -3372,14 +3003,12 @@ ENDSUB
 <p><strong>Functional programming</strong> is where functions are used as the building block of the program. Statements are written as a series of functions which accept data and return an output</p>
 </li>
 </ul>
-<h2 class="mume-header" id="object-oriented-programming">Object-oriented programming</h2>
-
+<h2 id="object-oriented-programming">Object-oriented programming</h2>
 <ul>
 <li>An object-oriented program is a number of interacting objects each of which is responsible for their own data and operations on that data</li>
 <li>The program code creates objects and allows them to communicate by sending messages and receiving answers</li>
 </ul>
-<h3 class="mume-header" id="object-attributes-and-behaviours">Object attributes and behaviours</h3>
-
+<h3 id="object-attributes-and-behaviours">Object attributes and behaviours</h3>
 <ul>
 <li>Object will have attributes
 <ul>
@@ -3391,20 +3020,20 @@ ENDSUB
 <li>For example a radio can be on or off, tuned to a station or set to a volume</li>
 </ul>
 </li>
-<li>The object&apos;s behaviours are the actions it can perform</li>
+<li>The object's behaviours are the actions it can perform</li>
 </ul>
-<h3 class="mume-header" id="classes">Classes</h3>
-
+<h3 id="classes">Classes</h3>
 <ul>
 <li>A class is a template for an object where the attributes and methods are defined for all object of that class</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  ClassName = Class
+<pre><code><div>  ClassName = Class
     Public
       //define all methods
     Private
       //define instance variables
   End
-</code></pre><ul>
+</div></code></pre>
+<ul>
 <li>Generally, instance variables are private and methods are public</li>
 <li>This is so that other classes may use the methods belonging to another class but not see or change their attributes</li>
 </ul>
@@ -3415,15 +3044,15 @@ ENDSUB
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="instantiation">Instantiation</h3>
-
+<h3 id="instantiation">Instantiation</h3>
 <ul>
 <li>This is how objects are created</li>
 <li>If you wanted to add a book to a stock system</li>
 <li>All objects in a class have the same structure and methods but each have their own data</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  book1 = new StockItem(&quot;PT123&quot;, &quot;Book&quot; , &quot;Computer Science&quot;, 35)
-</code></pre><ul>
+<pre><code><div>  book1 = new StockItem(&quot;PT123&quot;, &quot;Book&quot; , &quot;Computer Science&quot;, 35)
+</div></code></pre>
+<ul>
 <li>
 <p>This creates a reference variable called book of which is an instance of StockItem with the defined attributes</p>
 </li>
@@ -3437,8 +3066,7 @@ ENDSUB
 <p>In variable reference diagrams the reference variable is shown as circles and primitive data types are shown as rectangles</p>
 </li>
 </ul>
-<h3 class="mume-header" id="sending-messages">Sending messages</h3>
-
+<h3 id="sending-messages">Sending messages</h3>
 <ul>
 <li>Messages are either getters or setters</li>
 <li>Getters are functions and setters are procedures</li>
@@ -3446,8 +3074,7 @@ ENDSUB
 <ul>
 <li>The state of an object can be examined or changed by sending it a message</li>
 </ul>
-<h3 class="mume-header" id="encapsulation">Encapsulation</h3>
-
+<h3 id="encapsulation">Encapsulation</h3>
 <ul>
 <li>An object encapsulates its state and methods</li>
 <li>The data and methods are wrapped into a single entity so that the attributes and methods of one object cannot affect another object</li>
@@ -3455,13 +3082,12 @@ ENDSUB
 <li>Methods from other classes can be used without knowing how they work</li>
 <li>This is related to information hiding, where details of an object are hidden so that messages must be used to interact</li>
 </ul>
-<h3 class="mume-header" id="inheritance">Inheritance</h3>
-
+<h3 id="inheritance">Inheritance</h3>
 <ul>
 <li>A class can inherit data and methods from a parent class</li>
 <li>A child class is called a subclass and a parent class is called a superclass</li>
 </ul>
-<p><img src="https://image.slidesharecdn.com/inheritancecontinues-1223274749680392-9/95/c-inheritance-composition-polymorphism-38-728.jpg?cb=1332142453" alt="inheritance diagram"></p>
+<p><img src="https://image.slidesharecdn.com/inheritancecontinues-1223274749680392-9/95/c-inheritance-composition-polymorphism-38-728.jpg?cb%3D1332142453" alt="inheritance diagram"></p>
 <ul>
 <li>Inheritance is used when object A is an object B</li>
 <li>Eg. Cat is an Animal and therefore can inherit from animal</li>
@@ -3469,10 +3095,8 @@ ENDSUB
 <ul>
 <li><code>Cat = Subclass(Animal)</code> or <code>Class Cat(Animal)</code> or <code>public class Cat extends Animal</code></li>
 </ul>
-<h2 class="mume-header" id="oop-design-principals">OOP Design principals</h2>
-
-<h3 class="mume-header" id="association-aggregation-and-composition">Association, aggregation and composition</h3>
-
+<h2 id="oop-design-principals">OOP Design principals</h2>
+<h3 id="association-aggregation-and-composition">Association, aggregation and composition</h3>
 <ul>
 <li>Association is described as a &quot;has a &quot; relationship
 <ul>
@@ -3494,15 +3118,14 @@ ENDSUB
 <li>If the container is destroyed, all instances are destroyed</li>
 </ul>
 <p><img src="https://i.stack.imgur.com/bfBSY.png" alt="relationships"></p>
-<h3 class="mume-header" id="polymorphism">Polymorphism</h3>
-
+<h3 id="polymorphism">Polymorphism</h3>
 <ul>
 <li>This is the ability to process object differently depending on the class</li>
 <li>For example when a move command is sent to a Cat class, it may move two spaces whilst a Rodent will only move one</li>
 <li>The contents of the method is different but the name is the same</li>
 <li>This is called overriding</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  Animal = Class
+<pre><code><div>  Animal = Class
     Public
       Procedure moveLeft
       Procedure moveRight
@@ -3517,8 +3140,8 @@ ENDSUB
     Private
       Name : string
     End
-</code></pre><h3 class="mume-header" id="access-modifiers">Access modifiers</h3>
-
+</div></code></pre>
+<h3 id="access-modifiers">Access modifiers</h3>
 <ul>
 <li>If a method or instance variable is declared
 <ul>
@@ -3566,8 +3189,7 @@ ENDSUB
 <li>In class diagram, private is - and public is +</li>
 </ul>
 <p><img src="https://i.imgur.com/FxhUudl.png" alt="class digram with access specifiers"></p>
-<h3 class="mume-header" id="favour-composition-over-inheritance">Favour composition over inheritance</h3>
-
+<h3 id="favour-composition-over-inheritance">Favour composition over inheritance</h3>
 <ul>
 <li>Composition allows greater flexibility
 <ul>
@@ -3577,7 +3199,7 @@ ENDSUB
 <li>An object may consist of many other objects but cannot be said to inherit their characteristics</li>
 <li>Eg. A house class will be made up of Walls, Doors, Windows and Roof classes</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  House = Class
+<pre><code><div>  House = Class
     Public
       Procedure drawHouse
       Procedure getHousePosition
@@ -3596,8 +3218,8 @@ ENDSUB
         WallHeight : Real
         WallWidth : Real
         WallColour : Integer
-</code></pre><h3 class="mume-header" id="programming-to-an-interface">Programming to an interface</h3>
-
+</div></code></pre>
+<h3 id="programming-to-an-interface">Programming to an interface</h3>
 <ul>
 <li>Sometimes a number of different classes all need to understand a particular set of messages</li>
 <li>For example switchOn could be sent to a microwave, lamp, oven and watch
@@ -3611,21 +3233,21 @@ ENDSUB
 <li>The methods are specified in the interface but implemented in the class using the interface</li>
 <li>The programmer does not need to know how the objects in each class will respond to the message</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  Public interface Switches
+<pre><code><div>  Public interface Switches
     Procedure SwitchOn
     Procedure SwitchOff
     Procedure SetTimer(aTime)
     Procedure GetTimer
   End
-</code></pre><ul>
+</div></code></pre>
+<ul>
 <li>A programmer who wants to implement the Switches interface in the Microwave class would do <code>Class Microwave Implements Switches</code></li>
 </ul>
 <ul>
 <li>The objects must be able to handle any of the messages from the interface</li>
 <li>An advantage is new classes that use the interface can be added without affecting existing classes</li>
 </ul>
-<h3 class="mume-header" id="encapsulate-what-varies">Encapsulate what varies</h3>
-
+<h3 id="encapsulate-what-varies">Encapsulate what varies</h3>
 <ul>
 <li>Used to reduce maintenance and testing</li>
 <li>If a change needs to be made only the mode containing the concept should have to change</li>
@@ -3638,8 +3260,7 @@ ENDSUB
 <ul>
 <li>The concept could be implemented using interfaces where the methods are implemented differently by each class</li>
 </ul>
-<h2 class="mume-header" id="advantages-of-oop">Advantages of OOP</h2>
-
+<h2 id="advantages-of-oop">Advantages of OOP</h2>
 <ol>
 <li>Forces designers to plan extensively, which leads to better designs with fewer weaknesses</li>
 <li>Encapsulation allows code for an object to be written, tested and maintained independently of other objects</li>
@@ -3648,20 +3269,17 @@ ENDSUB
 <li>Objects that have already been defined, coded and tested can be easily re-used in different programs</li>
 <li>Easier to maintain due to the modular structure</li>
 </ol>
-<h2 class="mume-header" id="functional-programming">Functional programming</h2>
-
-<h3 class="mume-header" id="what-is-a-function">What is a function?</h3>
-
+<h2 id="functional-programming">Functional programming</h2>
+<h3 id="what-is-a-function">What is a function?</h3>
 <ul>
 <li>A mapping of a domain to a co-domain
 <ul>
-<li>Eg <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>&#x2192;</mo><mi>B</mi><mi mathvariant="normal">&#x2223;</mi><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f: A \rightarrow B \vert f(x) = x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2192;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.05017em;">B</span><span class="mord">&#x2223;</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>Eg <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi><mi mathvariant="normal">∣</mi><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f: A \rightarrow B \vert f(x) = x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></li>
 </ul>
 </li>
 <li>Does not have to be algebraic</li>
 </ul>
-<h3 class="mume-header" id="defining-a-function">Defining a function</h3>
-
+<h3 id="defining-a-function">Defining a function</h3>
 <ul>
 <li>Define a function as follows: <code>add3int x y z = x + y + z</code></li>
 <li>Giving a function an input is called function application
@@ -3670,8 +3288,7 @@ ENDSUB
 </ul>
 </li>
 </ul>
-<h3 class="mume-header" id="first-class-objects">First-class objects</h3>
-
+<h3 id="first-class-objects">First-class objects</h3>
 <ul>
 <li>A first-class object is an object which may:
 <ul>
@@ -3685,10 +3302,8 @@ ENDSUB
 <ul>
 <li>Functions are first-class objects and therefore can be passed as arguments</li>
 </ul>
-<h3 class="mume-header" id="advantages-of-functional-languages">Advantages of functional languages</h3>
-
-<h4 class="mume-header" id="statelessness">Statelessness</h4>
-
+<h3 id="advantages-of-functional-languages">Advantages of functional languages</h3>
+<h4 id="statelessness">Statelessness</h4>
 <ul>
 <li>The value of a variable cannot change
 <ul>
@@ -3697,20 +3312,17 @@ ENDSUB
 </ul>
 </li>
 </ul>
-<h4 class="mume-header" id="there-are-no-side-effects">There are no side effects</h4>
-
+<h4 id="there-are-no-side-effects">There are no side effects</h4>
 <ul>
 <li>Functions only calculate and return and therefore have no side effects</li>
 <li>Since the value of a variable cannot be changed, if a function is called twice with the same parameters, it will return the same result</li>
 </ul>
-<h4 class="mume-header" id="less-bugs">Less bugs</h4>
-
+<h4 id="less-bugs">Less bugs</h4>
 <ul>
 <li>It is easier to write bug free programs</li>
 <li>Small functions that can be easily be proved correct are used to construct larger, more complex functions</li>
 </ul>
-<h3 class="mume-header" id="functional-composition">Functional composition</h3>
-
+<h3 id="functional-composition">Functional composition</h3>
 <ul>
 <li>Two functions can be combined where the result of one function becomes the input of another
 <ul>
@@ -3723,11 +3335,11 @@ ENDSUB
 </li>
 </ul>
 <p>To produce g(f(x)) with x = 4 in Haskell</p>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token hvariable">f</span> <span class="token hvariable">x</span> <span class="token operator">=</span> <span class="token hvariable">x</span> <span class="token operator">+</span> <span class="token number">3</span>
-  <span class="token hvariable">g</span> <span class="token hvariable">x</span> <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token hvariable">x</span><span class="token operator">^</span><span class="token number">2</span>
-  <span class="token punctuation">(</span><span class="token hvariable">g</span><span class="token punctuation">.</span><span class="token hvariable">f</span><span class="token punctuation">)</span> <span class="token number">4</span>
-</pre><h3 class="mume-header" id="types-and-type-classes">Types and type-classes</h3>
-
+<pre><code class="language-Haskell"><div>  f x = x + <span class="hljs-number">3</span>
+  g x = <span class="hljs-number">2</span> * x^<span class="hljs-number">2</span>
+  (g.f) <span class="hljs-number">4</span>
+</div></code></pre>
+<h3 id="types-and-type-classes">Types and type-classes</h3>
 <ul>
 <li>In Haskell, types are sets of values, and type-classes are sets of types</li>
 <li>Integer, Int, Double, Float are all in type-classes Num.
@@ -3737,32 +3349,32 @@ ENDSUB
 </li>
 <li>The type of a function should be declared explicitly</li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token hvariable">sumOfSquares</span> <span class="token operator">::</span> <span class="token constant">Integer</span> <span class="token operator">-&gt;</span> <span class="token constant">Integer</span> <span class="token operator">-&gt;</span> <span class="token constant">Integer</span>
-  <span class="token hvariable">sumOfSquares</span> <span class="token hvariable">x</span> <span class="token hvariable">y</span> <span class="token operator">=</span> <span class="token hvariable">x</span><span class="token operator">^</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token hvariable">y</span><span class="token operator">^</span><span class="token number">2</span>
-</pre><p>The last type in the type declaration is the type that is returned</p>
+<pre><code class="language-Haskell"><div>  sumOfSquares :: <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span>
+  sumOfSquares x y = x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>
+</div></code></pre>
+<p>The last type in the type declaration is the type that is returned</p>
 <ul>
 <li>Type variables represent any type</li>
 </ul>
-<h2 class="mume-header" id="function-application">Function application</h2>
-
-<h3 class="mume-header" id="higher-order-functions">Higher-order functions</h3>
-
+<h2 id="function-application">Function application</h2>
+<h3 id="higher-order-functions">Higher-order functions</h3>
 <ul>
 <li>These take a function as an argument or returns a function as a result</li>
 </ul>
-<h3 class="mume-header" id="how-are-functions-evaluated">How are functions evaluated?</h3>
-
-<p>All functions in Haskell only take one argument<br>
+<h3 id="how-are-functions-evaluated">How are functions evaluated?</h3>
+<p>All functions in Haskell only take one argument
 Then how are statements such as</p>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token hvariable">add3Int</span> <span class="token hvariable">x</span> <span class="token hvariable">y</span> <span class="token hvariable">z</span> <span class="token operator">=</span> <span class="token hvariable">x</span> <span class="token operator">+</span> <span class="token hvariable">y</span> <span class="token operator">+</span> <span class="token hvariable">z</span>
-</pre><p>possible</p>
+<pre><code class="language-Haskell"><div>  add3Int x y z = x + y + z
+</div></code></pre>
+<p>possible</p>
 <ul>
 <li>A function takes a parameter at a time</li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token hvariable">add3Int</span> <span class="token operator">::</span> <span class="token hvariable">integer</span> <span class="token operator">-&gt;</span> <span class="token hvariable">integer</span> <span class="token operator">-&gt;</span> <span class="token hvariable">integer</span> <span class="token operator">-&gt;</span> <span class="token hvariable">integer</span>
-  <span class="token comment">-- The type declaration can also be written as</span>
-  <span class="token hvariable">add3Int</span> <span class="token operator">::</span> <span class="token hvariable">integer</span> <span class="token operator">-&gt;</span> <span class="token punctuation">(</span><span class="token hvariable">integer</span> <span class="token operator">-&gt;</span> <span class="token punctuation">(</span><span class="token hvariable">integer</span> <span class="token operator">-&gt;</span> <span class="token hvariable">integer</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</pre><p>What happens when <code>add3Int 2 4 5</code> is called</p>
+<pre><code class="language-Haskell"><div>  add3Int :: integer -&gt; integer -&gt; integer -&gt; integer
+  <span class="hljs-comment">-- The type declaration can also be written as</span>
+  add3Int :: integer -&gt; (integer -&gt; (integer -&gt; integer))
+</div></code></pre>
+<p>What happens when <code>add3Int 2 4 5</code> is called</p>
 <ul>
 <li>The function is applied to the arguments</li>
 <li>It takes the first argument, 2, and produces a function to add 2 to its arguments</li>
@@ -3773,28 +3385,28 @@ Then how are statements such as</p>
 <li>This function takes the argument of 4 and returns a function of type <code>(integer -&gt; integer)</code></li>
 <li>This function takes the argument of 5 an returns an integer</li>
 </ul>
-<h3 class="mume-header" id="partial-application">Partial application</h3>
-
+<h3 id="partial-application">Partial application</h3>
 <ul>
 <li>This uses the way functions are evaluated by decomposing multi-argument functions into smaller functions with fewer arguments</li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token hvariable">add</span> <span class="token operator">::</span> <span class="token constant">Integer</span> <span class="token operator">-&gt;</span> <span class="token constant">Integer</span> <span class="token operator">-&gt;</span> <span class="token constant">Integer</span>
-  <span class="token hvariable">add</span> <span class="token hvariable">x</span> <span class="token hvariable">y</span> <span class="token operator">=</span> <span class="token hvariable">x</span> <span class="token operator">+</span> <span class="token hvariable">y</span>
-</pre><ul>
+<pre><code class="language-Haskell"><div>  add :: <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span>
+  add x y = x + y
+</div></code></pre>
+<ul>
 <li>This means (add 3) 4</li>
 <li>This function can then be partially applied as an argument for another function</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  addSix :: Integer -&gt; Integer
+<pre><code><div>  addSix :: Integer -&gt; Integer
   addSix = add 6
-</code></pre><ul>
+</div></code></pre>
+<ul>
 <li>The function add required more that one argument and only one is passed</li>
 <li>It then returns a new function that takes the remaining argument and returns the result</li>
 </ul>
 <ul>
 <li>Partial application means fixing the values of inputs to a function to produce a more specific function</li>
 </ul>
-<h3 class="mume-header" id="map">Map</h3>
-
+<h3 id="map">Map</h3>
 <ul>
 <li>
 <p>Map is a high-order function that takes a list and the function to be applied to all elements and returns a list after applying the function</p>
@@ -3803,12 +3415,12 @@ Then how are statements such as</p>
 <p>Eg:</p>
 </li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token builtin">map</span> <span class="token punctuation">(</span><span class="token builtin">max</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
-</pre><ul>
+<pre><code class="language-Haskell"><div>  map (max <span class="hljs-number">3</span>) [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+</div></code></pre>
+<ul>
 <li>This will return <code>[3,3,4,5]</code></li>
 </ul>
-<h3 class="mume-header" id="filter">Filter</h3>
-
+<h3 id="filter">Filter</h3>
 <ul>
 <li>
 <p>A high-order function which takes a predicate and a list and returns the items that satisfy the condition</p>
@@ -3817,8 +3429,9 @@ Then how are statements such as</p>
 <p>Eg:</p>
 </li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token builtin">filter</span> <span class="token punctuation">(</span><span class="token operator">&gt;</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
-</pre><ul>
+<pre><code class="language-Haskell"><div>  filter (&gt;<span class="hljs-number">6</span>) [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]
+</div></code></pre>
+<ul>
 <li>
 <p>This will return <code>8,9</code></p>
 </li>
@@ -3829,50 +3442,53 @@ Then how are statements such as</p>
 <p>Eg:</p>
 </li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token hvariable">isEven</span> <span class="token hvariable">n</span> <span class="token operator">=</span> <span class="token hvariable">n</span> `<span class="token builtin">mod</span>` <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>
-  <span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token hvariable">isEven</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
-</pre><ul>
+<pre><code class="language-Haskell"><div>  isEven n = n `mod` <span class="hljs-number">2</span> == <span class="hljs-number">0</span>
+  filter(isEven) [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+</div></code></pre>
+<ul>
 <li>This will return <code>[2,4,6]</code></li>
 </ul>
-<h3 class="mume-header" id="fold">Fold</h3>
-
+<h3 id="fold">Fold</h3>
 <ul>
 <li>Reduces a list to a single value using recursion</li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token builtin">foldl</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token number">0</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
-</pre><ul>
+<pre><code class="language-Haskell"><div>  foldl (+) <span class="hljs-number">0</span> [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+</div></code></pre>
+<ul>
 <li>The calculation that takes place is (((0 + 2) + 3) + 4) + 5</li>
 </ul>
 <ul>
 <li>foldl starts the recursion at the left, foldr starts at the right</li>
 </ul>
-<h2 class="mume-header" id="lists-in-functional-programming">Lists in functional programming</h2>
-
+<h2 id="lists-in-functional-programming">Lists in functional programming</h2>
 <ul>
 <li>Like variables, lists are immutable</li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token hvariable">names</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Anna&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Bob&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Jo&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Keira&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Tom&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;George&quot;</span><span class="token punctuation">]</span>
-  <span class="token hvariable">numbers</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">83</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">77</span><span class="token punctuation">]</span>
-  <span class="token builtin">head</span> <span class="token hvariable">names</span>
-  <span class="token builtin">tail</span> <span class="token hvariable">names</span>
-  <span class="token builtin">head</span> <span class="token hvariable">numbers</span>
-  <span class="token builtin">tail</span> <span class="token hvariable">numbers</span>
-</pre><ul>
+<pre><code class="language-Haskell"><div>  names = [<span class="hljs-string">"Anna"</span>, <span class="hljs-string">"Bob"</span>, <span class="hljs-string">"Jo"</span>, <span class="hljs-string">"Keira"</span>, <span class="hljs-string">"Tom"</span>, <span class="hljs-string">"George"</span>]
+  numbers = [<span class="hljs-number">3</span>,<span class="hljs-number">7</span>,<span class="hljs-number">14</span>,<span class="hljs-number">83</span>,<span class="hljs-number">2</span>,<span class="hljs-number">77</span>]
+  head names
+  tail names
+  head numbers
+  tail numbers
+</div></code></pre>
+<ul>
 <li>This will return</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-"><code>  [&quot;Anna&quot;]
+<pre><code><div>  [&quot;Anna&quot;]
   [&quot;Bob&quot;, &quot;Jo&quot;, &quot;Keira&quot;, &quot;Tom&quot;, &quot;George&quot;]
   [3]
   [7,14,83,2,77]
-</code></pre><ul>
+</div></code></pre>
+<ul>
 <li>Tail can be applied repeatedly</li>
 </ul>
 <ul>
 <li>The following defines a new list and checks if it is empty</li>
 </ul>
-<pre data-role="codeBlock" data-info="Haskell" class="language-haskell">  <span class="token keyword">let</span> <span class="token hvariable">newList</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-  <span class="token builtin">null</span> <span class="token hvariable">newList</span>
-</pre><ul>
+<pre><code class="language-Haskell"><div>  <span class="hljs-keyword">let</span> newList = []
+  null newList
+</div></code></pre>
+<ul>
 <li>
 <p>This will return <code>True</code></p>
 </li>
@@ -3894,16 +3510,5 @@ Then how are statements such as</p>
 <li><code>length numbers</code> returns the length of numbers</li>
 </ul>
 
-      </div>
-      
-      
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    </body></html>
+    </body>
+    </html>

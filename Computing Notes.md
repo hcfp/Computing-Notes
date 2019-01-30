@@ -1121,6 +1121,50 @@ The following are the units to count bytes in base-2
   - The packet is then sent to the application layer
 - The application layer presents the data to the user
 
+## MAC addresses
+
+- Media access control addresses
+- 12 digits of hexadecimal hardcoded into a NIC
+- Uniquely identifies any device
+
+## Well known ports
+
+- The port determines the application that deals with the packet
+
+* 20 - FPT data
+* 21 - FTP control
+* 22  SSH
+* 23 - Telnet
+* 25 - SMTP
+* 80 & 8080 - HTTP
+* 110 - POP3
+* 143 - IMAP
+* 443 - HTTPS
+
+- The client port that a server responds to is temporary and arbitrary
+  - Stops hackers from knowing which ports are open
+
+## Transferring files with FTP
+
+- FTP is used to transfer data across a network such as the internet
+- It is a high level protocol in the application layer
+- The FTP software uses the protocol to generate FTP commands automatically
+- FTP may be used by software companies to offer updates, photographers to transfer images to newspapers
+- Generally require a username and password, could be configured for anonymous use
+
+## SSH
+
+- Allows secure remote access to manage a computer
+- It is a secure and modern replacement for Telnet which does not use encryption
+- It uses public key cryptography and a digital certificate
+- Used by network administrators to manage servers
+- The commands are similar to Linux
+
+### Using application level protocols with SSH
+
+- You can create a tunnel through the SSH (port 22) through with HTTP, POP3 and SMTP can operate
+- Eg. a HTTP get request can be sent securely using SSH but also bypasses the restrictions on the port
+
 # Fundamentals of databases
 
 ## Modelling data requirements
