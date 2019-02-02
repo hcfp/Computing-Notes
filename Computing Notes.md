@@ -915,7 +915,7 @@ The following are the units to count bytes in base-2
 * websitename.co.uk is a domain name
 * mail.websitename.co.uk is a FQDN
 
-### IP addresses
+### What is an IP address
 
 - An internet protocol address is a unique address that is assigned to a network device
 - It indicates where a packet of data is being sent or is being sent from
@@ -1121,13 +1121,13 @@ The following are the units to count bytes in base-2
   - The packet is then sent to the application layer
 - The application layer presents the data to the user
 
-## MAC addresses
+### MAC addresses
 
 - Media access control addresses
-- 12 digits of hexadecimal hardcoded into a NIC
+- 12 digits of hexadecimal hard-coded into a NIC
 - Uniquely identifies any device
 
-## Well known ports
+### Well known ports
 
 - The port determines the application that deals with the packet
 
@@ -1144,7 +1144,7 @@ The following are the units to count bytes in base-2
 - The client port that a server responds to is temporary and arbitrary
   - Stops hackers from knowing which ports are open
 
-## Transferring files with FTP
+### Transferring files with FTP
 
 - FTP is used to transfer data across a network such as the internet
 - It is a high level protocol in the application layer
@@ -1152,7 +1152,7 @@ The following are the units to count bytes in base-2
 - FTP may be used by software companies to offer updates, photographers to transfer images to newspapers
 - Generally require a username and password, could be configured for anonymous use
 
-## SSH
+### SSH
 
 - Allows secure remote access to manage a computer
 - It is a secure and modern replacement for Telnet which does not use encryption
@@ -1160,10 +1160,135 @@ The following are the units to count bytes in base-2
 - Used by network administrators to manage servers
 - The commands are similar to Linux
 
-### Using application level protocols with SSH
+#### Using application level protocols with SSH
 
 - You can create a tunnel through the SSH (port 22) through with HTTP, POP3 and SMTP can operate
 - Eg. a HTTP get request can be sent securely using SSH but also bypasses the restrictions on the port
+
+### How emails are sent and retrieved
+
+- The mail server interacts with all incoming and outgoing emails
+- The server routes emails using a database of the networks email addresses
+  - It stores the emails until they are retrieves
+- Post Office Protocol (POP3) stores email until they are transferred to the local computer where they are deleted from the server
+  - This does not allow syncing across devices
+- Internet Message Access Protocol (IMAP) keeps emails on the server
+  - Maintains synchronicity
+- Simple Mail Transfer Protocol (SMTP) transfers emails between servers and from a client to server
+
+![Email protocols](http://www.tech-faq.com/wp-content/uploads/smtp.gif)
+
+### Web servers
+
+- The web server hosts the website and handles client requests
+- Client requests and responses are made using HTTP
+  - The HTTP requests from a client will ask for some content
+  - The response will return the content
+- Webpages consist of HTML for content, CSS for styling and JavaScript for running client-side code
+
+* The server handles traffic and may redirect connections to other servers
+
+### How the browser renders webpages
+
+- The HTTP responses containing the webpage are parsed to fit a hierarchical model
+- The HTML is broken down into a hierarchy of tags called a Document Object Model
+
+![DOM](https://www.w3schools.com/js/pic_htmltree.gif)
+
+- The CSS is parsed into a CSSOM
+- Then the JavaScript is parsed and executed
+- Further HTTP requests are made to retrieve other content (images etc.)
+- The browser then  renders the page
+
+## IP addresses
+
+- An Internet Protocol address is a unique address used to identify a host computer or network node communicating using IP on the internet
+
+### IP standards
+
+- IPv4 has 4 billion addresses
+- IPv6 has many more
+  - Needed due to the internet of things
+- IPv4 and IPv6 are incompatible
+  - All hardware and software using IPv4 would have to be updated or replaced
+
+### IPv4
+
+- 32-bit number written in dotted-decimal
+- Each part is 8 bits of binary (range of 0-255)
+- 172.16.144.35 - 32 bits/4 bytes
+
+### Reserved IP addresses
+
+- 127.x.x.x are private and non-routable
+  - Used within local networks
+- x.x.x.0 is the network identifier
+- x.x.x.255 is used when broadcasting to all hosts on a sub network
+- x.x.x.1 router default
+
+### Network and host identifiers
+
+- An IPv4 address has two parts
+  - One to identify the network and one for the host device
+- The network part is the first n bits (network ID)
+- The remaining is the host (host ID)
+
+### Classful addressing
+
+- Classes define the ratio between the network and host IDs
+- Class A networks - few network IDs and many host IDs
+- Class C - many network IDs and few host IDs
+- The IP address is always split in a few possible positions
+
+### Classless addressing
+
+- Specifies a number of bits in the subnet mask
+- 103.27.104.92/24
+- /24 shows that the first 24 bits are the network ID
+- The advantage is that the split can be anywhere in the 32 bits
+- This is more flexible than the limited IP blocks in classful addressing
+
+### Public and private IPs
+
+- A public IP is globally unique
+- It can be addressed directly by any device
+- Within a local network, addresses can be private
+  - The router then forwards data to the correct local device
+  - Local IPs do note need registration with an Internet registry
+  - Therefore, they do not need to be unique
+- The advantage of local IPs is that it conserves the number of unique IPv4 addresses
+
+### Dynamic Host Configuration Protocol
+
+- A DHCP server assigns dynamic IP addresses
+- IP addresses are assigned to a device for a duration and freed when not in use
+  - Once freed it can be used by other devices connecting to the network
+- DHCP provides the subnet mask
+  - Which solves problems with manual configuration and centrally handling frequent changes in IP addresses (mobile devices)
+- DCHP is used on local networks to allocate private addresses
+- Static Ips are uncommon for small networks
+
+### Network Address Translation
+
+- Converts IP addresses as they pass (via a router) from a public address space (the Internet) and a private address space (a LAN)
+- Translates private addresses as they are not routable
+- Private address are also not unique therefore a server cannot communicate directly with the host
+
+1. An outgoing request is made by a computer on a private network contains its own IP address and port number
+2. The router logs an entry in the translation table
+3. It then swaps the packet IP address and port number for its external IP address and unique port number
+4. An incoming response is identified by the port number
+5. It is then given the internal IP address and port number
+
+- This is a solution to the lack of IP addresses
+  - Only needed until IPv6 is the standard
+- It automatically creates a firewall between internal and external networks which increases security
+
+### Port forwarding
+
+- Needed when a public computer wants to communicate with a server running on a local network
+- There is not direct access to the server, so NAT forwards all requests to a particular IP address an port to the port of the internal server using a private IP address
+- Requests to access the sever are sent to the router which can filter out packets for certain computers and applications
 
 # Fundamentals of databases
 

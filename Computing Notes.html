@@ -1324,7 +1324,7 @@ Some CPUs have Level 3 cache</li>
 <li><a href="http://websitename.co.uk">websitename.co.uk</a> is a domain name</li>
 <li><a href="http://mail.websitename.co.uk">mail.websitename.co.uk</a> is a FQDN</li>
 </ul>
-<h3 id="ip-addresses">IP addresses</h3>
+<h3 id="what-is-an-ip-address">What is an IP address</h3>
 <ul>
 <li>An internet protocol address is a unique address that is assigned to a network device</li>
 <li>It indicates where a packet of data is being sent or is being sent from</li>
@@ -1596,13 +1596,13 @@ Some CPUs have Level 3 cache</li>
 </li>
 <li>The application layer presents the data to the user</li>
 </ul>
-<h2 id="mac-addresses">MAC addresses</h2>
+<h3 id="mac-addresses">MAC addresses</h3>
 <ul>
 <li>Media access control addresses</li>
-<li>12 digits of hexadecimal hardcoded into a NIC</li>
+<li>12 digits of hexadecimal hard-coded into a NIC</li>
 <li>Uniquely identifies any device</li>
 </ul>
-<h2 id="well-known-ports">Well known ports</h2>
+<h3 id="well-known-ports">Well known ports</h3>
 <ul>
 <li>The port determines the application that deals with the packet</li>
 </ul>
@@ -1624,7 +1624,7 @@ Some CPUs have Level 3 cache</li>
 </ul>
 </li>
 </ul>
-<h2 id="transferring-files-with-ftp">Transferring files with FTP</h2>
+<h3 id="transferring-files-with-ftp">Transferring files with FTP</h3>
 <ul>
 <li>FTP is used to transfer data across a network such as the internet</li>
 <li>It is a high level protocol in the application layer</li>
@@ -1632,7 +1632,7 @@ Some CPUs have Level 3 cache</li>
 <li>FTP may be used by software companies to offer updates, photographers to transfer images to newspapers</li>
 <li>Generally require a username and password, could be configured for anonymous use</li>
 </ul>
-<h2 id="ssh">SSH</h2>
+<h3 id="ssh">SSH</h3>
 <ul>
 <li>Allows secure remote access to manage a computer</li>
 <li>It is a secure and modern replacement for Telnet which does not use encryption</li>
@@ -1640,10 +1640,173 @@ Some CPUs have Level 3 cache</li>
 <li>Used by network administrators to manage servers</li>
 <li>The commands are similar to Linux</li>
 </ul>
-<h3 id="using-application-level-protocols-with-ssh">Using application level protocols with SSH</h3>
+<h4 id="using-application-level-protocols-with-ssh">Using application level protocols with SSH</h4>
 <ul>
 <li>You can create a tunnel through the SSH (port 22) through with HTTP, POP3 and SMTP can operate</li>
 <li>Eg. a HTTP get request can be sent securely using SSH but also bypasses the restrictions on the port</li>
+</ul>
+<h3 id="how-emails-are-sent-and-retrieved">How emails are sent and retrieved</h3>
+<ul>
+<li>The mail server interacts with all incoming and outgoing emails</li>
+<li>The server routes emails using a database of the networks email addresses
+<ul>
+<li>It stores the emails until they are retrieves</li>
+</ul>
+</li>
+<li>Post Office Protocol (POP3) stores email until they are transferred to the local computer where they are deleted from the server
+<ul>
+<li>This does not allow syncing across devices</li>
+</ul>
+</li>
+<li>Internet Message Access Protocol (IMAP) keeps emails on the server
+<ul>
+<li>Maintains synchronicity</li>
+</ul>
+</li>
+<li>Simple Mail Transfer Protocol (SMTP) transfers emails between servers and from a client to server</li>
+</ul>
+<p><img src="http://www.tech-faq.com/wp-content/uploads/smtp.gif" alt="Email protocols"></p>
+<h3 id="web-servers">Web servers</h3>
+<ul>
+<li>The web server hosts the website and handles client requests</li>
+<li>Client requests and responses are made using HTTP
+<ul>
+<li>The HTTP requests from a client will ask for some content</li>
+<li>The response will return the content</li>
+</ul>
+</li>
+<li>Webpages consist of HTML for content, CSS for styling and JavaScript for running client-side code</li>
+</ul>
+<ul>
+<li>The server handles traffic and may redirect connections to other servers</li>
+</ul>
+<h3 id="how-the-browser-renders-webpages">How the browser renders webpages</h3>
+<ul>
+<li>The HTTP responses containing the webpage are parsed to fit a hierarchical model</li>
+<li>The HTML is broken down into a hierarchy of tags called a Document Object Model</li>
+</ul>
+<p><img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="DOM"></p>
+<ul>
+<li>The CSS is parsed into a CSSOM</li>
+<li>Then the JavaScript is parsed and executed</li>
+<li>Further HTTP requests are made to retrieve other content (images etc.)</li>
+<li>The browser then  renders the page</li>
+</ul>
+<h2 id="ip-addresses">IP addresses</h2>
+<ul>
+<li>An Internet Protocol address is a unique address used to identify a host computer or network node communicating using IP on the internet</li>
+</ul>
+<h3 id="ip-standards">IP standards</h3>
+<ul>
+<li>IPv4 has 4 billion addresses</li>
+<li>IPv6 has many more
+<ul>
+<li>Needed due to the internet of things</li>
+</ul>
+</li>
+<li>IPv4 and IPv6 are incompatible
+<ul>
+<li>All hardware and software using IPv4 would have to be updated or replaced</li>
+</ul>
+</li>
+</ul>
+<h3 id="ipv4">IPv4</h3>
+<ul>
+<li>32-bit number written in dotted-decimal</li>
+<li>Each part is 8 bits of binary (range of 0-255)</li>
+<li>172.16.144.35 - 32 bits/4 bytes</li>
+</ul>
+<h3 id="reserved-ip-addresses">Reserved IP addresses</h3>
+<ul>
+<li>127.x.x.x are private and non-routable
+<ul>
+<li>Used within local networks</li>
+</ul>
+</li>
+<li>x.x.x.0 is the network identifier</li>
+<li>x.x.x.255 is used when broadcasting to all hosts on a sub network</li>
+<li>x.x.x.1 router default</li>
+</ul>
+<h3 id="network-and-host-identifiers">Network and host identifiers</h3>
+<ul>
+<li>An IPv4 address has two parts
+<ul>
+<li>One to identify the network and one for the host device</li>
+</ul>
+</li>
+<li>The network part is the first n bits (network ID)</li>
+<li>The remaining is the host (host ID)</li>
+</ul>
+<h3 id="classful-addressing">Classful addressing</h3>
+<ul>
+<li>Classes define the ratio between the network and host IDs</li>
+<li>Class A networks - few network IDs and many host IDs</li>
+<li>Class C - many network IDs and few host IDs</li>
+<li>The IP address is always split in a few possible positions</li>
+</ul>
+<h3 id="classless-addressing">Classless addressing</h3>
+<ul>
+<li>Specifies a number of bits in the subnet mask</li>
+<li>103.27.104.92/24</li>
+<li>/24 shows that the first 24 bits are the network ID</li>
+<li>The advantage is that the split can be anywhere in the 32 bits</li>
+<li>This is more flexible than the limited IP blocks in classful addressing</li>
+</ul>
+<h3 id="public-and-private-ips">Public and private IPs</h3>
+<ul>
+<li>A public IP is globally unique</li>
+<li>It can be addressed directly by any device</li>
+<li>Within a local network, addresses can be private
+<ul>
+<li>The router then forwards data to the correct local device</li>
+<li>Local IPs do note need registration with an Internet registry</li>
+<li>Therefore, they do not need to be unique</li>
+</ul>
+</li>
+<li>The advantage of local IPs is that it conserves the number of unique IPv4 addresses</li>
+</ul>
+<h3 id="dynamic-host-configuration-protocol">Dynamic Host Configuration Protocol</h3>
+<ul>
+<li>A DHCP server assigns dynamic IP addresses</li>
+<li>IP addresses are assigned to a device for a duration and freed when not in use
+<ul>
+<li>Once freed it can be used by other devices connecting to the network</li>
+</ul>
+</li>
+<li>DHCP provides the subnet mask
+<ul>
+<li>Which solves problems with manual configuration and centrally handling frequent changes in IP addresses (mobile devices)</li>
+</ul>
+</li>
+<li>DCHP is used on local networks to allocate private addresses</li>
+<li>Static Ips are uncommon for small networks</li>
+</ul>
+<h3 id="network-address-translation">Network Address Translation</h3>
+<ul>
+<li>Converts IP addresses as they pass (via a router) from a public address space (the Internet) and a private address space (a LAN)</li>
+<li>Translates private addresses as they are not routable</li>
+<li>Private address are also not unique therefore a server cannot communicate directly with the host</li>
+</ul>
+<ol>
+<li>An outgoing request is made by a computer on a private network contains its own IP address and port number</li>
+<li>The router logs an entry in the translation table</li>
+<li>It then swaps the packet IP address and port number for its external IP address and unique port number</li>
+<li>An incoming response is identified by the port number</li>
+<li>It is then given the internal IP address and port number</li>
+</ol>
+<ul>
+<li>This is a solution to the lack of IP addresses
+<ul>
+<li>Only needed until IPv6 is the standard</li>
+</ul>
+</li>
+<li>It automatically creates a firewall between internal and external networks which increases security</li>
+</ul>
+<h3 id="port-forwarding">Port forwarding</h3>
+<ul>
+<li>Needed when a public computer wants to communicate with a server running on a local network</li>
+<li>There is not direct access to the server, so NAT forwards all requests to a particular IP address an port to the port of the internal server using a private IP address</li>
+<li>Requests to access the sever are sent to the router which can filter out packets for certain computers and applications</li>
 </ul>
 <h1 id="fundamentals-of-databases">Fundamentals of databases</h1>
 <h2 id="modelling-data-requirements">Modelling data requirements</h2>
