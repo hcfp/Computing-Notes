@@ -235,6 +235,7 @@ The following are the units to count bytes in base-2
 ## Data encryption
 
 - Encryption is the transformation of data from one form to another to prevent third parties from being able to understand it
+
 * The original data is known as plaintext
 * The encrypted data is known as ciphertext
 
@@ -1265,7 +1266,7 @@ The following are the units to count bytes in base-2
   - Once freed it can be used by other devices connecting to the network
 - DHCP provides the subnet mask
   - Which solves problems with manual configuration and centrally handling frequent changes in IP addresses (mobile devices)
-- DCHP is used on local networks to allocate private addresses
+- DHCP is used on local networks to allocate private addresses
 - Static Ips are uncommon for small networks
 
 ### Network Address Translation
@@ -1957,6 +1958,7 @@ ENDSUB
 
 * An array can be used if the maximum number of data items is small and is known in advance
 * The empty array must be declared in advance and could be used to hold a priority queue
+
 - The algorithm for inserting an item into a sorted list
 
 ```
@@ -2254,6 +2256,7 @@ There are different notations
 3. can be shown as a function
   $ f : S \rightarrow \mathbb{R} $
   $\text{ where } S \text{ is the set of } \{0,1,2,3\} \text{ and } \mathbb{R} \text{ is the set of all real numbers}$
+
 - Example:
   - $0\rightarrow 2.0$
   - $1\rightarrow \pi$
@@ -2524,6 +2527,7 @@ $$ cos \Theta =  \frac{(u • v)}{(\Vert u \Vert • \Vert v \Vert)} $$
   - be assigned to a variable
   - be assigned as an argument
   - be returned in a function call
+
 * Functions are first-class objects and therefore can be passed as arguments
 
 ### Advantages of functional languages
