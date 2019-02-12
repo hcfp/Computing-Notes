@@ -1,391 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Computing Notes.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
-<style>
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
-	font-size: 14px;
-	padding: 0 12px;
-	line-height: 22px;
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	color: #4080D0;
-	text-decoration: none;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code,
-h6 code {
-	font-size: inherit;
-	line-height: auto;
-}
-
-a:hover {
-	color: #4080D0;
-	text-decoration: underline;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left: 5px solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 14px;
-	line-height: 19px;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-.mac code {
-	font-size: 12px;
-	line-height: 18px;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-/** Theming */
-
-.vscode-light,
-.vscode-light pre code {
-	color: rgb(30, 30, 30);
-}
-
-.vscode-dark,
-.vscode-dark pre code {
-	color: #DDD;
-}
-
-.vscode-high-contrast,
-.vscode-high-contrast pre code {
-	color: white;
-}
-
-.vscode-light code {
-	color: #A31515;
-}
-
-.vscode-dark code {
-	color: #D7BA7D;
-}
-
-.vscode-light pre:not(.hljs),
-.vscode-light code > div {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre:not(.hljs),
-.vscode-dark code > div {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre:not(.hljs),
-.vscode-high-contrast code > div {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-.vscode-light blockquote,
-.vscode-dark blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.vscode-high-contrast blockquote {
-	background: transparent;
-	border-color: #fff;
-}
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Fundamentals of data representation</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
-
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
-</head>
-<body>
-<h1 id="fundamentals-of-data-representation">Fundamentals of data representation</h1>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 id="fundamentals-of-data-representation">Fundamentals of data representation</h1>
 <h2 id="number-systems">Number systems</h2>
 <ul>
 <li>Natural numbers - ℕ = {0, 1, 2, 3, … }</li>
@@ -1685,8 +1321,8 @@ Some CPUs have Level 3 cache</li>
 <li>A FQDN includes the host server name (www, mail, ftp) depending on the resource being requested</li>
 </ul>
 <ul>
-<li>websitename.co.uk is a domain name</li>
-<li>mail.websitename.co.uk is a FQDN</li>
+<li><a href="http://websitename.co.uk">websitename.co.uk</a> is a domain name</li>
+<li><a href="http://mail.websitename.co.uk">mail.websitename.co.uk</a> is a FQDN</li>
 </ul>
 <h3 id="what-is-an-ip-address">What is an IP address</h3>
 <ul>
@@ -2504,19 +2140,19 @@ Some CPUs have Level 3 cache</li>
 <li>The ALTER TABLE statement is used to add, delete or modify fields</li>
 <li>To add a column:</li>
 </ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
+<pre><code class="language-sql"><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
 <span class="hljs-keyword">ADD</span> Department <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">10</span>)
 </div></code></pre>
 <ul>
 <li>To delete a column:</li>
 </ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
+<pre><code class="language-sql"><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
 <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> HireDate
 </div></code></pre>
 <ul>
 <li>To change the data type of a column:</li>
 </ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
+<pre><code class="language-sql"><div><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Employee
 <span class="hljs-keyword">MODIFY</span> <span class="hljs-keyword">COLUMN</span> EmpName <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
 </div></code></pre>
 <h3 id="defining-linked-tables">Defining linked tables</h3>
@@ -2553,14 +2189,14 @@ Some CPUs have Level 3 cache</li>
 <ul>
 <li>The CourseAttendance table is created using the SQL statements:</li>
 </ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> CourseAttendance
+<pre><code class="language-sql"><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> CourseAttendance
 (
 
   CourseID <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">6</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
   EmpID <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> MULL,
   CourseDate <span class="hljs-built_in">DATE</span>,
-  FOREIGN <span class="hljs-keyword">KEY</span> CourseID <span class="hljs-keyword">REFERENCES</span> Course(CourseID),
-  FOREIGN <span class="hljs-keyword">KEY</span> EmpID <span class="hljs-keyword">REFERENCES</span> Employee(EmpID),
+  <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> CourseID <span class="hljs-keyword">REFERENCES</span> Course(CourseID),
+  <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> EmpID <span class="hljs-keyword">REFERENCES</span> Employee(EmpID),
   PRIMARY <span class="hljs-keyword">KEY</span> (CourseID, EmpID)
 
 )
@@ -2571,14 +2207,14 @@ Some CPUs have Level 3 cache</li>
 <li>INSERT INTO</li>
 <li>This statement is used to insert a new record into a table. The syntax is:</li>
 </ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> tableName(column1, column2)
+<pre><code class="language-sql"><div><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> tableName(column1, column2)
 <span class="hljs-keyword">VALUES</span> (value1, value2)
 </div></code></pre>
 <ul>
 <li>UPDATE</li>
 <li>This statement is used to update a record. The syntax is:</li>
 </ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">UPDATE</span> tableName
+<pre><code class="language-sql"><div><span class="hljs-keyword">UPDATE</span> tableName
 <span class="hljs-keyword">SET</span> column1 = value1, column2 = value2,
 <span class="hljs-keyword">WHERE</span> columnX = <span class="hljs-keyword">value</span>
 </div></code></pre>
@@ -2586,7 +2222,7 @@ Some CPUs have Level 3 cache</li>
 <li>DELETE</li>
 <li>This statement is used to delete a record from a database table. The syntax is:</li>
 </ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> tableName
+<pre><code class="language-sql"><div><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> tableName
 <span class="hljs-keyword">WHERE</span> columnX = <span class="hljs-keyword">value</span>
 </div></code></pre>
 <h2 id="client-server-databases">Client-Server databases</h2>
@@ -2625,7 +2261,7 @@ Some CPUs have Level 3 cache</li>
 <ul>
 <li>If two users are attempting to update two records, deadlock can occur where neither can proceed</li>
 </ul>
-<pre class="hljs"><code><div>User1                                   User2
+<pre><code class="language-text"><div>User1                                   User2
 Locks Customer A's record               Locks Customer B's record
 Tries to access Customer B's record     Tries to access Customer A's record
 Waits...                                Waits...
@@ -2672,13 +2308,13 @@ Waits...                                Waits...
 <li>The start state has an arrow pointing into it</li>
 <li>Double circle is the accept state</li>
 </ul>
-<p><img src="https://www.google.co.uk/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=imgres&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiH-4uZjv7dAhWS_qQKHdBJCL0QjRx6BAgBEAU&amp;url=https://en.wikipedia.org/wiki/Finite-state_machine&amp;psig=AOvVaw30USiIWK7v6i32xlJznYRN&amp;ust=1539337769955250" alt="Finite state machine"></p>
+<p><img src="https://www.google.co.uk/url?sa%3Di%26amp%3Brct%3Dj%26amp%3Bq%3D%26amp%3Besrc%3Ds%26amp%3Bsource%3Dimgres%26amp%3Bcd%3D%26amp%3Bcad%3Drja%26amp%3Buact%3D8%26amp%3Bved%3D2ahUKEwiH-4uZjv7dAhWS_qQKHdBJCL0QjRx6BAgBEAU%26amp%3Burl%3Dhttps%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFinite-state_machine%26amp%3Bpsig%3DAOvVaw30USiIWK7v6i32xlJznYRN%26amp%3Bust%3D1539337769955250" alt="Finite state machine"></p>
 <h3 id="state-transition-tables">State transition tables</h3>
 <ul>
 <li>Alternative way to represent an FSM</li>
 </ul>
-<p><img src="https://www.google.co.uk/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=images&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjjrt3Kjv7dAhWIMewKHafJD4sQjRx6BAgBEAU&amp;url=http://www2.elo.utfsm.cl/~lsb/elo211/aplicaciones/katz/chapter9/chapter09.doc2.html&amp;psig=AOvVaw2GxNI-A6NEzylAea5mNZPL&amp;ust=1539337869451123" alt="State transition table"></p>
-<h3 id="mealy-machines">Mealy Machines</h3>
+<p><img src="https://www.google.co.uk/url?sa%3Di%26amp%3Brct%3Dj%26amp%3Bq%3D%26amp%3Besrc%3Ds%26amp%3Bsource%3Dimages%26amp%3Bcd%3D%26amp%3Bcad%3Drja%26amp%3Buact%3D8%26amp%3Bved%3D2ahUKEwjjrt3Kjv7dAhWIMewKHafJD4sQjRx6BAgBEAU%26amp%3Burl%3Dhttp%3A%2F%2Fwww2.elo.utfsm.cl%2F~lsb%2Felo211%2Faplicaciones%2Fkatz%2Fchapter9%2Fchapter09.doc2.html%26amp%3Bpsig%3DAOvVaw2GxNI-A6NEzylAea5mNZPL%26amp%3Bust%3D1539337869451123" alt="State transition table"></p>
+<h3 id="mealy-machines-1">Mealy Machines</h3>
 <ul>
 <li>Is an FSM with an output</li>
 <li>Outputs determined by both its current state and the current input</li>
@@ -2716,10 +2352,10 @@ Waits...                                Waits...
 </ul>
 </li>
 <li>Integers (+ve and -ve) Z = {-2, -1, 0, 1 , 2, ...}</li>
-<li>The set of all rational numbers is $\mathbb{Q}$.
+<li>The set of all rational numbers is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="double-struck">Q</mi></mrow><annotation encoding="application/x-tex">\mathbb{Q}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85556em;vertical-align:-0.16667em;"></span><span class="mord"><span class="mord mathbb">Q</span></span></span></span></span>.
 <ul>
 <li>This includes all numbers that can be expressed as a fraction</li>
-<li>$\mathbb{R}$ is the set of all real numbers</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">R</span></span></span></span></span> is the set of all real numbers</li>
 <li>Includes irrational numbers</li>
 </ul>
 </li>
@@ -2729,7 +2365,7 @@ Waits...                                Waits...
 <li>A finite set's elements can be counted by natural numbers</li>
 <li>The <strong>cardinality</strong> is the number of elements</li>
 <li>ℕ is a countable infinite set</li>
-<li>$\mathbb{R}$ is not countable</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">R</span></span></span></span></span> is not countable</li>
 </ul>
 <h3 id="defining-a-set-by-set-comprehension">Defining a set by set comprehension</h3>
 <ul>
@@ -3005,14 +2641,14 @@ Waits...                                Waits...
 <ul>
 <li>When the array is full and the rear pointer points to the last element of the array, it will be made to point at the first element</li>
 </ul>
-<pre class="hljs"><code><div>SUB initialise
+<pre><code><div>SUB initialise
   front := 0
   rear := -1
   size := 0
   maxSize := size of array
 ENDSUB
 </div></code></pre>
-<pre class="hljs"><code><div>SUB isEmpty
+<pre><code><div>SUB isEmpty
   IF size = 0 then
     RETURN True
   ELSE
@@ -3020,7 +2656,7 @@ ENDSUB
   ENDIF
 ENDSUB
 </div></code></pre>
-<pre class="hljs"><code><div>SUB isFull
+<pre><code><div>SUB isFull
   IF size = maxSize THEN
     RETURN True
   ELSE
@@ -3028,7 +2664,7 @@ ENDSUB
   ENDIF
 ENDSUB
 </div></code></pre>
-<pre class="hljs"><code><div>SUB enqueue(newItem)
+<pre><code><div>SUB enqueue(newItem)
   IF isFull THEN
     OUTPUT &quot;Queue full&quot;
   ELSE
@@ -3038,7 +2674,7 @@ ENDSUB
   ENDIF
 ENDSUB
 </div></code></pre>
-<pre class="hljs"><code><div>SUB dequeue
+<pre><code><div>SUB dequeue
   IF isEmpty THEN
     OUTPUT &quot;Queue empty&quot;
     item := NULL
@@ -3084,7 +2720,7 @@ ENDSUB
 <ul>
 <li>The algorithm for inserting an item into a sorted list</li>
 </ul>
-<pre class="hljs"><code><div>  IF iSFull() THEN
+<pre><code><div>  IF iSFull() THEN
     OUTPUT('FULL')
   ELSE
     Find first greater
@@ -3128,7 +2764,7 @@ ENDSUB
 <li>isEmpty() - returns boolean</li>
 <li>isFull() - returns boolean</li>
 </ul>
-<pre class="hljs"><code><div>SUB isEmpty
+<pre><code><div>SUB isEmpty
   IF top = -1 THEN
     RETURN True
   ELSE
@@ -3136,7 +2772,7 @@ ENDSUB
   ENDIF
 ENDSUB
 </div></code></pre>
-<pre class="hljs"><code><div>SUB isFull
+<pre><code><div>SUB isFull
   IF top = maxSize THEN
     RETURN True
   ELSE
@@ -3144,7 +2780,7 @@ ENDSUB
   ENDIF
 ENDSUB
 </div></code></pre>
-<pre class="hljs"><code><div>SUB push(item)
+<pre><code><div>SUB push(item)
   IF isFull THEN
     OUTPUT &quot;Stack full&quot;
   ELSE
@@ -3153,7 +2789,7 @@ ENDSUB
   ENDIF
 ENDSUB
 </div></code></pre>
-<pre class="hljs"><code><div>SUB pop
+<pre><code><div>SUB pop
   IF isEmpty THEN
     OUTPUT &quot;Stack si empty&quot;
   ELSE
@@ -3470,17 +3106,17 @@ ENDSUB
 <p>There are different notations</p>
 <ol>
 <li>List [2.0, 3.14159, 2.71828]</li>
-<li>A n-vector over $ \mathbb{R} $ can be written $\mathbb{{R}}^n$
+<li>A n-vector over $ \mathbb{R} $ can be written <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\mathbb{{R}}^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord"><span class="mord mathbb">R</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span>
 4-vector over R such as [2.0, 3.14159, 2.71828, -1.0] can be written $ \mathbb{R} ^ 4 $</li>
 <li>can be shown as a function
-$ f : S \rightarrow \mathbb{R} $
-$\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text{ is the set of all real numbers}$</li>
+$ f : S \rightarrow \mathbb{R} <span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex">
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span>\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text{ is the set of all real numbers}$</li>
 </ol>
 <ul>
 <li>Example:
 <ul>
-<li>$0\rightarrow 2.0$</li>
-<li>$1\rightarrow \pi$</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>→</mo><mn>2.0</mn></mrow><annotation encoding="application/x-tex">0\rightarrow 2.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">0</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>→</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">1\rightarrow \pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span></span></li>
 </ul>
 </li>
 </ul>
@@ -3497,16 +3133,20 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <ul>
 <li>Used to find if object lies inside the area bound by two vectors</li>
 </ul>
-<p>$$\alpha u + \beta v \text{ where } \alpha + \beta = 1 \text{ and where } \alpha , \beta \geq 0 $$</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mi>u</mi><mo>+</mo><mi>β</mi><mi>v</mi><mtext> where </mtext><mi>α</mi><mo>+</mo><mi>β</mi><mo>=</mo><mn>1</mn><mtext> and where </mtext><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha u + \beta v \text{ where } \alpha + \beta = 1 \text{ and where } \alpha , \beta \geq 0 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord text"><span class="mord"> where </span></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord text"><span class="mord"> and where </span></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span></p>
 <p><img src="https://i.imgur.com/275QEpv.png" alt="Convex combination"></p>
 <h3 id="dot-product">Dot product</h3>
-<p>$$ u • v = u_1v_1 + u_2v_2 + ... + u_nv_n$$</p>
-<p>$$ [2,3,4] • [5,2,1] = 10 + 6 + 4 = 20 $$</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mi mathvariant="normal">•</mi><mi>v</mi><mo>=</mo><msub><mi>u</mi><mn>1</mn></msub><msub><mi>v</mi><mn>1</mn></msub><mo>+</mo><msub><mi>u</mi><mn>2</mn></msub><msub><mi>v</mi><mn>2</mn></msub><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><msub><mi>u</mi><mi>n</mi></msub><msub><mi>v</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">u • v = u_1v_1 + u_2v_2 + ... + u_nv_n
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mord">•</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo>]</mo><mi mathvariant="normal">•</mi><mo>[</mo><mn>5</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo><mo>=</mo><mn>10</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">[2,3,4] • [5,2,1] = 10 + 6 + 4 = 20 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mclose">]</span><span class="mord">•</span><span class="mopen">[</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span></span></p>
 <ul>
 <li>The dot product is a number, not a vector, and can be used to compare vectors</li>
 </ul>
 <h4 id="finding-angle-between-vectors">Finding angle between vectors</h4>
-<p>$$ cos \Theta =  \frac{(u • v)}{(\Vert u \Vert • \Vert v \Vert)} $$</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi mathvariant="normal">Θ</mi><mo>=</mo><mfrac><mrow><mo>(</mo><mi>u</mi><mi mathvariant="normal">•</mi><mi>v</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi mathvariant="normal">∥</mi><mi>u</mi><mi mathvariant="normal">∥</mi><mi mathvariant="normal">•</mi><mi mathvariant="normal">∥</mi><mi>v</mi><mi mathvariant="normal">∥</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">cos \Theta =  \frac{(u • v)}{(\Vert u \Vert • \Vert v \Vert)} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord">Θ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">∥</span><span class="mord mathdefault">u</span><span class="mord">∥</span><span class="mord">•</span><span class="mord">∥</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord">∥</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mord">•</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 <h1 id="oop-and-functional-programming">OOP and functional programming</h1>
 <h2 id="programming-paradigms">Programming paradigms</h2>
 <ul>
@@ -3549,7 +3189,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <ul>
 <li>A class is a template for an object where the attributes and methods are defined for all object of that class</li>
 </ul>
-<pre class="hljs"><code><div>  ClassName = Class
+<pre><code><div>  ClassName = Class
     Public
       //define all methods
     Private
@@ -3573,7 +3213,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <li>If you wanted to add a book to a stock system</li>
 <li>All objects in a class have the same structure and methods but each have their own data</li>
 </ul>
-<pre class="hljs"><code><div>  book1 = new StockItem(&quot;PT123&quot;, &quot;Book&quot; , &quot;Computer Science&quot;, 35)
+<pre><code><div>  book1 = new StockItem(&quot;PT123&quot;, &quot;Book&quot; , &quot;Computer Science&quot;, 35)
 </div></code></pre>
 <ul>
 <li>
@@ -3610,7 +3250,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <li>A class can inherit data and methods from a parent class</li>
 <li>A child class is called a subclass and a parent class is called a superclass</li>
 </ul>
-<p><img src="https://image.slidesharecdn.com/inheritancecontinues-1223274749680392-9/95/c-inheritance-composition-polymorphism-38-728.jpg?cb=1332142453" alt="inheritance diagram"></p>
+<p><img src="https://image.slidesharecdn.com/inheritancecontinues-1223274749680392-9/95/c-inheritance-composition-polymorphism-38-728.jpg?cb%3D1332142453" alt="inheritance diagram"></p>
 <ul>
 <li>Inheritance is used when object A is an object B</li>
 <li>Eg. Cat is an Animal and therefore can inherit from animal</li>
@@ -3648,7 +3288,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <li>The contents of the method is different but the name is the same</li>
 <li>This is called overriding</li>
 </ul>
-<pre class="hljs"><code><div>  Animal = Class
+<pre><code><div>  Animal = Class
     Public
       Procedure moveLeft
       Procedure moveRight
@@ -3722,7 +3362,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <li>An object may consist of many other objects but cannot be said to inherit their characteristics</li>
 <li>Eg. A house class will be made up of Walls, Doors, Windows and Roof classes</li>
 </ul>
-<pre class="hljs"><code><div>  House = Class
+<pre><code><div>  House = Class
     Public
       Procedure drawHouse
       Procedure getHousePosition
@@ -3756,7 +3396,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <li>The methods are specified in the interface but implemented in the class using the interface</li>
 <li>The programmer does not need to know how the objects in each class will respond to the message</li>
 </ul>
-<pre class="hljs"><code><div>  Public interface Switches
+<pre><code><div>  Public interface Switches
     Procedure SwitchOn
     Procedure SwitchOff
     Procedure SetTimer(aTime)
@@ -3797,7 +3437,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <ul>
 <li>A mapping of a domain to a co-domain
 <ul>
-<li>Eg $f: A \rightarrow B \vert f(x) = x^2$</li>
+<li>Eg <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi><mi mathvariant="normal">∣</mi><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f: A \rightarrow B \vert f(x) = x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></li>
 </ul>
 </li>
 <li>Does not have to be algebraic</li>
@@ -3858,7 +3498,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 </li>
 </ul>
 <p>To produce g(f(x)) with x = 4 in Haskell</p>
-<pre class="hljs"><code><div>  f x = x + <span class="hljs-number">3</span>
+<pre><code class="language-Haskell"><div>  f x = x + <span class="hljs-number">3</span>
   g x = <span class="hljs-number">2</span> * x^<span class="hljs-number">2</span>
   (g.f) <span class="hljs-number">4</span>
 </div></code></pre>
@@ -3872,7 +3512,7 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 </li>
 <li>The type of a function should be declared explicitly</li>
 </ul>
-<pre class="hljs"><code><div>  sumOfSquares :: <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span>
+<pre><code class="language-Haskell"><div>  sumOfSquares :: <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span>
   sumOfSquares x y = x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>
 </div></code></pre>
 <p>The last type in the type declaration is the type that is returned</p>
@@ -3887,13 +3527,13 @@ $\text{ where } S \text{ is the set of } {0,1,2,3} \text{ and } \mathbb{R} \text
 <h3 id="how-are-functions-evaluated">How are functions evaluated?</h3>
 <p>All functions in Haskell only take one argument
 Then how are statements such as</p>
-<pre class="hljs"><code><div>  add3Int x y z = x + y + z
+<pre><code class="language-Haskell"><div>  add3Int x y z = x + y + z
 </div></code></pre>
 <p>possible</p>
 <ul>
 <li>A function takes a parameter at a time</li>
 </ul>
-<pre class="hljs"><code><div>  add3Int :: integer -&gt; integer -&gt; integer -&gt; integer
+<pre><code class="language-Haskell"><div>  add3Int :: integer -&gt; integer -&gt; integer -&gt; integer
   <span class="hljs-comment">-- The type declaration can also be written as</span>
   add3Int :: integer -&gt; (integer -&gt; (integer -&gt; integer))
 </div></code></pre>
@@ -3912,14 +3552,14 @@ Then how are statements such as</p>
 <ul>
 <li>This uses the way functions are evaluated by decomposing multi-argument functions into smaller functions with fewer arguments</li>
 </ul>
-<pre class="hljs"><code><div>  add :: <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span>
+<pre><code class="language-Haskell"><div>  add :: <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span> -&gt; <span class="hljs-type">Integer</span>
   add x y = x + y
 </div></code></pre>
 <ul>
 <li>This means (add 3) 4</li>
 <li>This function can then be partially applied as an argument for another function</li>
 </ul>
-<pre class="hljs"><code><div>  addSix :: Integer -&gt; Integer
+<pre><code><div>  addSix :: Integer -&gt; Integer
   addSix = add 6
 </div></code></pre>
 <ul>
@@ -3938,7 +3578,7 @@ Then how are statements such as</p>
 <p>Eg:</p>
 </li>
 </ul>
-<pre class="hljs"><code><div>  map (max <span class="hljs-number">3</span>) [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+<pre><code class="language-Haskell"><div>  map (max <span class="hljs-number">3</span>) [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
 </div></code></pre>
 <ul>
 <li>This will return <code>[3,3,4,5]</code></li>
@@ -3952,7 +3592,7 @@ Then how are statements such as</p>
 <p>Eg:</p>
 </li>
 </ul>
-<pre class="hljs"><code><div>  filter (&gt;<span class="hljs-number">6</span>) [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]
+<pre><code class="language-Haskell"><div>  filter (&gt;<span class="hljs-number">6</span>) [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]
 </div></code></pre>
 <ul>
 <li>
@@ -3965,7 +3605,7 @@ Then how are statements such as</p>
 <p>Eg:</p>
 </li>
 </ul>
-<pre class="hljs"><code><div>  isEven n = n `mod` <span class="hljs-number">2</span> == <span class="hljs-number">0</span>
+<pre><code class="language-Haskell"><div>  isEven n = n `mod` <span class="hljs-number">2</span> == <span class="hljs-number">0</span>
   filter(isEven) [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
 </div></code></pre>
 <ul>
@@ -3975,7 +3615,7 @@ Then how are statements such as</p>
 <ul>
 <li>Reduces a list to a single value using recursion</li>
 </ul>
-<pre class="hljs"><code><div>  foldl (+) <span class="hljs-number">0</span> [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+<pre><code class="language-Haskell"><div>  foldl (+) <span class="hljs-number">0</span> [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
 </div></code></pre>
 <ul>
 <li>The calculation that takes place is (((0 + 2) + 3) + 4) + 5</li>
@@ -3987,7 +3627,7 @@ Then how are statements such as</p>
 <ul>
 <li>Like variables, lists are immutable</li>
 </ul>
-<pre class="hljs"><code><div>  names = [<span class="hljs-string">"Anna"</span>, <span class="hljs-string">"Bob"</span>, <span class="hljs-string">"Jo"</span>, <span class="hljs-string">"Keira"</span>, <span class="hljs-string">"Tom"</span>, <span class="hljs-string">"George"</span>]
+<pre><code class="language-Haskell"><div>  names = [<span class="hljs-string">"Anna"</span>, <span class="hljs-string">"Bob"</span>, <span class="hljs-string">"Jo"</span>, <span class="hljs-string">"Keira"</span>, <span class="hljs-string">"Tom"</span>, <span class="hljs-string">"George"</span>]
   numbers = [<span class="hljs-number">3</span>,<span class="hljs-number">7</span>,<span class="hljs-number">14</span>,<span class="hljs-number">83</span>,<span class="hljs-number">2</span>,<span class="hljs-number">77</span>]
   head names
   tail names
@@ -3997,7 +3637,7 @@ Then how are statements such as</p>
 <ul>
 <li>This will return</li>
 </ul>
-<pre class="hljs"><code><div>  [&quot;Anna&quot;]
+<pre><code><div>  [&quot;Anna&quot;]
   [&quot;Bob&quot;, &quot;Jo&quot;, &quot;Keira&quot;, &quot;Tom&quot;, &quot;George&quot;]
   [3]
   [7,14,83,2,77]
@@ -4008,7 +3648,7 @@ Then how are statements such as</p>
 <ul>
 <li>The following defines a new list and checks if it is empty</li>
 </ul>
-<pre class="hljs"><code><div>  <span class="hljs-keyword">let</span> newList = []
+<pre><code class="language-Haskell"><div>  <span class="hljs-keyword">let</span> newList = []
   null newList
 </div></code></pre>
 <ul>
@@ -4033,5 +3673,5 @@ Then how are statements such as</p>
 <li><code>length numbers</code> returns the length of numbers</li>
 </ul>
 
-</body>
-</html>
+    </body>
+    </html>
