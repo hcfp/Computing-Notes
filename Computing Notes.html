@@ -1808,6 +1808,194 @@ Some CPUs have Level 3 cache</li>
 <li>There is not direct access to the server, so NAT forwards all requests to a particular IP address an port to the port of the internal server using a private IP address</li>
 <li>Requests to access the sever are sent to the router which can filter out packets for certain computers and applications</li>
 </ul>
+<h2 id="client-server-model">Client-server model</h2>
+<h3 id="what-is-the-client-server-model">What is the client-server model</h3>
+<ul>
+<li>A client sends a message to a server which responds with the data requested or a suitable message otherwise</li>
+<li>An example is when a browser sends a HTTP request to a server
+<ul>
+<li>The requested content is then sent back from the server</li>
+</ul>
+</li>
+</ul>
+<h3 id="application-programming-interface">Application Programming Interface</h3>
+<ul>
+<li>An API is a set of protocols that govern how two applications interact with one another</li>
+<li>It defines the format of the requests and responses between a client and the server</li>
+<li>It enables an application to use the the services of another</li>
+</ul>
+<h3 id="websocket-protocol">WebSocket protocol</h3>
+<ul>
+<li>The WebSocket specification is an API</li>
+<li>It is an application layer protocol that allows persistent bi-directional communication channel between a client and server
+<ul>
+<li>This is known as full-duplex</li>
+</ul>
+</li>
+<li>The packets have less header information
+<ul>
+<li>Smaller packets</li>
+</ul>
+</li>
+<li>Packets are automatically accepted without security checks</li>
+<li>A persistent channel with smaller packets enables fast, real-time and interactive communication</li>
+<li>Used for gaming, messaging and collaborative document editing</li>
+</ul>
+<ul>
+<li>The reduced overheads on the HTTP servers mean fewer web server are required
+<ul>
+<li>This saves transmission time</li>
+<li>Saves bandwidth
+<ul>
+<li>Important for mobile data</li>
+</ul>
+</li>
+<li>Saves cost and space of additional servers</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-crud-applications">Web CRUD applications</h3>
+<ul>
+<li>Create, Retrieve, Update and delete</li>
+<li>They are the operations of a database or content management system</li>
+</ul>
+<ul>
+<li>CRUD can be mapped to HTTP and SQL</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">CRUD</th>
+<th style="text-align:center">HTTP request methods</th>
+<th style="text-align:center">SQL database function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create</td>
+<td style="text-align:center">POST</td>
+<td style="text-align:center">INSET</td>
+</tr>
+<tr>
+<td style="text-align:center">Retrieve</td>
+<td style="text-align:center">GET</td>
+<td style="text-align:center">SELECT</td>
+</tr>
+<tr>
+<td style="text-align:center">Update</td>
+<td style="text-align:center">PUT</td>
+<td style="text-align:center">UPDATE</td>
+</tr>
+<tr>
+<td style="text-align:center">Delete</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">DELETE</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http-request-methods">HTTP request methods</h3>
+<ul>
+<li>HTTP uses GET, POST, PUT and DELETE when working with database server</li>
+<li>Usually only GET and POST are used as they can be used to perform the function of PUT and DELETE</li>
+</ul>
+<h3 id="representational-state-transfer-rest">Representational State Transfer (REST)</h3>
+<ul>
+<li>It is a style of systems design that uses HTTP request methods to interact with a database via a web server</li>
+<li>The client does not require knowledge of how the server will:
+<ul>
+<li>fulfil the request</li>
+<li>store the data</li>
+<li>or gather the data</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>This separation allows any client or server to be updated and developed independently of each other without loss of function</li>
+<li>If a system or API conforms to the specification it is called RESTful</li>
+</ul>
+<h4 id="how-does-a-browser-connect-to-a-database-using-http-request-methods">How does a browser connect to a database using HTTP request methods</h4>
+<ol>
+<li>The browser makes a client server request to load a web page and all its resources</li>
+<li>The HTML will contain JavaScript that is executed client-side</li>
+<li>The JavaScript calls the RESTful API which enables communication with the server-side database using HTTP requests</li>
+<li>The server responds to the HTTP requests with data in XML or JSON format</li>
+<li>The browser renders the XML or JSON</li>
+</ol>
+<ul>
+<li>GET <a href="http://solarsystem.com/planets">http://solarsystem.com/planets</a> - This will return all records in the planets table</li>
+<li>PUT <a href="http://solarsystem.com/planets/Jupiter/gravity/24.79">http://solarsystem.com/planets/Jupiter/gravity/24.79</a> - Update the gravity value for Jupiter</li>
+<li>DELETE <a href="http://solarsystem.com/planets/Jupiter">http://solarsystem.com/planets/Jupiter</a> - removes the record</li>
+</ul>
+<h3 id="xml-and-json">XML and JSON</h3>
+<ul>
+<li>JSON is JavaScript Object Notation</li>
+<li>XML is Extensible Mark-up Language</li>
+</ul>
+<ul>
+<li>They are standard methods for transferring data between the server and a web application
+<img src="https://www.sunnyhoi.com/app/uploads/2017/09/json-vs-xml-which-format-to-use-for-your-api.png" alt="XML and JSON"></li>
+</ul>
+<h4 id="advantages-of-json-over-xml">Advantages of JSON over XML</h4>
+<ul>
+<li>XML is widely used and has some advantages over JSON
+<ul>
+<li>XML is more flexible in terms of structure and data types</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">JSON is:</th>
+<th style="text-align:center">Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Easier for humans to read</td>
+<td style="text-align:center">JSON is is easier to read in the data  oriented format {&quot;object&quot; : &quot;value&quot;}</td>
+</tr>
+<tr>
+<td style="text-align:center">More compact</td>
+<td style="text-align:center">Shorter with fewer characters Quicker to transmit XML field names need to be written  twice as there are tags</td>
+</tr>
+<tr>
+<td style="text-align:center">Easier to create</td>
+<td style="text-align:center">Simpler syntax and structure and  can use arrays</td>
+</tr>
+<tr>
+<td style="text-align:center">Easier for computers to parse and therefore quicker to parse</td>
+<td style="text-align:center">Can be parsed directly with JavaScript Can differentiate between numerical  values and strings</td>
+</tr>
+</tbody>
+</table>
+<h3 id="thin-and-thick-client-computing">Thin and thick-client computing</h3>
+<ul>
+<li>The thickness is the level of processing and storage a client does compared to the server</li>
+<li>The more processing and storage a server does, the thinner the client</li>
+<li>A dumb terminal only has very little processing power and no storage</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thin-client</td>
+<td>Easy to set up maintain and add terminals to a network  Software can be installed on the server and automatically distributed   More secure as all data is held centrally</td>
+<td>If the server goes down, all terminals go down  Requires a powerful, reliable server which is expensive  Increased server demand and  bandwidth  Maintaining network connections for mobile devices requires more battery power than local processing</td>
+</tr>
+<tr>
+<td>Thick-client</td>
+<td>Reliable with greater up-time   Not reliant on server  Better for more powerful  software</td>
+<td>More expensive client required  Software has to be installed separately takes longer  Data consistency issues</td>
+</tr>
+</tbody>
+</table>
 <h1 id="fundamentals-of-databases">Fundamentals of databases</h1>
 <h2 id="modelling-data-requirements">Modelling data requirements</h2>
 <ul>
@@ -2308,12 +2496,12 @@ Waits...                                Waits...
 <li>The start state has an arrow pointing into it</li>
 <li>Double circle is the accept state</li>
 </ul>
-<p><img src="https://www.google.co.uk/url?sa%3Di%26amp%3Brct%3Dj%26amp%3Bq%3D%26amp%3Besrc%3Ds%26amp%3Bsource%3Dimgres%26amp%3Bcd%3D%26amp%3Bcad%3Drja%26amp%3Buact%3D8%26amp%3Bved%3D2ahUKEwiH-4uZjv7dAhWS_qQKHdBJCL0QjRx6BAgBEAU%26amp%3Burl%3Dhttps%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFinite-state_machine%26amp%3Bpsig%3DAOvVaw30USiIWK7v6i32xlJznYRN%26amp%3Bust%3D1539337769955250" alt="Finite state machine"></p>
+<p><img src="https://www.google.co.uk/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=imgres&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiH-4uZjv7dAhWS_qQKHdBJCL0QjRx6BAgBEAU&amp;url=https://en.wikipedia.org/wiki/Finite-state_machine&amp;psig=AOvVaw30USiIWK7v6i32xlJznYRN&amp;ust=1539337769955250" alt="Finite state machine"></p>
 <h3 id="state-transition-tables">State transition tables</h3>
 <ul>
 <li>Alternative way to represent an FSM</li>
 </ul>
-<p><img src="https://www.google.co.uk/url?sa%3Di%26amp%3Brct%3Dj%26amp%3Bq%3D%26amp%3Besrc%3Ds%26amp%3Bsource%3Dimages%26amp%3Bcd%3D%26amp%3Bcad%3Drja%26amp%3Buact%3D8%26amp%3Bved%3D2ahUKEwjjrt3Kjv7dAhWIMewKHafJD4sQjRx6BAgBEAU%26amp%3Burl%3Dhttp%3A%2F%2Fwww2.elo.utfsm.cl%2F~lsb%2Felo211%2Faplicaciones%2Fkatz%2Fchapter9%2Fchapter09.doc2.html%26amp%3Bpsig%3DAOvVaw2GxNI-A6NEzylAea5mNZPL%26amp%3Bust%3D1539337869451123" alt="State transition table"></p>
+<p><img src="https://www.google.co.uk/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=images&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjjrt3Kjv7dAhWIMewKHafJD4sQjRx6BAgBEAU&amp;url=http://www2.elo.utfsm.cl/~lsb/elo211/aplicaciones/katz/chapter9/chapter09.doc2.html&amp;psig=AOvVaw2GxNI-A6NEzylAea5mNZPL&amp;ust=1539337869451123" alt="State transition table"></p>
 <h3 id="mealy-machines-1">Mealy Machines</h3>
 <ul>
 <li>Is an FSM with an output</li>
@@ -3250,7 +3438,7 @@ $ f : S \rightarrow \mathbb{R} <span class="katex"><span class="katex-mathml"><m
 <li>A class can inherit data and methods from a parent class</li>
 <li>A child class is called a subclass and a parent class is called a superclass</li>
 </ul>
-<p><img src="https://image.slidesharecdn.com/inheritancecontinues-1223274749680392-9/95/c-inheritance-composition-polymorphism-38-728.jpg?cb%3D1332142453" alt="inheritance diagram"></p>
+<p><img src="https://image.slidesharecdn.com/inheritancecontinues-1223274749680392-9/95/c-inheritance-composition-polymorphism-38-728.jpg?cb=1332142453" alt="inheritance diagram"></p>
 <ul>
 <li>Inheritance is used when object A is an object B</li>
 <li>Eg. Cat is an Animal and therefore can inherit from animal</li>

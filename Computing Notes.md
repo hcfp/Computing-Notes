@@ -1291,6 +1291,110 @@ The following are the units to count bytes in base-2
 - There is not direct access to the server, so NAT forwards all requests to a particular IP address an port to the port of the internal server using a private IP address
 - Requests to access the sever are sent to the router which can filter out packets for certain computers and applications
 
+## Client-server model
+
+### What is the client-server model
+
+- A client sends a message to a server which responds with the data requested or a suitable message otherwise
+- An example is when a browser sends a HTTP request to a server
+  - The requested content is then sent back from the server
+
+### Application Programming Interface
+
+- An API is a set of protocols that govern how two applications interact with one another
+- It defines the format of the requests and responses between a client and the server
+- It enables an application to use the the services of another
+
+### WebSocket protocol
+
+- The WebSocket specification is an API
+- It is an application layer protocol that allows persistent bi-directional communication channel between a client and server
+  - This is known as full-duplex
+- The packets have less header information
+  - Smaller packets
+- Packets are automatically accepted without security checks
+- A persistent channel with smaller packets enables fast, real-time and interactive communication
+- Used for gaming, messaging and collaborative document editing
+
+* The reduced overheads on the HTTP servers mean fewer web server are required
+  * This saves transmission time
+  * Saves bandwidth
+    * Important for mobile data
+  * Saves cost and space of additional servers
+
+### Web CRUD applications
+
+- Create, Retrieve, Update and delete
+- They are the operations of a database or content management system
+
+* CRUD can be mapped to HTTP and SQL
+
+|   CRUD   | HTTP request methods | SQL database function |
+|:--------:|:--------------------:|:---------------------:|
+|  Create  |         POST         |         INSET         |
+| Retrieve |          GET         |         SELECT        |
+|  Update  |          PUT         |         UPDATE        |
+|  Delete  |        DELETE        |         DELETE        |
+
+### HTTP request methods
+
+- HTTP uses GET, POST, PUT and DELETE when working with database server
+- Usually only GET and POST are used as they can be used to perform the function of PUT and DELETE
+
+### Representational State Transfer (REST)
+
+- It is a style of systems design that uses HTTP request methods to interact with a database via a web server
+- The client does not require knowledge of how the server will:
+  - fulfil the request
+  - store the data
+  - or gather the data
+
+* This separation allows any client or server to be updated and developed independently of each other without loss of function
+* If a system or API conforms to the specification it is called RESTful
+
+#### How does a browser connect to a database using HTTP request methods
+
+1. The browser makes a client server request to load a web page and all its resources
+2. The HTML will contain JavaScript that is executed client-side
+3. The JavaScript calls the RESTful API which enables communication with the server-side database using HTTP requests
+4. The server responds to the HTTP requests with data in XML or JSON format
+5. The browser renders the XML or JSON
+
+- GET <http://solarsystem.com/planets> - This will return all records in the planets table
+- PUT <http://solarsystem.com/planets/Jupiter/gravity/24.79> - Update the gravity value for Jupiter
+- DELETE <http://solarsystem.com/planets/Jupiter> - removes the record
+
+### XML and JSON
+
+- JSON is JavaScript Object Notation
+- XML is Extensible Mark-up Language
+
+* They are standard methods for transferring data between the server and a web application
+![XML and JSON](https://www.sunnyhoi.com/app/uploads/2017/09/json-vs-xml-which-format-to-use-for-your-api.png)
+
+#### Advantages of JSON over XML
+
+- XML is widely used and has some advantages over JSON
+  - XML is more flexible in terms of structure and data types
+
+|                           JSON is:                           |                                                     Reason                                                    |
+|:------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------:|
+|                   Easier for humans to read                  |                  JSON is is easier to read in the data  oriented format {"object" : "value"}                  |
+|                         More compact                         | Shorter with fewer characters Quicker to transmit XML field names need to be written  twice as there are tags |
+|                       Easier to create                       |                                Simpler syntax and structure and  can use arrays                               |
+| Easier for computers to parse and therefore quicker to parse |         Can be parsed directly with JavaScript Can differentiate between numerical  values and strings        |
+
+### Thin and thick-client computing
+
+- The thickness is the level of processing and storage a client does compared to the server
+- The more processing and storage a server does, the thinner the client
+- A dumb terminal only has very little processing power and no storage
+
+|  | Advantages | Disadvantages |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Thin-client | Easy to set up maintain and add terminals to a network  Software can be installed on the server and automatically distributed   More secure as all data is held centrally | If the server goes down, all terminals go down  Requires a powerful, reliable server which is expensive  Increased server demand and  bandwidth  Maintaining network connections for mobile devices requires more battery power than local processing |
+| Thick-client | Reliable with greater up-time   Not reliant on server  Better for more powerful  software | More expensive client required  Software has to be installed separately takes longer  Data consistency issues |
+
 # Fundamentals of databases
 
 ## Modelling data requirements
