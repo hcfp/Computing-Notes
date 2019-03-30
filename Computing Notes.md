@@ -599,8 +599,8 @@ The following are the units to count bytes in base-2
 - The toner is given a positive charge
 - The toner is attracted to the drum
 - Toner is transferred from the drum by rolling over paper
-- The toner is fused to the paper by heated rollers
 - This is then repeated 4 times for colour (CMYK)
+- The toner is fused to the paper by heated rollers
 
 ## Storage devices
 
